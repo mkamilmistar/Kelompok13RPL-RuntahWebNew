@@ -16,9 +16,9 @@ Route::get('/', 'SiteController@home');
 Route::get('/register', 'SiteController@register');
 Route::post('/postregister', 'SiteController@postregister');
 Route::get('/about', 'SiteController@about');
-Route::group(['middleware' => ['auth', 'checkRole:volunteer']], function () {
-    Route::get('/profile/{id}', 'VolunteerController@profile');
-});
+Route::get('/diy', 'PostController@diy');
+Route::get('/diy/create', 'PostController@create')->name('post.create');
+Route::post('/diy/create', 'PostController@publish')->name('post.publish');
 
 
 //route untuk admin
@@ -35,3 +35,7 @@ Route::group(['middleware' => ['auth', 'checkRole:admin']], function () {
     Route::get('/volunteer/{volunteer}/delete', 'VolunteerController@delete');
     Route::get('/dashboard', 'VolunteerController@dashboard');
 });
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');

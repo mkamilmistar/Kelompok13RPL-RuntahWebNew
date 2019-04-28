@@ -24,13 +24,13 @@
                     <ul>
                         @if(Auth::guest())
                         <li><a href="/">Home</a></li>
-                        <li><a href="#">Do It Yourself!</a></li>
+                        <li><a href="/diy">Do It Yourself!</a></li>
                         <li><a href="#">Information</a></li>
                         <li><a href="/about">About</a></li>
 
                         @elseif(auth()->user()->role=='admin')
                         <li><a href="/">Home</a></li>
-                        <li><a href="#">Do It Yourself!</a></li>
+                        <li><a href="/diy">Do It Yourself!</a></li>
                         <li><a href="#">Information</a></li>
                         <li><a href="#">Volunteer</a>
                             <ul class="dropdown">
@@ -43,7 +43,7 @@
 
                         @elseif(auth()->user()->role=='volunteer')
                         <li><a href="/">Home</a></li>
-                        <li><a href="#">Do It Yourself!</a></li>
+                        <li><a href="/diy">Do It Yourself!</a></li>
                         <li><a href="#">Information</a></li>
                         <li><a href="#">Volunteer</a>
                             <ul class="dropdown">
