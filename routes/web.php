@@ -16,6 +16,7 @@ Route::get('/', 'SiteController@home');
 Route::get('/register', 'SiteController@register');
 Route::post('/postregister', 'SiteController@postregister');
 Route::get('/about', 'SiteController@about');
+Route::get('/information', 'SiteController@information');
 Route::group(['middleware' => ['auth', 'checkRole:volunteer']], function () {
     Route::get('/profile/{id}', 'VolunteerController@profile');
 });

@@ -4,7 +4,7 @@
         <nav class="classy-navbar justify-content-between" id="cleverNav">
 
             <!-- Logo -->
-            <a class="nav-brand" href="/"><img src="{{asset('/sites')}}/img/logo.png" alt=""></a>
+            <a class="nav-brand" href="/"><img src="{{asset('/sites')}}/img/logo1.png" alt=""></a>
 
             <!-- Navbar Toggler -->
             <div class="classy-navbar-toggler">
@@ -25,7 +25,7 @@
                         @if(Auth::guest())
                         <li><a href="/">Home</a></li>
                         <li><a href="#">Do It Yourself!</a></li>
-                        <li><a href="#">Information</a></li>
+                        <li><a href="/information">Information</a></li>
                         <li><a href="/about">About</a></li>
 
                         @elseif(auth()->user()->role=='admin')

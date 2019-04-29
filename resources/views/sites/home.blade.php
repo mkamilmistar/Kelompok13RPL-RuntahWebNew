@@ -1,14 +1,14 @@
 @extends('sites.layouts.master')
 @section('content')
 <!-- ##### Hero Area Start ##### -->
-<section class="hero-area bg-img bg-overlay-2by5" style="background-image: url({{asset('/sites')}}/img/bg-img/bg1.jpg);">
+<section class="hero-area bg-img bg-overlay-2by5" style="background-image: url({{asset('/sites')}}/img/bg-img/bg0.jpg);">
     <div class="container h-100">
         <div class="row h-100 align-items-center">
             <div class="col-12">
                 <!-- Hero Content -->
                 <div class="hero-content text-center">
-                    <h2>Kuchenk Kawen</h2>
-                    <a href="#" class="btn clever-btn">Ayo Kawin!</a>
+                    <h2>Selamatkan Lingkungan Mu!</h2>
+                    <a href="#" class="btn clever-btn">Aku Mau Ikut Andil !</a>
                 </div>
             </div>
         </div>

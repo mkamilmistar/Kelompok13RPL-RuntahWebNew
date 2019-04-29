@@ -29,6 +29,16 @@ class SiteController extends Controller
         return view('sites.register');
     }
 
+    public function doityourself()
+    {
+        return view('sites.doityourself');
+    }
+
+    public function information()
+    {
+        return view('sites.information');
+    }
+
     public function postregister(Request $request)
     {
         //insert ke table volunteer
