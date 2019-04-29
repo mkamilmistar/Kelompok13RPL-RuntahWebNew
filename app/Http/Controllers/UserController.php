@@ -11,8 +11,8 @@ class UserController extends Controller
 {
     public function profile(Request $request)
     {
-        $users = User::all();
-        dd($users);
+        $users = Auth::user();
+
         return view('sites.profile', compact('users'));
     }
 }

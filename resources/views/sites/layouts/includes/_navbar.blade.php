@@ -51,7 +51,7 @@
                                 <li><a href="#">History</a></li>
                                 <li><a href="#">Point</a></li>
                                 <li><a href="#">Report</a></li>
-                                <li><a href="/profile/{$user->id}">Edit Profile</a></li>
+                                <li><a href="/profile">Edit Profile</a></li>
                             </ul>
                         </li>
                         <li><a href="/about">About</a></li>
@@ -79,7 +79,7 @@
                             <div class="dropdown">
                                 <a class="dropdown-toggle" href="#" role="button" id="userName" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">{{auth()->user()->name}}</a>
                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="userName">
-                                    <a class="dropdown-item" href="#">Profile</a>
+                                    <a class="dropdown-item" href="/profile">Profile</a>
                                     <a class="dropdown-item" href="#">Account Info</a>
                                     <a class="dropdown-item" href="/logout">Logout</a>
                                 </div>
