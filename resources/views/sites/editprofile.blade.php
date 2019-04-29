@@ -21,11 +21,11 @@
                         <!-- PROFILE HEADER -->
                         <div class="profile-main">
                             <div class="row justify-content-center">
-                                <img src="{{asset('images/'.$users->user_image)}}" class="img-circle" style="width:300px;height:300px;object-fit: cover;border-radius:8px" alt="Avatar">
-                                <input type="file" name="user_image" id="img" onchange="PreviewImage();">
+                                <p>Change Photo</p>
                             </div>
                             <div class="row justify-content-center">
-                                <p>Change Photo</p>
+                                <img src="{{asset('images/'.$users->user_image)}}" class="img-circle" style="width:300px;height:300px;object-fit: cover;border-radius:8px" alt="Avatar">
+                                <input type="file" name="user_image" id="img" onchange="PreviewImage();">
                             </div>
                         </div>
                         <!-- Contact Info -->
