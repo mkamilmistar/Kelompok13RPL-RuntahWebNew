@@ -24,11 +24,11 @@
                     <p>{{$post->content}}</p>
                 </div>
                 @endforeach
-
+                @if(auth()->user()->role=='volunteer')
                 <a href="/diy/create">
                     <h3>Make a post here!</h3>
                 </a>
-
+                @endif
             </div>
         </div>
     </div>

@@ -32,6 +32,7 @@
                         <table class="table table-bordered dataTable" id="dataTable" width="100%" cellspacing="0" role="grid" aria-describedby="dataTable_info" style="width: 100%;">
                             <thead>
                                 <tr>
+                                    <td><b>User Name</b></td>
                                     <td><b>Nama Depan</b></td>
                                     <td><b>Nama Belakang</b></td>
                                     <td><b>Jenis Kelamin</b></td>
@@ -45,6 +46,7 @@
                             @foreach($data_volunteer as $volunteer)
                             <tbody>
                                 <tr>
+                                    <td>{{$volunteer -> username}}</td>
                                     <td>{{$volunteer -> nama_depan}}</td>
                                     <td>{{$volunteer -> nama_belakang}}</td>
                                     <td>{{$volunteer -> jenis_kelamin}}</td>

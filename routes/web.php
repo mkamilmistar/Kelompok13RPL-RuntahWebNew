@@ -20,7 +20,9 @@ Route::get('/diy', 'PostController@diy');
 Route::get('/diy/create', 'PostController@create')->name('post.create');
 Route::post('/diy/create', 'PostController@publish')->name('post.publish');
 
-Route::get('/profile', 'UserController@profile')->name('profile.awal');
+Route::get('/profile', 'UserController@profile');
+Route::get('/profile/{id}/edit', 'UserController@edit');
+Route::post('/profile/edit/save', 'UserController@save');
 
 
 //route untuk admin

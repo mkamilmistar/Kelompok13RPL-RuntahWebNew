@@ -4,6 +4,8 @@ namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Facades\Schema;
+use App\User;
+use Auth;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -24,6 +26,13 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        //
+
+        view()->composer(
+
+            'sites.layouts.includes._navbar',
+            function ($view) {
+                $view->with('users', Auth::user());
+            }
+        );
     }
 }

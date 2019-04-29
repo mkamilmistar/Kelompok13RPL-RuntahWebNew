@@ -12,9 +12,9 @@ class VolunteerController extends Controller
     public function index(Request $request)
     {
         if ($request->has('cari')) {
-            $data_volunteer = \App\Volunteer::where('nama_depan', 'LIKE', '%' . $request->cari . '%')->get();
+            $data_volunteer = \App\User::where('nama_depan', 'LIKE', '%' . $request->cari . '%')->get();
         } else {
-            $data_volunteer = \App\Volunteer::all();
+            $data_volunteer = \App\User::all();
         }
         return view('admin.Volunteer.index', ['data_volunteer' => $data_volunteer]);
     }
@@ -59,11 +59,5 @@ class VolunteerController extends Controller
         $volunteer->delete();
         $user->delete();
         return redirect('/volunteer')->with('sukses', 'Data berhasil dihapus');
-    }
-
-    public function profile($id)
-    {
-        $user = \App\User::find($id);
-        return view('sites.profile', ['user' => $user]);
     }
 }
