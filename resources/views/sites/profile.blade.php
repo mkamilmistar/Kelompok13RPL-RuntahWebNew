@@ -35,19 +35,19 @@
 
                                 <li>
                                     <h6><i class="fa fa-clock-o" aria-hidden="true"></i> Gender</h6>
-                                    <h6>{{$volunteer -> jenis_kelamin}}</h6>
+                                    <h6>{{$users->username}}</h6>
                                 </li>
                                 <li>
                                     <h6><i class="fa fa-phone" aria-hidden="true"></i> Phone Number</h6>
-                                    <h6>{{$volunteer -> nomor_telepon}}</h6>
+                                    <h6>{$volunteer -> nomor_telepon}</h6>
                                 </li>
                                 <li>
                                     <h6><i class="fa fa-envelope" aria-hidden="true"></i> Email</h6>
-                                    <h6>{{$volunteer->email}}</h6>
+                                    <h6>{$volunteer->email}</h6>
                                 </li>
                                 <li>
                                     <h6><i class="fa fa-map-pin" aria-hidden="true"></i> Address</h6>
-                                    <h6>{{$volunteer->alamat}}</h6>
+                                    <h6>{$volunteer->alamat}</h6>
                                 </li>
                             </ul>
 

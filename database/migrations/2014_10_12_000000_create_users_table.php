@@ -30,6 +30,7 @@ class CreateUsersTable extends Migration
             $table->text('alamat');
             $table->string('nik_pengguna');
             $table->string('poin');
+            $table->string('user_image')->default('images/no-cover.jpeg');
             $table->timestamps();
         });
     }

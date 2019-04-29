@@ -20,6 +20,8 @@ Route::get('/diy', 'PostController@diy');
 Route::get('/diy/create', 'PostController@create')->name('post.create');
 Route::post('/diy/create', 'PostController@publish')->name('post.publish');
 
+Route::get('/profile', 'UserController@profile')->name('profile.awal');
+
 
 //route untuk admin
 Route::get('/logout', 'AuthController@logout');

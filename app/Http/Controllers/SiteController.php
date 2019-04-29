@@ -13,8 +13,6 @@ class SiteController extends Controller
         return view('sites.home');
     }
 
-
-
     public function profile(Request $request)
     {
         $data_volunteer = \App\Volunteer::all();
