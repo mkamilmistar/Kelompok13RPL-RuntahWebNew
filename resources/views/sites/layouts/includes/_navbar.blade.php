@@ -86,7 +86,7 @@
                             </div>
                         </div>
                         <div class="userthumb">
-                            <img src="{{asset('/sites')}}/img/bg-img/t1.png" alt="">
+                            <img src="{{asset('/images')}}/default.jpg" alt="">
                         </div>
                     </div>
                     @endif

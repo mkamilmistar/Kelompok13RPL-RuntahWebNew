@@ -13,10 +13,7 @@
                     <!-- PROFILE HEADER -->
                     <div class="profile-main">
                         <div class="row justify-content-center">
-                            <div class="col-md-3 mt-4">
-                                <img src="{{asset($users->user_image)}}" class="img-circle" alt="Avatar">
-                                <h3 class="name"></h3>
-                            </div>
+                            <img src="{{asset('images/'.$users->user_image)}}" class="img-circle" style="width:300px;height:300px;object-fit: cover;border-radius:8px" alt="Avatar">
                         </div>
                     </div>
                     <div class="profile-stat">
@@ -31,6 +28,28 @@
                         <div class="contact--info mt-50 mb-100">
                             <h4>Basic Info</h4>
                             <ul class="contact-list">
+                                @if ( !empty ( $users->nama_depan ) )
+                                <li>
+                                    <h6><i class="fa fa-clock-o" aria-hidden="true"></i> Nama Depan</h6>
+                                    <h6>{{$users->nama_depan}}</h6>
+                                </li>
+                                @else
+                                <li>
+                                    <h6><i class="fa fa-clock-o" aria-hidden="true"></i>Nama Depan</h6>
+                                    <h6>-</h6>
+                                </li>
+                                @endif
+                                @if ( !empty ( $users->nama_belakang ) )
+                                <li>
+                                    <h6><i class="fa fa-clock-o" aria-hidden="true"></i>Nama Belakang</h6>
+                                    <h6>{{$users->nama_belakang}}</h6>
+                                </li>
+                                @else
+                                <li>
+                                    <h6><i class="fa fa-clock-o" aria-hidden="true"></i>Nama Belakang</h6>
+                                    <h6>-</h6>
+                                </li>
+                                @endif
                                 @if ( !empty ( $users->jenis_kelamin ) )
                                 <li>
                                     <h6><i class="fa fa-clock-o" aria-hidden="true"></i> Gender</h6>
@@ -70,7 +89,7 @@
                                 @if ( !empty ( $users->alamat ) )
                                 <li>
                                     <h6><i class="fa fa-map-pin" aria-hidden="true"></i> Address</h6>
-                                    <h6>{{$volunteer->alamat}}</h6>
+                                    <h6>{{$users->alamat}}</h6>
                                 </li>
                                 @else
                                 <li>
@@ -92,7 +111,7 @@
                                 @endif
                             </ul>
                             <div class="row justify-content-center">
-                                <a href="#" class="btn clever-btn">Edit Profile</a>
+                                <a href="{{url("/profile/{$users->id}/edit")}}" class="btn clever-btn">Edit Profile</a>
                             </div>
                         </div>
                     </div>
