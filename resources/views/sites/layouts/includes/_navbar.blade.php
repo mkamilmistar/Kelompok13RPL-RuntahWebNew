@@ -86,7 +86,7 @@
                             </div>
                         </div>
                         <div class="userthumb">
-                            <img src="{{asset('/images')}}/default.jpg" alt="">
+                            <img src="{{asset('images/'.$users->user_image)}}" alt="">
                         </div>
                     </div>
                     @endif
