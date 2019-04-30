@@ -39,7 +39,7 @@
                             </ul>
                         </li>
                         <li><a href="/about">About</a></li>
-                        <li><a href="/volunteer">Admin</a></li>
+                        <li><a href="/admins">Admin</a></li>
 
                         @elseif(auth()->user()->role=='volunteer')
                         <li><a href="/">Home</a></li>

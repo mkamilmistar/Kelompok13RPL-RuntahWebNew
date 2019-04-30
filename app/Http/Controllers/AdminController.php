@@ -7,7 +7,7 @@ use App\Volunteer;
 use App\User;
 
 
-class VolunteerController extends Controller
+class AdminController extends Controller
 {
     public function index(Request $request)
     {
@@ -39,7 +39,7 @@ class VolunteerController extends Controller
         //insert ke table volunteer
         $request->request->add(['user_id' => $user->id]);
         $volunteer = \App\Volunteer::create($request->all());
-        return redirect('/volunteer')->with('sukses', 'Data berhasil ditambahkan');
+        return redirect('/admin')->with('sukses', 'Data berhasil ditambahkan');
     }
 
     public function edit(volunteer $volunteer)
@@ -50,7 +50,7 @@ class VolunteerController extends Controller
     public function update(Request $request, volunteer $volunteer)
     {
         $volunteer->update($request->all());
-        return redirect('/volunteer')->with('sukses', 'Data Berhasil diedit');
+        return redirect('/admin')->with('sukses', 'Data Berhasil diedit');
     }
 
     public function delete(volunteer $volunteer, user $user)
@@ -58,6 +58,6 @@ class VolunteerController extends Controller
 
         $volunteer->delete();
         $user->delete();
-        return redirect('/volunteer')->with('sukses', 'Data berhasil dihapus');
+        return redirect('/admin')->with('sukses', 'Data berhasil dihapus');
     }
 }

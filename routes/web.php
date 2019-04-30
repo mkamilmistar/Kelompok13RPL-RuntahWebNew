@@ -32,12 +32,12 @@ Route::get('/login', 'AuthController@login')->name('login');
 
 
 Route::group(['middleware' => ['auth', 'checkRole:admin']], function () {
-    Route::get('/volunteer', 'VolunteerController@index');
-    Route::post('/volunteer/create', 'VolunteerController@create');
-    Route::get('/volunteer/{volunteer}/edit', 'VolunteerController@edit');
-    Route::post('/volunteer/{volunteer}/update', 'VolunteerController@update');
-    Route::get('/volunteer/{volunteer}/delete', 'VolunteerController@delete');
-    Route::get('/dashboard', 'VolunteerController@dashboard');
+    Route::get('admins', 'AdminController@index');
+    Route::post('/admins/create', 'AdminController@create');
+    Route::get('/admins/{volunteer}/edit', 'AdminController@edit');
+    Route::post('/admins/{volunteer}/update', 'AdminController@update');
+    Route::get('/admins/{volunteer}/delete', 'AdminController@delete');
+    Route::get('/admins/dashboard', 'AdminController@dashboard');
 });
 
 Auth::routes();
