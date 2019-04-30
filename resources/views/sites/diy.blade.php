@@ -20,8 +20,19 @@
                 <!-- Blog Details Text -->
                 @foreach($posts as $post)
                 <div class="blog-details-text">
-                    <b> {{$post->title}}</b>
-                    <p>{{$post->content}}</p>
+                    <div class="form-group">
+                        <label for=""><b> {{$post->title}}</b></label>
+                    </div>
+                    <div class="form-group">
+                        <label for="">
+                            <p>{{$post->content}}</p>
+                        </label>
+                    </div>
+                    @if(Auth::guest())
+                    @elseif(auth()->user()->role=='volunteer')
+                    <a href="/diy/{{$post->id}}/edit" class="btn clever-btn">Edit</a>
+                    <a href="/diy/{{$post->id}}/delete" class="btn clever-btn">Delete</a>
+                    @endif
                 </div>
                 @endforeach
                 @if(Auth::guest())
