@@ -24,10 +24,18 @@
                     <p>{{$post->content}}</p>
                 </div>
                 @endforeach
-                @if(auth()->user()->role=='volunteer')
-                <a href="/diy/create">
-                    <h3>Make a post here!</h3>
-                </a>
+                @if(Auth::guest())
+                <div class="form-group">
+                    <div class="row justify-content-center">
+                        <a href="#" class="btn clever-btn">REPORT!</a>
+                    </div>
+                </div>
+                @elseif(auth()->user()->role=='volunteer')
+                <div class="form-group">
+                    <div class="row justify-content-center">
+                        <a href="/diy/create" class="btn clever-btn">Make a post here!</a>
+                    </div>
+                </div>
                 @endif
             </div>
         </div>
