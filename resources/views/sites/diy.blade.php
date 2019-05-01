@@ -27,13 +27,13 @@
                     </div>
                     <div class="form-group">
                         <label for="">
-                            <p>{{$post->content}}</p>
+                            <p>{!!$post->content!!}</p>
                         </label>
                     </div>
                     @if(Auth::guest())
                     @elseif(auth()->user()->role=='admin')
-                    <a href="/diy/{{$post->id}}/edit" class="btn clever-btn">Edit</a>
-                    <a href="/diy/{{$post->id}}/delete" class="btn clever-btn">Delete</a>
+                    <a href="/admins/diypost/{{$post->id}}/edit" class="btn clever-btn">Edit</a>
+                    <a href="/admins/diypost/{{$post->id}}/delete" class="btn clever-btn">Delete</a>
                     @endif
                 </div>
                 @endforeach
@@ -46,7 +46,7 @@
                 @elseif(auth()->user()->role=='admin')
                 <div class="form-group">
                     <div class="row justify-content-center">
-                        <a href="/diy/create" class="btn clever-btn">Make a post here!</a>
+                        <a href="/admins/diypost/create" class="btn clever-btn">Make a post here!</a>
                     </div>
                 </div>
                 @endif

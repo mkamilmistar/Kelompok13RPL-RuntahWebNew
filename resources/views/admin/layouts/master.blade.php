@@ -28,6 +28,8 @@
     <link rel="stylesheet" href="{{asset('admin/assets/bower_components/bootstrap-daterangepicker/daterangepicker.css')}}">
     <!-- bootstrap wysihtml5 - text editor -->
     <link rel="stylesheet" href="{{asset('admin/assets/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css')}}">
+    <!-- bootstrap ckeditor - text editor -->
+
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -44,7 +46,7 @@
     <div class="wrapper">
         <header class="main-header">
             <!-- Logo -->
-            <a href="index2.html" class="logo">
+            <a href="/" class="logo">
                 <!-- mini logo for sidebar mini 50x50 pixels -->
                 <span class="logo-mini"><b>A</b>R</span>
                 <!-- logo for regular state and mobile devices -->
@@ -316,8 +318,8 @@
     <!-- AdminLTE for demo purposes -->
     <script src="{{asset('admin/assets/dist/js/demo.js')}}"></script>
     <!-- CK editor -->
-    <script src="{{asset('admin/assets/bower_components/ckeditor/ckeditor.js')}}"></script>
-
+    <script src="{{asset('admin/unisharp/laravel-ckeditor/ckeditor.js')}}"></script>
+    @yield('js')
     <script>
         @if(Session::has('sukses'))
         // Display a success toast, with a title

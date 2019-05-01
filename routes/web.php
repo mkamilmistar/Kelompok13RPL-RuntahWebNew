@@ -19,11 +19,6 @@ Route::get('/about', 'SiteController@about');
 
 //route DIY
 Route::get('/diy', 'PostController@diy');
-Route::get('/diy/create', 'PostController@create')->name('post.create');
-Route::post('/diy/create', 'PostController@publish')->name('post.publish');
-Route::get('/diy/{id}/edit', 'PostController@editpost')->name('post.edit');
-Route::post('/diy/{id}/update', 'PostController@updatepost')->name('post.update');
-Route::get('/diy/{id}/delete', 'PostController@deletepost')->name('post.delete');
 
 //route PROFILE USER
 Route::get('/profile', 'UserController@profile');

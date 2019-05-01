@@ -27,7 +27,7 @@ Postingan Do It Yourself!
                         </div>
                         <div id="collapseOne" class="panel-collapse collapse in">
                             <div class="box-body">
-                                {{$post->content}}
+                                {!!$post->content!!}
                             </div>
                         </div>
                         <div id="collapseOne" class="panel-collapse collapse in">

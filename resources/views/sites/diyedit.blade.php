@@ -12,7 +12,7 @@
 
         <div class="form-group">
             <label for="">Content</label>
-            <textarea class="form-control" name="content" rows="5" placeholder="Post Title">{{$posts->content}}</textarea>
+            <textarea class="form-control" name="content" rows="5" placeholder="Post Title">{!!$posts->content!!}</textarea>
         </div>
 
         <div class="form-group">

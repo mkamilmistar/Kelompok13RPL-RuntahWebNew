@@ -72,7 +72,8 @@
     <script src="{{asset('/sites')}}/js/plugins/plugins.js"></script>
     <!-- Active js -->
     <script src="{{asset('/sites')}}/js/active.js"></script>
-
+    <!-- CK editor -->
+    <script src="{{asset('admin/unisharp/laravel-ckeditor/ckeditor.js')}}"></script>
 
 </body>
 </body>

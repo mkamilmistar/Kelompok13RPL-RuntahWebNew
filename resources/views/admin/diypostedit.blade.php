@@ -24,9 +24,8 @@ Postingan Do It Yourself!
 
                         <div class="form-group">
                             <label for="">Content</label>
-                            <textarea class="form-control" name="content" rows="5" placeholder="Post Title">{{$posts->content}}</textarea>
+                            <textarea class="form-control" name="content" rows="5" placeholder="Post Title">{!!$posts->content!!}</textarea>
                         </div>
-
                         <div class="form-group">
                             <input type="submit" value="Save" class="btn btn-primary">
                         </div>
@@ -41,6 +40,10 @@ Postingan Do It Yourself!
     </div>
     <!-- /.row -->
     <!-- END ACCORDION & CAROUSEL-->
+    @endsection
 
-
+    @section('js')
+    <script>
+        CKEDITOR.replace('content');
+    </script>
     @endsection
