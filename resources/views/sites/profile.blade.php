@@ -1,4 +1,7 @@
 @extends('sites.layouts.master')
+@section('title')
+My Profile - Runtah WEB
+@endsection
 @section('content')
 <!-- ##### Regular Page Area Start ##### -->
 <div class="regular-page-area section-padding-100">

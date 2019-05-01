@@ -1,4 +1,7 @@
 @extends('sites.layouts.master')
+@section('title')
+Home - Runtah WEB
+@endsection
 @section('content')
 <!-- ##### Hero Area Start ##### -->
 <section class="hero-area bg-img bg-overlay-2by5" style="background-image: url({{asset('/sites')}}/img/bg-img/bg0.jpg);">

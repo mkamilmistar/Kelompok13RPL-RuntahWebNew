@@ -13,9 +13,9 @@ Postingan Do It Yourself!
                 <h3 class="box-title">Post</h3>
             </div>
             <!-- /.box-header -->
-            @foreach($posts as $post)
             <div class="box-body">
                 <div class="box-group" id="accordion">
+                    @foreach($posts as $post)
                     <!-- we are adding the .panel class so bootstrap.js collapse plugin detects it -->
                     <div class="panel box box-primary">
                         <div class="box-header with-border">
@@ -38,11 +38,9 @@ Postingan Do It Yourself!
                                 </div>
                             </div>
                         </div>
-
                     </div>
-
+                    @endforeach
                 </div>
-                @endforeach
                 <!-- /.box-body -->
             </div>
             <!-- /.box -->

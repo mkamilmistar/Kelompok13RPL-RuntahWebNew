@@ -1,4 +1,7 @@
 @extends('sites.layouts.master')
+@section('title')
+About - Runtah WEB
+@endsection
 @section('content')
 <!-- ##### Catagory Area Start ##### -->
 <div class="clever-catagory blog-details bg-img d-flex align-items-center justify-content-center p-3 height-400" style="background-image: url({{asset('/sites')}}/img/blog-img/7.jpg);">
