@@ -3,8 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Volunteer;
 use App\User;
+use App\Post;
 
 
 class AdminController extends Controller
@@ -25,6 +25,7 @@ class AdminController extends Controller
         return view('admin.dashboard');
     }
 
+    //USER KONTROL
     public function create(Request $request)
     {
         //insert ke table volunteer
@@ -37,27 +38,73 @@ class AdminController extends Controller
         $user->save();
 
         //insert ke table volunteer
-        $request->request->add(['user_id' => $user->id]);
-        $volunteer = \App\Volunteer::create($request->all());
-        return redirect('/admin')->with('sukses', 'Data berhasil ditambahkan');
+        //$request->request->add(['user_id' => $user->id]);
+        //$volunteer = \App\Volunteer::create($request->all());
+        return redirect('/admins')->with('sukses', 'Data berhasil ditambahkan');
     }
 
-    public function edit(volunteer $volunteer)
+    public function edit($id)
     {
-        return view('admin/edit', ['volunteer' => $volunteer]);
+        $users = \App\User::find($id);
+        return view('admin.edit', compact('users'));
     }
 
-    public function update(Request $request, volunteer $volunteer)
+    public function update(Request $request, $id)
     {
-        $volunteer->update($request->all());
-        return redirect('/admin')->with('sukses', 'Data Berhasil diedit');
+        $users = \App\User::find($id);
+        $users->update($request->all());
+        return redirect('/admins')->with('sukses', 'Data Berhasil diedit');
     }
 
-    public function delete(volunteer $volunteer, user $user)
+    public function delete(user $user)
     {
-
-        $volunteer->delete();
         $user->delete();
-        return redirect('/admin')->with('sukses', 'Data berhasil dihapus');
+        return redirect('/admins')->with('sukses', 'Data berhasil dihapus');
+    }
+
+    //POSTINGAN DIY
+    public function diypost()
+    {
+        $posts = Post::all();
+        return view('admin.diypost', compact('posts'));
+    }
+
+    public function createpost()
+    {
+        return view('admin.diypostcreate');
+    }
+
+    public function publishpost()
+    {
+        Post::create([
+            'title' => request('title'),
+            'content' => request('content')
+        ]);
+
+        return redirect('/admins/diypost');
+    }
+
+    public function editpost($id)
+    {
+        $posts = Post::find($id);
+        return view('admin.diypostedit', compact('posts'));
+    }
+
+    public function updatepost($id)
+    {
+        $posts = Post::find($id);
+        $posts->update([
+            'title' => request('title'),
+            'content' => request('content')
+        ]);
+        return redirect('/admins/diypost')->with('sukses', 'post updated!');
+    }
+
+
+    public function deletepost($id)
+    {
+        $posts = Post::find($id);
+        $posts->delete();
+        return redirect('/admins/diypost')->with('sukses', 'Post berhasil dihapus');
     }
 }

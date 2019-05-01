@@ -33,20 +33,28 @@ Route::post('/profile/edit/save', 'UserController@save');
 Route::get('/profile/changepassword', 'UserController@changepassword')->name('changepassword');
 Route::post('/profile/savepassword', 'UserController@savepassword')->name('savepassword');
 
-
-//route untuk admin
+//route auth
 Route::get('/logout', 'AuthController@logout');
 Route::post('/postlogin', 'AuthController@postlogin');
 Route::get('/login', 'AuthController@login')->name('login');
 
 
+//route untuk admin
 Route::group(['middleware' => ['auth', 'checkRole:admin']], function () {
     Route::get('admins', 'AdminController@index');
     Route::post('/admins/create', 'AdminController@create');
-    Route::get('/admins/{volunteer}/edit', 'AdminController@edit');
-    Route::post('/admins/{volunteer}/update', 'AdminController@update');
-    Route::get('/admins/{volunteer}/delete', 'AdminController@delete');
+    Route::get('/admins/{id}/edit', 'AdminController@edit');
+    Route::post('/admins/{id}/update', 'AdminController@update');
+    Route::get('/admins/{id}/delete', 'AdminController@delete');
     Route::get('/admins/dashboard', 'AdminController@dashboard');
+
+    //untuk post diy
+    Route::get('/admins/diypost', 'AdminController@diypost');
+    Route::get('/admins/diypost/create', 'AdminController@createpost')->name('post.create');
+    Route::post('/admins/diypost/create', 'AdminController@publishpost')->name('post.publish');
+    Route::get('/admins/diypost/{id}/edit', 'AdminController@editpost')->name('post.edit');
+    Route::post('/admins/diypost/{id}/update', 'AdminController@updatepost')->name('post.update');
+    Route::get('/admins/diypost/{id}/delete', 'AdminController@deletepost')->name('post.delete');
 });
 
 Auth::routes();
