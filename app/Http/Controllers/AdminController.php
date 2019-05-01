@@ -62,7 +62,7 @@ class AdminController extends Controller
         return redirect('/admins')->with('sukses', 'Data berhasil dihapus');
     }
 
-    //POSTINGAN DIY
+    //AWAL POSTINGAN DIY
     public function diypost()
     {
         $posts = Post::all();
@@ -100,11 +100,20 @@ class AdminController extends Controller
         return redirect('/admins/diypost')->with('sukses', 'post updated!');
     }
 
-
     public function deletepost($id)
     {
         $posts = Post::find($id);
         $posts->delete();
         return redirect('/admins/diypost')->with('sukses', 'Post berhasil dihapus');
     }
+    //AKHIR DIY
+
+    //AWAL INFORMATION
+
+    public function information()
+    {
+        return view('admin.information');
+    }
+
+    //AKHIR INFORMATION
 }

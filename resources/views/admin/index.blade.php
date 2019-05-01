@@ -25,6 +25,7 @@ Data Volunteer
                     <thead>
                         <tr>
                             <td><b>User Name</b></td>
+                            <td><b>Role</b></td>
                             <td><b>Nama Depan</b></td>
                             <td><b>Nama Belakang</b></td>
                             <td><b>Jenis Kelamin</b></td>
@@ -33,12 +34,14 @@ Data Volunteer
                             <td><b>NIK Pengguna</b></td>
                             <td><b>Poin</b></td>
                             <td><b>Action</b></td>
+
                         </tr>
                     </thead>
                     @foreach($data_volunteer as $volunteer)
                     <tbody>
                         <tr>
                             <td>{{$volunteer -> username}}</td>
+                            <td>{{$volunteer -> role}}</td>
                             <td>{{$volunteer -> nama_depan}}</td>
                             <td>{{$volunteer -> nama_belakang}}</td>
                             <td>{{$volunteer -> jenis_kelamin}}</td>

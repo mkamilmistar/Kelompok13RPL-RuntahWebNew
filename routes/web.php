@@ -16,6 +16,7 @@ Route::get('/', 'SiteController@home');
 Route::get('/register', 'SiteController@register');
 Route::post('/postregister', 'SiteController@postregister');
 Route::get('/about', 'SiteController@about');
+Route::get('/information', 'SiteController@information');
 
 //route DIY
 Route::get('/diy', 'PostController@diy');
@@ -50,6 +51,9 @@ Route::group(['middleware' => ['auth', 'checkRole:admin']], function () {
     Route::get('/admins/diypost/{id}/edit', 'AdminController@editpost')->name('post.edit');
     Route::post('/admins/diypost/{id}/update', 'AdminController@updatepost')->name('post.update');
     Route::get('/admins/diypost/{id}/delete', 'AdminController@deletepost')->name('post.delete');
+
+    //untuk information
+    Route::get('/admins/information', 'AdminController@information');
 });
 
 Auth::routes();
