@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\User;
 use Auth;
+use Illuminate\Support\Facades\Hash;
 
 
 class UserController extends Controller
@@ -51,5 +52,29 @@ class UserController extends Controller
         $users->save(); //save all
 
         return redirect('/profile')->with('info', 'Profile updated!');
+    }
+
+    public function changepassword()
+    {
+        return view('Auth.changepassword');
+    }
+
+    public function savepassword(Request $request)
+    {
+        $this->validate($request, [
+            'oldpassword' => 'required',
+            'password' => 'required|confirmed'
+
+        ]);
+        $hashedPassword = Auth::user()->password;
+        if (Hash::check($request->oldpassword, $hashedPassword)) {
+            $users = User::find(Auth::id());
+            $users->password = Hash::make($request->password);
+            $users->save();
+            Auth::logout();
+            return redirect()->route('login')->with('sukses', "Password terupdate");
+        } else {
+            return redirect()->back()->with('gagal', "Password error");
+        }
     }
 }

@@ -30,82 +30,82 @@
                             <ul class="contact-list">
                                 @if ( !empty ( $users->nama_depan ) )
                                 <li>
-                                    <h6><i class="fa fa-clock-o" aria-hidden="true"></i> Nama Depan</h6>
+                                    <h6><i class="fa fa-user" aria-hidden="true"></i> Nama Depan</h6>
                                     <h6>{{$users->nama_depan}}</h6>
                                 </li>
                                 @else
                                 <li>
-                                    <h6><i class="fa fa-clock-o" aria-hidden="true"></i>Nama Depan</h6>
+                                    <h6><i class="fa fa-user" aria-hidden="true"></i>Nama Depan</h6>
                                     <h6>-</h6>
                                 </li>
                                 @endif
                                 @if ( !empty ( $users->nama_belakang ) )
                                 <li>
-                                    <h6><i class="fa fa-clock-o" aria-hidden="true"></i>Nama Belakang</h6>
+                                    <h6><i class="fa fa-user" aria-hidden="true"></i>Nama Belakang</h6>
                                     <h6>{{$users->nama_belakang}}</h6>
                                 </li>
                                 @else
                                 <li>
-                                    <h6><i class="fa fa-clock-o" aria-hidden="true"></i>Nama Belakang</h6>
+                                    <h6><i class="fa fa-user" aria-hidden="true"></i>Nama Belakang</h6>
                                     <h6>-</h6>
                                 </li>
                                 @endif
                                 @if ( !empty ( $users->jenis_kelamin ) )
                                 <li>
-                                    <h6><i class="fa fa-clock-o" aria-hidden="true"></i> Gender</h6>
+                                    <h6><i class="fa fa-intersex" aria-hidden="true"></i>Gender</h6>
                                     <h6>{{$users->jenis_kelamin}}</h6>
                                 </li>
                                 @else
                                 <li>
-                                    <h6><i class="fa fa-clock-o" aria-hidden="true"></i> Gender</h6>
+                                    <h6><i class="fa fa-intersex" aria-hidden="true"></i>Gender</h6>
                                     <h6>-</h6>
                                 </li>
                                 @endif
 
                                 @if ( !empty ( $users->nomor_telepon ) )
                                 <li>
-                                    <h6><i class="fa fa-phone" aria-hidden="true"></i> Phone Number</h6>
+                                    <h6><i class="fa fa-phone" aria-hidden="true"></i>Phone</h6>
                                     <h6>{{$users -> nomor_telepon}}</h6>
                                 </li>
                                 @else
                                 <li>
-                                    <h6><i class="fa fa-phone" aria-hidden="true"></i> Phone Number</h6>
+                                    <h6><i class="fa fa-phone" aria-hidden="true"></i>Phone</h6>
                                     <h6>-</h6>
                                 </li>
                                 @endif
 
                                 @if ( !empty ( $users->email ) )
                                 <li>
-                                    <h6><i class="fa fa-envelope" aria-hidden="true"></i> Email</h6>
+                                    <h6><i class="fa fa-envelope" aria-hidden="true"></i>Email</h6>
                                     <h6>{{$users->email}}</h6>
                                 </li>
                                 @else
                                 <li>
-                                    <h6><i class="fa fa-envelope" aria-hidden="true"></i> Email</h6>
+                                    <h6><i class="fa fa-envelope" aria-hidden="true"></i>Email</h6>
                                     <h6>-</h6>
                                 </li>
                                 @endif
 
                                 @if ( !empty ( $users->alamat ) )
                                 <li>
-                                    <h6><i class="fa fa-map-pin" aria-hidden="true"></i> Address</h6>
+                                    <h6><i class="fa fa-home" aria-hidden="true"></i>Address</h6>
                                     <h6>{{$users->alamat}}</h6>
                                 </li>
                                 @else
                                 <li>
-                                    <h6><i class="fa fa-map-pin" aria-hidden="true"></i> Address</h6>
+                                    <h6><i class="fa fa-home" aria-hidden="true"></i>Address</h6>
                                     <h6>-</h6>
                                 </li>
                                 @endif
 
                                 @if ( !empty ( $users->nik_pengguna ) )
                                 <li>
-                                    <h6><i class="fa fa-clock-o" aria-hidden="true"></i> NIK Pengguna</h6>
+                                    <h6><i class="fa fa-square" aria-hidden="true"></i>NIK Pengguna</h6>
                                     <h6>{{$users->nik_pengguna}}</h6>
                                 </li>
                                 @else
                                 <li>
-                                    <h6><i class="fa fa-clock-o" aria-hidden="true"></i> NIK Penguna</h6>
+                                    <h6><i class="fa fa-square" aria-hidden="true"></i>NIK Penguna</h6>
                                     <h6>-</h6>
                                 </li>
                                 @endif

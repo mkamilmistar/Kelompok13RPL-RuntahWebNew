@@ -21,7 +21,9 @@
                 @foreach($posts as $post)
                 <div class="blog-details-text">
                     <div class="form-group">
-                        <label for=""><b> {{$post->title}}</b></label>
+                        <label for="">
+                            <h3> {{$post->title}}</h3>
+                        </label>
                     </div>
                     <div class="form-group">
                         <label for="">
@@ -29,7 +31,7 @@
                         </label>
                     </div>
                     @if(Auth::guest())
-                    @elseif(auth()->user()->role=='volunteer')
+                    @elseif(auth()->user()->role=='admin')
                     <a href="/diy/{{$post->id}}/edit" class="btn clever-btn">Edit</a>
                     <a href="/diy/{{$post->id}}/delete" class="btn clever-btn">Delete</a>
                     @endif
@@ -41,7 +43,7 @@
                         <a href="#" class="btn clever-btn">REPORT!</a>
                     </div>
                 </div>
-                @elseif(auth()->user()->role=='volunteer')
+                @elseif(auth()->user()->role=='admin')
                 <div class="form-group">
                     <div class="row justify-content-center">
                         <a href="/diy/create" class="btn clever-btn">Make a post here!</a>

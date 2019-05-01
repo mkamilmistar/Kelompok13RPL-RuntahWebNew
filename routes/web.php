@@ -30,6 +30,9 @@ Route::get('/profile', 'UserController@profile');
 Route::get('/profile/{id}/edit', 'UserController@edit');
 Route::post('/profile/edit/save', 'UserController@save');
 
+Route::get('/profile/changepassword', 'UserController@changepassword')->name('changepassword');
+Route::post('/profile/savepassword', 'UserController@savepassword')->name('savepassword');
+
 
 //route untuk admin
 Route::get('/logout', 'AuthController@logout');

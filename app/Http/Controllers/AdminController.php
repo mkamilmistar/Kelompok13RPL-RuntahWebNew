@@ -16,13 +16,13 @@ class AdminController extends Controller
         } else {
             $data_volunteer = \App\User::all();
         }
-        return view('admin.Volunteer.index', ['data_volunteer' => $data_volunteer]);
+        return view('admin.index', ['data_volunteer' => $data_volunteer]);
     }
 
     public function dashboard()
     {
 
-        return view('admin.Volunteer.dashboard');
+        return view('admin.dashboard');
     }
 
     public function create(Request $request)
@@ -44,7 +44,7 @@ class AdminController extends Controller
 
     public function edit(volunteer $volunteer)
     {
-        return view('admin/volunteer/edit', ['volunteer' => $volunteer]);
+        return view('admin/edit', ['volunteer' => $volunteer]);
     }
 
     public function update(Request $request, volunteer $volunteer)

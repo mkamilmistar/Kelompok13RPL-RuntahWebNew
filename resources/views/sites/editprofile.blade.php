@@ -34,15 +34,15 @@
                                 <h4>Basic Info</h4>
                                 <ul class="contact-list">
                                     <li>
-                                        <h6><i class="fa fa-clock-o" aria-hidden="true"></i><label for="nama_depan">First Name <font color="red">*</font></label></h6>
+                                        <h6><i class="fa fa-user" aria-hidden="true"></i><label for="nama_depan">First Name <font color="red">*</font></label></h6>
                                         <h6><input type="text" class="form-control" required name="nama_depan" value="{{$users->nama_depan}}"></h6>
                                     </li>
                                     <li>
-                                        <h6><i class="fa fa-clock-o" aria-hidden="true"></i><label for="nama_belakang">Last Name<font color="red">*</font></label></h6>
+                                        <h6><i class="fa fa-user" aria-hidden="true"></i><label for="nama_belakang">Last Name<font color="red">*</font></label></h6>
                                         <h6><input type="text" class="form-control" required name="nama_belakang" value="{{$users->nama_belakang}}"></h6>
                                     </li>
                                     <li>
-                                        <h6><i class="fa fa-clock-o" aria-hidden="true"></i><label for="address"><label for="jenis_kelamin">Gender<font color="red">*</font>
+                                        <h6><i class="fa fa-intersex" aria-hidden="true"></i><label for="address"><label for="jenis_kelamin">Gender<font color="red">*</font>
                                         </h6>
                                         <h6>
                                             <select name="jenis_kelamin" class="form-control" id="exampleFormControlSelect1">
@@ -53,7 +53,7 @@
                                     </li>
 
                                     <li>
-                                        <h6><i class="fa fa-phone" aria-hidden="true"></i><label for="nomor_telepon">Phone Number<font color="red">*</h6>
+                                        <h6><i class="fa fa-phone" aria-hidden="true"></i><label for="nomor_telepon">Phone<font color="red">*</h6>
                                         <h6><input type="text" class="form-control" required name="nomor_telepon" value="{{$users->nomor_telepon}}"></h6>
                                     </li>
 
@@ -63,16 +63,23 @@
                                     </li>
 
                                     <li>
-                                        <h6><i class="fa fa-map-pin" aria-hidden="true"></i><label for="alamat"> Address<font color="red">*</h6>
+                                        <h6><i class="fa fa-home" aria-hidden="true"></i><label for="alamat">Address<font color="red">*</h6>
                                         <h6><input type="text" class="form-control" required name="alamat" value="{{$users->alamat}}"></h6>
                                     </li>
 
                                     <li>
-                                        <h6><i class="fa fa-clock-o" aria-hidden="true"></i> NIK Pengguna</h6>
+                                        <h6><i class="fa fa-square" aria-hidden="true"></i>NIK Pengguna</h6>
                                         <h6><input type="text" class="form-control" required name="nik_pengguna" value="{{$users->nik_pengguna}}"></h6>
                                     </li>
 
                                 </ul>
+                                <div class="form-group">
+                                    <div class="row justify-content-center">
+                                        <a href="/profile/changepassword" class="">
+                                            Change Password
+                                        </a>
+                                    </div>
+                                </div>
                                 <div class="row justify-content-center">
                                     <input type="submit" class="btn clever-btn" value="SAVE">
                                 </div>
