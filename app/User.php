@@ -5,7 +5,7 @@ namespace App;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
-
+use Illuminate\Database\Eloquent\Model;
 
 class User extends Authenticatable
 {
@@ -17,9 +17,9 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'username', 'email', 'password', 'role',
-        'nama_depan', 'nama_belakang', 'jenis_kelamin', 'nomor_telepon',
-        'alamat', 'nik_pengguna', 'poin', 'user_image'
+        'username', 'email', 'password',
+        'nama_depan', 'nama_belakang', 'jenis_kelamin',
+        'alamat', 'user_image'
     ];
 
     /**
@@ -39,4 +39,11 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public function reports()
+    {
+        return $this->hasOne(Report::class);
+        return $this->hasOne(Volunteer::class);
+        return $this->hasOne(Admin::class);
+    }
 }

@@ -4,13 +4,13 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Admin extends Model
+class Volunteer extends Model
 {
     protected $fillable = [
-        'admin_id', 'role', 'username', 'password', 'email', 'jenis_kelamin'
+        'role', 'jenis_kelamin', 'point', 'volunteer_id', 'pasword', 'email'
     ];
 
-    public function useres()
+    public function users()
     {
         return $this->hasMany(User::class);
     }

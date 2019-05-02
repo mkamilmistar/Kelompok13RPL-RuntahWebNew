@@ -5,10 +5,35 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\User;
 use App\Post;
+use Auth;
 
 
 class AdminController extends Controller
 {
+    public function adminlogin()
+    {
+        return view('admin.adminlogin');
+    }
+
+    public function adminpostlogin(Request $request)
+    {
+        if (auth::attempt($request->only('email', 'password'))) {
+            return redirect('/admins/dashboard');
+        }
+        return redirect('/admins/login');
+    }
+
+    public function adminlogout()
+    {
+        Auth::logout();
+        return redirect('/admins/login');
+    }
+
+    public function admins()
+    {
+        return redirect('/admins/login');
+    }
+
     public function index(Request $request)
     {
         if ($request->has('cari')) {
@@ -28,7 +53,7 @@ class AdminController extends Controller
     //USER KONTROL
     public function create(Request $request)
     {
-        //insert ke table volunteer
+        //insert ke table user
         $user = new \App\User;
         $user->role = 'volunteer';
         $user->name = $request->nama_depan;
@@ -113,6 +138,11 @@ class AdminController extends Controller
     public function information()
     {
         return view('admin.information');
+    }
+
+    public function createinfo()
+    {
+        return view('admin.createinfo');
     }
 
     //AKHIR INFORMATION

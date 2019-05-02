@@ -44,6 +44,9 @@ Edit Profile - Runtah WEB
                                         <h6><i class="fa fa-user" aria-hidden="true"></i><label for="nama_belakang">Last Name<font color="red">*</font></label></h6>
                                         <h6><input type="text" class="form-control" required name="nama_belakang" value="{{$users->nama_belakang}}"></h6>
                                     </li>
+
+                                    <label for=""></label>
+
                                     <li>
                                         <h6><i class="fa fa-intersex" aria-hidden="true"></i><label for="address"><label for="jenis_kelamin">Gender<font color="red">*</font>
                                         </h6>
@@ -69,12 +72,14 @@ Edit Profile - Runtah WEB
                                         <h6><i class="fa fa-home" aria-hidden="true"></i><label for="alamat">Address<font color="red">*</h6>
                                         <h6><input type="text" class="form-control" required name="alamat" value="{{$users->alamat}}"></h6>
                                     </li>
-
+                                    @if(auth()->user()->role=='admin')
+                                    <label for=""></label>
+                                    @else(auth()->user()->role=='volunteer')
                                     <li>
                                         <h6><i class="fa fa-square" aria-hidden="true"></i>NIK Pengguna</h6>
                                         <h6><input type="text" class="form-control" required name="nik_pengguna" value="{{$users->nik_pengguna}}"></h6>
                                     </li>
-
+                                    @endif
                                 </ul>
                                 <div class="form-group">
                                     <div class="row justify-content-center">

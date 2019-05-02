@@ -14,7 +14,10 @@ class CreateInformationsTable extends Migration
     public function up()
     {
         Schema::create('informations', function (Blueprint $table) {
-            $table->bigIncrements('id');
+            $table->Increments('id');
+            $table->string('daerah');
+            $table->date('date');
+            $table->time('time');
             $table->timestamps();
         });
     }

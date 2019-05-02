@@ -36,8 +36,13 @@ Route::get('/login', 'AuthController@login')->name('login');
 
 
 //route untuk admin
+Route::get('admins/login', 'AdminController@adminlogin');
+Route::post('admins/postlogin', 'AdminController@adminpostlogin');
+Route::get('admins/logout', 'AdminController@adminlogout');
+Route::get('admins', 'AdminController@admins');
+
 Route::group(['middleware' => ['auth', 'checkRole:admin']], function () {
-    Route::get('admins', 'AdminController@index');
+    Route::get('/admins/index', 'AdminController@index');
     Route::post('/admins/create', 'AdminController@create');
     Route::get('/admins/{id}/edit', 'AdminController@edit');
     Route::post('/admins/{id}/update', 'AdminController@update');
