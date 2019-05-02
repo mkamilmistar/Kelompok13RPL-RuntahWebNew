@@ -39,5 +39,61 @@ About - Runtah WEB
         </div>
     </div>
 </div>
+<!-- ##### Blog Area Start ##### -->
+<section class="blog-area section-padding-100-0">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <div class="section-heading">
+                    <h3>About Us</h3>
+                </div>
+            </div>
+        </div>
 
+        <div class="row">
+            <!-- Single Blog Area -->
+            <div class="col-12 col-md-4">
+                <div class="single-blog-area mb-100 wow fadeInUp" data-wow-delay="500ms">
+                    <img src="{{asset('/sites')}}/img/blog-img/2.jpg" alt="">
+                    <!-- Blog Content -->
+                    <div class="blog-content">
+                        <h4>Intan Aida Rahmani</h4>
+
+                        <p>Front-End</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Single Blog Area -->
+            <div class="col-12 col-md-4">
+                <div class="single-blog-area mb-100 wow fadeInUp" data-wow-delay="500ms">
+                    <img src="{{asset('/sites')}}/img/blog-img/1.png" alt="">
+                    <!-- Blog Content -->
+                    <div class="blog-content">
+                        <h4>M. Kamil</h4>
+
+                        <p>Back-End</p>
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- Single Blog Area -->
+            <div class="col-12 col-md-4">
+                <div class="single-blog-area mb-100 wow fadeInUp" data-wow-delay="500ms">
+                    <img src="{{asset('/sites')}}/img/blog-img/2.jpg" alt="">
+                    <!-- Blog Content -->
+                    <div class="blog-content">
+                        <h4>Tengku Sandra Alyssa</h4>
+
+                        <p>Back-End</p>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+</section>
+<!-- ##### Blog Area End ##### -->
 @endsection
