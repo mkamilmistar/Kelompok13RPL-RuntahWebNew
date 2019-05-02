@@ -6,7 +6,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class Information extends Model
 {
+    public $table = "information";
     protected $fillable = [
-        'daerah', 'date', 'time',
+        'kecamatan', 'date', 'time',
     ];
 }

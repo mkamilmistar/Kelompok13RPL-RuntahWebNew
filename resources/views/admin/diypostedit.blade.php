@@ -6,6 +6,9 @@ Postingan DIY
 Postingan Do It Yourself!
 @endsection
 @section('content')
+@section('diy')
+class="active treeview"
+@endsection
 <div class="row">
     <div class="col-md-12">
         <div class="box box-solid">

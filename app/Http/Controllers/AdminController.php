@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\User;
 use App\Post;
 use Auth;
+use App\Information;
 
 
 class AdminController extends Controller
@@ -65,7 +66,7 @@ class AdminController extends Controller
         //insert ke table volunteer
         //$request->request->add(['user_id' => $user->id]);
         //$volunteer = \App\Volunteer::create($request->all());
-        return redirect('/admins')->with('sukses', 'Data berhasil ditambahkan');
+        return redirect('/admins/dashboard')->with('sukses', 'Data berhasil ditambahkan');
     }
 
     public function edit($id)
@@ -78,13 +79,13 @@ class AdminController extends Controller
     {
         $users = \App\User::find($id);
         $users->update($request->all());
-        return redirect('/admins')->with('sukses', 'Data Berhasil diedit');
+        return redirect('/admins/dashboard')->with('sukses', 'Data Berhasil diedit');
     }
 
     public function delete(user $user)
     {
         $user->delete();
-        return redirect('/admins')->with('sukses', 'Data berhasil dihapus');
+        return redirect('/admins/dashboard')->with('sukses', 'Data berhasil dihapus');
     }
 
     //AWAL POSTINGAN DIY
@@ -135,9 +136,11 @@ class AdminController extends Controller
 
     //AWAL INFORMATION
 
-    public function information()
+    public function information(Request $request)
     {
-        return view('admin.information');
+        $information = Information::all();
+        //dd($information);
+        return view('admin.information', compact('information'));
     }
 
     public function createinfo()

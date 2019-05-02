@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Volunteer;
 use App\User;
+use App\Information;
 
 class SiteController extends Controller
 {
@@ -34,10 +35,13 @@ class SiteController extends Controller
         return view('sites.doityourself');
     }
 
-    public function information()
+    public function information(Request $request)
     {
-        return view('sites.information');
+        $information = Information::all();
+        return view('sites.information', compact('information'));
     }
+
+
 
     public function postregister(Request $request)
     {

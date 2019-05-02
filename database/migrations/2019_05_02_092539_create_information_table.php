@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateInformationsTable extends Migration
+class CreateInformationTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,11 @@ class CreateInformationsTable extends Migration
      */
     public function up()
     {
-        Schema::create('informations', function (Blueprint $table) {
+        Schema::create('information', function (Blueprint $table) {
             $table->Increments('id');
-            $table->string('daerah');
-            $table->date('date');
-            $table->time('time');
+            $table->string('kecamatan');
+            $table->string('date');
+            $table->string('time');
             $table->timestamps();
         });
     }
@@ -29,6 +29,6 @@ class CreateInformationsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('informations');
+        Schema::dropIfExists('information');
     }
 }

@@ -15,10 +15,10 @@
         <!-- sidebar menu: : style can be found in sidebar.less -->
         <ul class="sidebar-menu" data-widget="tree">
             <li class="header">MAIN NAVIGATION</li>
-            <li><a href="/admins/dashboard"><i class="fa fa-dashboard"></i> <span>Dashboard</span></a></li>
-            <li><a href="/admins/index"><i class="fa fa-users"></i> <span>Volunteer Member</span></a></li>
-            <li><a href="/admins/diypost"><i class="fa fa-tasks"></i> <span>Post DIY</span></a></li>
-            <li><a href="/admins/information"><i class="fa fa-map-o"></i> <span>Information</span></a></li>
+            <li @yield('dashboard')><a href="/admins/dashboard"><i class="fa fa-dashboard"></i> <span>Dashboard</span></a></li>
+            <li @yield('index')><a href="/admins/index"><i class="fa fa-users"></i> <span>Volunteer Member</span></a></li>
+            <li @yield('diy')><a href="/admins/diypost"><i class="fa fa-tasks"></i> <span>Post DIY</span></a></li>
+            <li @yield('info')><a href="/admins/information"><i class="fa fa-map-o"></i> <span>Information</span></a></li>
         </ul>
     </section>
     <!-- /.sidebar -->
