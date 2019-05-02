@@ -17,12 +17,9 @@ Information - Runtah WEB
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-12 col-lg-8">
-
-
                 <div class="box">
                     <div class="box-header">
                         <h3 class="box-title">Data Pengangkatan Sampah Kabupaten Bogor</h3>
-
                     </div>
                     <!-- /.box-header -->
                     <div class="box-body">
@@ -32,8 +29,6 @@ Information - Runtah WEB
                                     <td><b>Kecamatan</b></td>
                                     <td><b>Hari/Tanggal</b></td>
                                     <td><b>Jam</b></td>
-
-
                                 </tr>
                             </thead>
                             @foreach($information as $info)
@@ -42,17 +37,14 @@ Information - Runtah WEB
                                     <td>{{$info -> kecamatan}}</td>
                                     <td>{{$info -> date}}</td>
                                     <td>{{$info -> time}}</td>
-
                                 </tr>
                             </tbody>
                             @endforeach
-
                         </table>
                     </div>
                     <!-- /.box-body -->
                 </div>
                 <!-- /.box -->
-
             </div>
         </div>
     </div>

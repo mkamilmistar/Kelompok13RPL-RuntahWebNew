@@ -6,9 +6,7 @@ Postingan DIY
 Postingan Do It Yourself!
 @endsection
 @section('content')
-@section('diy')
-class="active treeview"
-@endsection
+
 <!-- Main content -->
 <section class="content">
     <!-- /.content -->

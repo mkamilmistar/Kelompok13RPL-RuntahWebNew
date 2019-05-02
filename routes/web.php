@@ -59,6 +59,7 @@ Route::group(['middleware' => ['auth', 'checkRole:admin']], function () {
 
     //untuk information
     Route::get('/admins/information', 'AdminController@information');
+    Route::post('/admins/information/create', 'AdminController@publishinfo')->name('info.publish');
 });
 
 Auth::routes();

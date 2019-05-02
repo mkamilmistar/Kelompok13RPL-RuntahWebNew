@@ -11,9 +11,6 @@ Sampah
 
 @section('content')
 
-@section('info')
-class="active treeview"
-@endsection
 <!-- DataTales Example -->
 <div class="row">
     <div class="col-xs-12">
@@ -21,7 +18,13 @@ class="active treeview"
             <div class="box-header">
                 <h3 class="box-title">Table Data Information</h3>
                 Pengangkatan Sampah Kabupaten Bogor
+                <div class="right">
+                    <!-- Button trigger modal -->
+                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">Tambah Data
+                    </button>
+                </div>
             </div>
+
             <!-- /.box-header -->
             <div class="box-body">
                 <table id="example2" class="table table-bordered table-hover">
@@ -57,10 +60,10 @@ class="active treeview"
         @section('script')
         <script>
             $('.delete').click(function() {
-                var informations_id = $(this).attr('informations-id');
+                var information_id = $(this).attr('information-id');
                 swal({
                         title: "Yakin?",
-                        text: "Ingin dihapus data informasi dengan id " + informations_id + "?",
+                        text: "Ingin dihapus data informasi dengan id " + information_id + "?",
                         icon: "warning",
                         buttons: true,
                         dangerMode: true,
@@ -68,7 +71,7 @@ class="active treeview"
                     .then((willDelete) => {
                         console.log(willDelete);
                         if (willDelete) {
-                            window.location = "/admins/" + informations_id + "/delete";
+                            window.location = "/admins/" + information_id + "/delete";
                         } else {
 
                         }
@@ -78,5 +81,38 @@ class="active treeview"
         @endsection
     </div>
 </div>
-
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Tambah Data Jadwal Sampah Kabupaten Bogor</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form action="/admins/information/create" method="POST">
+                    {{csrf_field()}}
+                    <div class="form-group">
+                        <label for="text">Kecamatan</label>
+                        <input name="kecamatan" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Kecamatan">
+                    </div>
+                    <div class="form-group">
+                        <label for="text">Hari/Tanggal</label>
+                        <input name="date" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Hari/Tanggal">
+                    </div>
+                    <div class="form-group">
+                        <label for="text">Jam</label>
+                        <input name="time" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Jam">
+                    </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </div>
+            </form>
+        </div>
+    </div>
+</div>
 @endsection

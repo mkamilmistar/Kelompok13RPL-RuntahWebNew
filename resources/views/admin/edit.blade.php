@@ -9,9 +9,7 @@ Data Edit
 Edit
 @endsection
 @section('content')
-@section('index')
-class="active treeview"
-@endsection
+
 <div class="main">
     <!-- MAIN CONTENT -->
     <div class="main-content">

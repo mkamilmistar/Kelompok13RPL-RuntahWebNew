@@ -15,10 +15,10 @@
         <!-- sidebar menu: : style can be found in sidebar.less -->
         <ul class="sidebar-menu" data-widget="tree">
             <li class="header">MAIN NAVIGATION</li>
-            <li @yield('dashboard')><a href="/admins/dashboard"><i class="fa fa-dashboard"></i> <span>Dashboard</span></a></li>
-            <li @yield('index')><a href="/admins/index"><i class="fa fa-users"></i> <span>Volunteer Member</span></a></li>
-            <li @yield('diy')><a href="/admins/diypost"><i class="fa fa-tasks"></i> <span>Post DIY</span></a></li>
-            <li @yield('info')><a href="/admins/information"><i class="fa fa-map-o"></i> <span>Information</span></a></li>
+            <li class="{{ request()->is('admins/dashboard') ? 'active treeview' : '' }}"><a href="/admins/dashboard"><i class="fa fa-dashboard"></i> <span>Dashboard</span></a></li>
+            <li class="{{ request()->is('admins/index') ? 'active treeview' : '' }}"><a href="/admins/index"><i class="fa fa-users"></i> <span>Volunteer Member</span></a></li>
+            <li class="{{ request()->is('admins/diypost') ? 'active treeview' : '' }}"><a href="/admins/diypost"><i class="fa fa-tasks"></i> <span>Post DIY</span></a></li>
+            <li class="{{ request()->is('admins/information') ? 'active treeview' : '' }}"><a href="/admins/information"><i class="fa fa-map-o"></i> <span>Information</span></a></li>
         </ul>
     </section>
     <!-- /.sidebar -->

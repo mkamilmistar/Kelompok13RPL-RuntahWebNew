@@ -9,9 +9,7 @@ Dashboard
 Dashboard
 @endsection
 @section('content')
-@section('dashboard')
-class="active treeview"
-@endsection
+
 <h1>KOPONG</h1>
 
 @endsection

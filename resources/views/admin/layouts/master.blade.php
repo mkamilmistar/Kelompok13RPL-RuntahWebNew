@@ -319,6 +319,7 @@
     <script src="{{asset('admin/assets/dist/js/demo.js')}}"></script>
     <!-- CK editor -->
     <script src="{{asset('admin/unisharp/laravel-ckeditor/ckeditor.js')}}"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     @yield('js')
     <script>
         @if(Session::has('sukses'))

@@ -143,9 +143,15 @@ class AdminController extends Controller
         return view('admin.information', compact('information'));
     }
 
-    public function createinfo()
+    public function publishinfo()
     {
-        return view('admin.createinfo');
+        Information::create([
+            'kecamatan' => request('kecamatan'),
+            'date' => request('date'),
+            'time' => request('time')
+        ]);
+
+        return redirect('/admins/information');
     }
 
     //AKHIR INFORMATION

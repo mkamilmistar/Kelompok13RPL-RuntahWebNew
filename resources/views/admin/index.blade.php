@@ -9,9 +9,7 @@ Volunteer merupakan orang yang sukarela membantu membersihkan sampah.
 Data Volunteer
 @endsection
 @section('content')
-@section('index')
-class="active treeview"
-@endsection
+
 <!-- Table Baru -->
 <!-- Page Heading -->
 

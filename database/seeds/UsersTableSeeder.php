@@ -26,6 +26,16 @@ class UsersTableSeeder extends Seeder
             'admin_id' => '1'
         ]);
 
+        //DIY
+        DB::table('post')->insert([
+            'title' => 'Pengolahan Sampah di Surabaya',
+            'content' => '<iframe width="560" height="315" src="https://www.youtube.com/embed/D8m1msDYudc" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>'
+        ]);
+        DB::table('post')->insert([
+            'title' => 'Inspirasi: Menghasilkan Uang dari Sampah Plastik',
+            'content' => '<iframe width="560" height="315" src="https://www.youtube.com/embed/a06Ilsp9xg8" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>'
+        ]);
+
         //DB information
         DB::table('information')->insert([
             'kecamatan' => 'Babakan Madang',
