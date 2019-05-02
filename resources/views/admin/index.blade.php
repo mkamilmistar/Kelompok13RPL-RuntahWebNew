@@ -6,7 +6,7 @@ Data Volunteer
 Volunteer merupakan orang yang sukarela membantu membersihkan sampah.
 @endsection
 @section('title')
-Data Volunteer
+Data Volunteer Admin
 @endsection
 @section('content')
 

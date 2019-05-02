@@ -3,7 +3,7 @@
 Postingan DIY
 @endsection
 @section('title')
-Postingan Do It Yourself!
+Postingan Do It Yourself! Admin
 @endsection
 @section('content')
 
