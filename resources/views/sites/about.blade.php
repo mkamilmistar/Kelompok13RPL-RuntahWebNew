@@ -47,7 +47,7 @@ About - Runtah WEB
             <!-- Single Blog Area -->
             <div class="col-12 col-md-4">
                 <div class="single-blog-area mb-100 wow fadeInUp" data-wow-delay="500ms">
-                    <img src="{{asset('/sites')}}/img/blog-img/2.jpg" alt="">
+                    <img src="{{asset('/sites')}}/img/blog-img/3.png" alt="">
                     <!-- Blog Content -->
                     <div class="blog-content">
                         <h4>Intan Aida Rahmani</h4>
