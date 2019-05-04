@@ -4,7 +4,7 @@ Do It Yourself! - Runtah WEB
 @endsection
 @section('content')
 <!-- ##### Catagory Area Start ##### -->
-<div class="clever-catagory blog-details bg-img d-flex align-items-center justify-content-center p-3 height-400" style="background-image: url({{asset('/sites')}}/img/blog-img/7.jpg);">
+<div class="clever-catagory blog-details bg-img d-flex align-items-center justify-content-center p-3 height-400" style="background-image: url({{asset('/sites')}}/img/bg-img/bg0.jpg);">
     <div class="blog-details-headline">
         <h3>Do It Yourself</h3>
         <div class="meta d-flex align-items-center justify-content-center">
