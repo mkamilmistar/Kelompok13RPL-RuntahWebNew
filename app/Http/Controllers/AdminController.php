@@ -7,6 +7,7 @@ use App\User;
 use App\Post;
 use Auth;
 use App\Information;
+use App\Report;
 
 
 class AdminController extends Controller
@@ -155,4 +156,11 @@ class AdminController extends Controller
     }
 
     //AKHIR INFORMATION
+
+    public function report(Request $request)
+    {
+       $report = Report::all();
+       //dd($report);
+       return view('admin.report',compact('report'));
+    }
 }

@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Volunteer;
 use App\User;
 use App\Information;
+use App\Report;
 
 class SiteController extends Controller
 {
@@ -30,11 +31,6 @@ class SiteController extends Controller
         return view('sites.register');
     }
 
-    public function doityourself()
-    {
-        return view('sites.doityourself');
-    }
-
     public function information(Request $request)
     {
         $information = Information::all();
@@ -42,7 +38,19 @@ class SiteController extends Controller
     }
 
 
-
+    public function report()
+    {
+        return view('sites.report');
+    }
+    public function postreport()
+    {
+        Report::create([
+            'report' => request('report'),
+            'report_id' => request('report_id'), 
+        ]);
+        
+        return redirect('/');
+    }
     public function postregister(Request $request)
     {
         //insert ke table volunteer
