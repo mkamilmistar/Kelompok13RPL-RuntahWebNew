@@ -116,7 +116,7 @@ Home - Runtah WEB
             <!-- Single Blog Area -->
             <div class="col-12 col-md-6">
                 <div class="single-blog-area mb-100 wow fadeInUp" data-wow-delay="250ms">
-                    <img src="{{asset('/sites')}}/img/blog-img/1.jpg" alt="">
+                    <img src="{{asset('/sites')}}/img/blog-img/bg1.jpg" alt="">
                     <!-- Blog Content -->
                     <div class="blog-content">
                         <a href="#" class="blog-headline">
@@ -135,7 +135,7 @@ Home - Runtah WEB
             <!-- Single Blog Area -->
             <div class="col-12 col-md-6">
                 <div class="single-blog-area mb-100 wow fadeInUp" data-wow-delay="500ms">
-                    <img src="{{asset('/sites')}}/img/blog-img/2.jpg" alt="">
+                    <img src="{{asset('/sites')}}/img/blog-img/bg1.jpg" alt="">
                     <!-- Blog Content -->
                     <div class="blog-content">
                         <a href="#" class="blog-headline">
