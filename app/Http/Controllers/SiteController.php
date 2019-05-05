@@ -41,8 +41,6 @@ class SiteController extends Controller
         return view('sites.information', compact('information'));
     }
 
-
-
     public function postregister(Request $request)
     {
         //insert ke table volunteer
