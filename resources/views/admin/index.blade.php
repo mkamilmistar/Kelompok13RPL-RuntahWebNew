@@ -26,7 +26,7 @@ Data Volunteer Admin
                     <thead>
                         <tr>
                             <td><b>User Name</b></td>
-                            <td><b>Role</b></td>
+                            <td><b>Email</b></td>
                             <td><b>Nama Depan</b></td>
                             <td><b>Nama Belakang</b></td>
                             <td><b>Jenis Kelamin</b></td>
@@ -42,7 +42,7 @@ Data Volunteer Admin
                     <tbody>
                         <tr>
                             <td>{{$volunteer -> username}}</td>
-                            <td>{{$volunteer -> role}}</td>
+                            <td>{{$volunteer -> email}}</td>
                             <td>{{$volunteer -> nama_depan}}</td>
                             <td>{{$volunteer -> nama_belakang}}</td>
                             <td>{{$volunteer -> jenis_kelamin}}</td>
@@ -63,6 +63,36 @@ Data Volunteer Admin
             <!-- /.box-body -->
         </div>
         <!-- /.box -->
+        <div class="box">
+            <div class="box-header">
+                <h3 class="box-title">Table Data Admin</h3>
+            </div>
+            <div class="box-body">
+                <table id="example2" class="table table-bordered table-hover">
+                    <thead>
+                        <tr>
+                            <td><b>User Name</b></td>
+                            <td><b>Email</b></td>
+
+
+                        </tr>
+                    </thead>
+                    @foreach($data_admin as $admin)
+                    <tbody>
+                        <tr>
+                            <td>{{$admin -> username}}</td>
+                            <td>{{$admin -> email}}</td>
+
+                        </tr>
+                    </tbody>
+                    @endforeach
+
+                </table>
+            </div>
+            <!-- /.box-body -->
+        </div>
+        <!-- /.box -->
+
 
         @endsection
 

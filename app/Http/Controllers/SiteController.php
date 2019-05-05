@@ -37,19 +37,4 @@ class SiteController extends Controller
         $information = Information::all();
         return view('sites.information', compact('information'));
     }
-
-
-    public function report()
-    {
-        return view('sites.report');
-    }
-    public function postreport(Request $request)
-    {
-        $report = new Report;
-        $report->report_id = Auth::user()->id;
-        $report->report = $request->input('report');
-        $report->save();
-
-        return redirect('/');
-    }
 }

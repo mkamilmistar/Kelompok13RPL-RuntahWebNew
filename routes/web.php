@@ -19,7 +19,7 @@ Route::get('/about', 'SiteController@about');
 Route::get('/information', 'SiteController@information');
 
 //route DIY
-Route::get('/diy', 'PostController@diy');
+Route::get('/diy', 'InformationController@diy');
 
 //route PROFILE USER
 Route::get('/profile', 'UserController@profile');
@@ -35,8 +35,9 @@ Route::post('/postlogin', 'AuthController@postlogin');
 Route::get('/login', 'AuthController@login')->name('login');
 
 //route report
-Route::get('/report','SiteController@report');
-Route::post('/postreport','SiteController@postreport')->name('postreport');
+Route::get('/report', 'ReportController@report');
+Route::post('/postreport', 'ReportController@postreport')->name('postreport');
+
 //route untuk admin
 Route::get('admins/login', 'AdminController@adminlogin');
 Route::post('admins/postlogin', 'AdminController@adminpostlogin');
@@ -52,19 +53,19 @@ Route::group(['middleware' => ['auth', 'checkRole:admin']], function () {
     Route::get('/admins/dashboard', 'AdminController@dashboard');
 
     //untuk post diy
-    Route::get('/admins/diypost', 'AdminController@diypost');
-    Route::get('/admins/diypost/create', 'AdminController@createpost')->name('post.create');
-    Route::post('/admins/diypost/create', 'AdminController@publishpost')->name('post.publish');
-    Route::get('/admins/diypost/{id}/edit', 'AdminController@editpost')->name('post.edit');
-    Route::post('/admins/diypost/{id}/update', 'AdminController@updatepost')->name('post.update');
-    Route::get('/admins/diypost/{id}/delete', 'AdminController@deletepost')->name('post.delete');
+    Route::get('/admins/diypost', 'DIYController@diypost');
+    Route::get('/admins/diypost/create', 'DIYController@createpost')->name('post.create');
+    Route::post('/admins/diypost/create', 'DIYController@publishpost')->name('post.publish');
+    Route::get('/admins/diypost/{id}/edit', 'DIYController@editpost')->name('post.edit');
+    Route::post('/admins/diypost/{id}/update', 'DIYController@updatepost')->name('post.update');
+    Route::get('/admins/diypost/{id}/delete', 'DIYController@deletepost')->name('post.delete');
 
     //untuk information
-    Route::get('/admins/information', 'AdminController@information');
-    Route::post('/admins/information/create', 'AdminController@publishinfo')->name('info.publish');
+    Route::get('/admins/information', 'InformationController@information');
+    Route::post('/admins/information/create', 'InformationController@publishinfo')->name('info.publish');
 
     //untuk repot
-    Route::get('/admins/report', 'AdminController@report');
+    Route::get('/admins/report', 'ReportController@viewreport');
 });
 
 
