@@ -7,6 +7,7 @@ use App\Volunteer;
 use App\User;
 use App\Information;
 use App\Report;
+use Auth;
 
 class SiteController extends Controller
 {
@@ -42,12 +43,12 @@ class SiteController extends Controller
     {
         return view('sites.report');
     }
-    public function postreport()
+    public function postreport(Request $request)
     {
-        Report::create([
-            'report' => request('report'),
-            'report_id' => request('report_id'),
-        ]);
+        $report = new Report;
+        $report->report_id = Auth::user()->id;
+        $report->report = $request->input('report');
+        $report->save();
 
         return redirect('/');
     }

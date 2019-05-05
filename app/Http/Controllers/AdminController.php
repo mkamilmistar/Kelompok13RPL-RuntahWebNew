@@ -84,12 +84,13 @@ class AdminController extends Controller
         return view('admin.diypostcreate');
     }
 
-    public function publishpost()
+    public function publishpost(Request $request)
     {
-        Post::create([
-            'title' => request('title'),
-            'content' => request('content')
-        ]);
+        $post = new Post;
+        $post->post_id = Auth::user()->id;
+        $post->title = $request->input('title');
+        $post->content = $request->input('content');
+        $post->save();
 
         return redirect('/admins/diypost');
     }
@@ -142,8 +143,8 @@ class AdminController extends Controller
 
     public function report(Request $request)
     {
-       $report = Report::all();
-       //dd($report);
-       return view('admin.report',compact('report'));
+        $report = Report::all();
+        //dd($report);
+        return view('admin.report', compact('report'));
     }
 }

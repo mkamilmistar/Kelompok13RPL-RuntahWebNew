@@ -40,10 +40,9 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
-    public function reports()
+    public function report()
     {
-        return $this->hasOne(Report::class);
-        return $this->hasOne(Volunteer::class);
-        return $this->hasOne(Admin::class);
+        return $this->hasMany(Report::class);
+        return $this->hasMany(Post::class);
     }
 }
