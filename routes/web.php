@@ -34,7 +34,9 @@ Route::get('/logout', 'AuthController@logout');
 Route::post('/postlogin', 'AuthController@postlogin');
 Route::get('/login', 'AuthController@login')->name('login');
 
-
+//route report
+Route::get('/report','SiteController@report');
+Route::post('/postreport','SiteController@postreport')->name('postreport');
 //route untuk admin
 Route::get('admins/login', 'AdminController@adminlogin');
 Route::post('admins/postlogin', 'AdminController@adminpostlogin');
@@ -60,7 +62,12 @@ Route::group(['middleware' => ['auth', 'checkRole:admin']], function () {
     //untuk information
     Route::get('/admins/information', 'AdminController@information');
     Route::post('/admins/information/create', 'AdminController@publishinfo')->name('info.publish');
+
+    //untuk repot
+    Route::get('/admins/report', 'AdminController@report');
 });
+
+
 
 Auth::routes();
 

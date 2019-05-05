@@ -37,7 +37,7 @@
                                 <li><a href="#">Start!</a></li>
                                 <li><a href="#">History</a></li>
                                 <li><a href="#">Point</a></li>
-                                <li><a href="#">Report</a></li>
+                                <li><a href="/report">Report</a></li>
                                 <li><a href="/profile">Edit Profile</a></li>
                             </ul>
                         </li>
@@ -53,7 +53,7 @@
                                 <li><a href="#">Start!</a></li>
                                 <li><a href="#">History</a></li>
                                 <li><a href="#">Point</a></li>
-                                <li><a href="#">Report</a></li>
+                                <li><a href="/report">Report</a></li>
                                 <li><a href="/profile">Edit Profile</a></li>
                             </ul>
                         </li>

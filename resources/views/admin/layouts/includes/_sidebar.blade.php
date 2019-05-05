@@ -19,6 +19,7 @@
             <li class="{{ request()->is('admins/index') ? 'active treeview' : '' }}"><a href="/admins/index"><i class="fa fa-users"></i> <span>Volunteer Member</span></a></li>
             <li class="{{ request()->is('admins/diypost') ? 'active treeview' : '' }}"><a href="/admins/diypost"><i class="fa fa-tasks"></i> <span>Post DIY</span></a></li>
             <li class="{{ request()->is('admins/information') ? 'active treeview' : '' }}"><a href="/admins/information"><i class="fa fa-map-o"></i> <span>Information</span></a></li>
+            <li class="{{ request()->is('admins/report') ? 'active treeview' : '' }}"><a href="/admins/report"><i class="fa fa-exclamation-triangle"></i> <span>Report</span></a></li>
         </ul>
     </section>
     <!-- /.sidebar -->
