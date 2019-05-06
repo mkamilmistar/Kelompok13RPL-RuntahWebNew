@@ -28,28 +28,38 @@ Sampah
             <!-- /.box-header -->
             <div class="box-body">
                 <table id="example2" class="table table-bordered table-hover">
-                    <thead>
-                        <tr>
-                            <td><b>Kecamatan</b></td>
-                            <td><b>Hari/Tanggal</b></td>
-                            <td><b>Jam</b></td>
-                            <td><b>Action</b></td>
+                    <label for="roll">Kabupaten <span class="required">*</span></label>
+                    <select name="state" class="form-control" id="state">
+                        <option value="">-- Pilih Kabupaten --</option>
+                        @foreach ($district as $district)
+                        <option value="{{ $district->id }}">{{ ($district->kabupaten) }}</option>
+                        @endforeach
+                        <thead>
+                            <tr>
+                                <td><b>Kecamatan</b></td>
+                                <td><b>Hari/Tanggal</b></td>
+                                <td><b>Jam</b></td>
+                                <td><b>Action</b></td>
 
-                        </tr>
-                    </thead>
-                    @foreach($information as $info)
-                    <tbody>
-                        <tr>
-                            <td>{{$info -> kecamatan}}</td>
-                            <td>{{$info -> date}}</td>
-                            <td>{{$info -> time}}</td>
-                            <td>
-                                <a href="/admins/information/{{$info->id}}/edit" type="button" class="btn btn-warning">Edit</a>
-                                <a href="#" type="button" class="btn btn-danger delete" information-id="{{$info->id}}">Hapus</a>
-                            </td>
-                        </tr>
-                    </tbody>
-                    @endforeach
+                            </tr>
+                        </thead>
+                        @foreach($subdistrict as $info)
+                        <tbody>
+                            <tr>
+
+                                <td>{{$info -> kecamatan}}</td>
+                                <td>{{$info -> date}}</td>
+                                <td>{{$info -> time}}</td>
+                                <td>
+                                    <a href="/admins/information/{{$info->id}}/edit" type="button" class="btn btn-warning">Edit</a>
+                                    <a href="#" type="button" class="btn btn-danger delete" information-id="{{$info->id}}">Hapus</a>
+                                </td>
+
+                            </tr>
+                        </tbody>
+                        @endforeach
+                    </select>
+
 
                 </table>
             </div>
@@ -94,6 +104,10 @@ Sampah
             <div class="modal-body">
                 <form action="/admins/information/create" method="POST">
                     {{csrf_field()}}
+                    <div class="form-group">
+                        <label for="text">Kabupaten</label>
+                        <input name="kabupaten" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Kecamatan">
+                    </div>
                     <div class="form-group">
                         <label for="text">Kecamatan</label>
                         <input name="kecamatan" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Kecamatan">

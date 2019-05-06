@@ -5,6 +5,9 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Information;
 use Auth;
+use App\District;
+use App\Subdistrict;
+use App\Http\Controllers\Controller;
 
 class InformationController extends Controller
 {
@@ -12,18 +15,25 @@ class InformationController extends Controller
 
     public function information(Request $request)
     {
-        $information = Information::all();
+        $district = District::all();
+        $subdistrict = Subdistrict::all();
         //dd($information);
-        return view('admin.information', compact('information'));
+        return view('admin.information', compact('district', 'subdistrict'));
     }
 
-    public function publishinfo()
+    public function publishinfo(Request $request)
     {
-        Information::create([
-            'kecamatan' => request('kecamatan'),
-            'date' => request('date'),
-            'time' => request('time')
-        ]);
+        $district = new District;
+        $district->kabupaten = $request->input('kabupaten');
+        $district->save();
+        if ($request->has('kabupaten')) {
+            $subdistrict = new Subdistrict;
+            $subdistrict->kecamatan = $request->input('kecamatan');
+            $subdistrict->date = $request->input('date');
+            $subdistrict->time = $request->input('time');
+            $subdistrict->save();
+        }
+
 
         return redirect('/admins/information');
     }
