@@ -14,7 +14,7 @@ class CreateSubdistrictsTable extends Migration
     public function up()
     {
         Schema::create('subdistricts', function (Blueprint $table) {
-            $table->Increments('id');
+            $table->increments('id');
             $table->integer('kecamatan_id')->unsigned();
             $table->foreign('kecamatan_id')->references('id')->on('districts')->onDELETE('CASCADE');
             $table->string('kecamatan');

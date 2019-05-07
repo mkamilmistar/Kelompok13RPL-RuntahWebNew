@@ -3,6 +3,9 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use App\Event;
+use App\District;
+
 
 class Subdistrict extends Model
 {
@@ -13,5 +16,9 @@ class Subdistrict extends Model
     public function district()
     {
         $this->belongsTo(District::class);
+    }
+    public function event()
+    {
+        $this->hasMany(Event::class);
     }
 }

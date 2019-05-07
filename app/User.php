@@ -6,6 +6,7 @@ use Illuminate\Notifications\Notifiable;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Console\Scheduling\Event;
 
 class User extends Authenticatable
 {
@@ -44,5 +45,10 @@ class User extends Authenticatable
     {
         return $this->hasMany(Report::class);
         return $this->hasMany(Post::class);
+    }
+
+    public function event()
+    {
+        return $this->hasMany(Event::class);
     }
 }

@@ -12,6 +12,6 @@ class District extends Model
 
     public function subdistrict()
     {
-        $this->hasMany(Subdistrict::class);
+        return $this->hasMany(Subdistrict::class);
     }
 }

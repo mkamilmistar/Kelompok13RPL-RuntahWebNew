@@ -19,7 +19,7 @@ Route::get('/about', 'SiteController@about');
 Route::get('/information', 'SiteController@information');
 
 //route DIY
-Route::get('/diy', 'InformationController@diy');
+Route::get('/diy', 'PostController@diy');
 
 //route PROFILE USER
 Route::get('/profile', 'UserController@profile');
