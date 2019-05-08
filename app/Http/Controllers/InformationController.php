@@ -5,39 +5,42 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Information;
 use Auth;
-use App\District;
-use App\Subdistrict;
+use App\Wilayah;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Input;
 
 class InformationController extends Controller
 {
     //AWAL INFORMATION
 
-    public function information(Request $request)
+    public function information()
     {
-        $district = District::all();
-        $subdistrict = Subdistrict::all();
+        $wilayah = Wilayah::all();
         //dd($information);
-        return view('admin.information', compact('district', 'subdistrict'));
+        return view('admin.information', compact('wilayah'));
     }
+
+
 
     public function publishinfo(Request $request)
     {
-        $district = new District;
-        $district->kabupaten = $request->input('kabupaten');
-        $district->save();
-        if ($request->has('kabupaten')) {
-            $subdistrict = new Subdistrict;
-            $subdistrict->kecamatan = $request->input('kecamatan');
-            $subdistrict->date = $request->input('date');
-            $subdistrict->time = $request->input('time');
-            $subdistrict->save();
-        }
 
+        $wilayah = new Wilayah();
+        $wilayah->kabupaten = $request->input('kabupaten');
+        $wilayah->kecamatan = $request->input('kecamatan');
+        $wilayah->date = $request->input('date');
+        $wilayah->time = $request->input('time');
+        $wilayah->save();
 
         return redirect('/admins/information');
     }
 
+    public function deleteinfo($id)
+    {
+        $wilayah = Wilayah::find($id);
+        $wilayah->delete();
+        return redirect('/admins/information')->with('sukses', 'Info berhasil dihapus');
+    }
     //AKHIR INFORMATION
 
 }

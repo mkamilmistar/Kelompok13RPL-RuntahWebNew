@@ -67,9 +67,10 @@ class AdminController extends Controller
         return redirect('/admins/dashboard')->with('sukses', 'Data Berhasil diedit');
     }
 
-    public function delete(user $user)
+    public function delete($id)
     {
-        $user->delete();
-        return redirect('/admins/dashboard')->with('sukses', 'Data berhasil dihapus');
+        $users = User::find($id);
+        $users->delete();
+        return redirect('/admins/index')->with('sukses', 'Volunteer berhasil dihapus');
     }
 }

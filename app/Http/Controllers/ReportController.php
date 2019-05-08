@@ -28,4 +28,11 @@ class ReportController extends Controller
         //dd($report);
         return view('admin.report', compact('report'));
     }
+
+    public function deletereport($id)
+    {
+        $wilayah = Report::find($id);
+        $wilayah->delete();
+        return redirect('/admins/report')->with('sukses', 'Report berhasil dihapus');
+    }
 }

@@ -34,7 +34,7 @@
                         <li><a href="/information">Information</a></li>
                         <li><a href="#">Volunteer</a>
                             <ul class="dropdown">
-                                <li><a href="#">Start!</a></li>
+                                <li><a href="/volunteer">Start!</a></li>
                                 <li><a href="#">History</a></li>
                                 <li><a href="#">Point</a></li>
                                 <li><a href="/report">Report</a></li>
@@ -50,7 +50,7 @@
                         <li><a href="/information">Information</a></li>
                         <li><a href="#">Volunteer</a>
                             <ul class="dropdown">
-                                <li><a href="#">Start!</a></li>
+                                <li><a href="/volunteer">Start!</a></li>
                                 <li><a href="#">History</a></li>
                                 <li><a href="#">Point</a></li>
                                 <li><a href="/report">Report</a></li>

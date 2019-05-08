@@ -17,7 +17,7 @@ class CreateEventsTable extends Migration
             $table->increments('id');
             $table->foreign('id')->references('id')->on('users')->onDELETE('CASCADE');
             $table->integer('event_id')->unsigned();
-            $table->foreign('event_id')->references('id')->on('subdistricts')->onDELETE('CASCADE');
+            $table->foreign('event_id')->references('id')->on('wilayah')->onDELETE('CASCADE');
             $table->text('location');
             $table->string('datetime');
             $table->string('date');

@@ -3,16 +3,16 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
-use App\Subdistrict;
+use App\Wilayah;
 
 class event extends Model
 {
     public function subdistrict()
     {
-        $this->belongsTo(Subdistrict::class);
+        return $this->belongsTo(Wilayah::class);
     }
     public function user()
     {
-        $this->belongsTo(User::class);
+        return $this->belongsTo(User::class);
     }
 }

@@ -13,7 +13,7 @@
 
     <!-- Favicon -->
     <link rel="icon" href="{{asset('/sites')}}/img/core-img/favicon.ico">
-
+    <link rel="stylesheet" href="{{asset('admin/assets/bower_components/datatables.net-bs/css/dataTables.bootstrap.min.css')}}">
     <!-- Stylesheet -->
     <link rel="stylesheet" href="{{asset('/sites')}}/style.css">
 
@@ -74,7 +74,7 @@
     <script src="{{asset('/sites')}}/js/active.js"></script>
     <!-- CK editor -->
     <script src="{{asset('admin/unisharp/laravel-ckeditor/ckeditor.js')}}"></script>
-
+    @yield('script')
 </body>
 </body>
 

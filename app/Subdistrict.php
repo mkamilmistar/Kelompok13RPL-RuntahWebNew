@@ -9,16 +9,19 @@ use App\District;
 
 class Subdistrict extends Model
 {
+
+    protected $table = 'subdistricts';
+
     protected $fillable = [
         'kecamatan_id', 'kecamatan', 'date', 'time'
     ];
 
     public function district()
     {
-        $this->belongsTo(District::class);
+        return $this->belongsTo(District::class, 'kecamatan_id');
     }
     public function event()
     {
-        $this->hasMany(Event::class);
+        return $this->hasMany(Event::class);
     }
 }

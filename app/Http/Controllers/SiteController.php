@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Volunteer;
 use App\User;
-use App\Information;
+use App\Wilayah;
 use App\Report;
 use Auth;
 
@@ -34,7 +34,7 @@ class SiteController extends Controller
 
     public function information(Request $request)
     {
-        $information = Information::all();
+        $information = Wilayah::all();
         return view('sites.information', compact('information'));
     }
 }

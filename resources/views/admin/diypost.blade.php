@@ -35,7 +35,7 @@ Postingan Do It Yourself! Admin
                             <div class="box-body">
                                 <div class="col-md-6">
                                     <a href="/admins/diypost/{{$post->id}}/edit" class="btn btn-block btn-warning">Edit</a>
-                                    <a href="/admins/diypost/{{$post->id}}/delete" class="btn btn-block btn-danger">Delete</a>
+                                    <a href="#" post-id="{{$post->id}}" type="button" class="btn btn-block btn-danger delete">Delete</a>
                                 </div>
                             </div>
                         </div>
@@ -54,6 +54,32 @@ Postingan Do It Yourself! Admin
     </div>
     <!-- /.row -->
     <!-- END ACCORDION & CAROUSEL-->
+    @section('script')
+    <script>
+        $('.delete').click(function() {
+            var post_id = $(this).attr('post-id');
+            swal({
+                    title: "Yakin?",
+                    text: "Ingin dihapus data post dengan id " + post_id + "?",
+                    icon: "warning",
+                    buttons: true,
+                    dangerMode: true,
+                })
+                .then((willDelete) => {
+                    console.log(willDelete);
+                    if (willDelete) {
+                        window.location = "/admins/" + "diypost/" + post_id + "/delete";
+                    } else {
 
+                    }
+                });
+        });
+    </script>
+    @endsection
 
+    @endsection
+    @section('js')
+    <script>
+        CKEDITOR.replace('content');
+    </script>
     @endsection

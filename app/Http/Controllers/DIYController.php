@@ -9,6 +9,13 @@ use Auth;
 class DIYController extends Controller
 {
     //AWAL POSTINGAN DIY
+
+    public function diy()
+    {
+        $posts = Post::all();
+        return view('sites.diy', compact('posts'));
+    }
+
     public function diypost()
     {
         $posts = Post::all();

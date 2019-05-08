@@ -11,7 +11,7 @@ Home - Runtah WEB
                 <!-- Hero Content -->
                 <div class="hero-content text-center">
                     <h2>Selamatkan Lingkungan Mu!</h2>
-                    <a href="#" class="btn clever-btn">Aku Mau Ikut Andil !</a>
+                    <a href="/volunteer" class="btn clever-btn">Aku Mau Ikut Andil !</a>
                 </div>
             </div>
         </div>

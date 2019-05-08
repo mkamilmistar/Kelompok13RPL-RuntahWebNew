@@ -36,7 +36,7 @@ Volunteer
                             <td>{{App\User::find($adu->id)->username}}</td>
                             <td>{{$adu -> report}}</td>
                             <td>
-                                <a href="#" type="button" class="btn btn-danger delete" information-id="{{$adu->id}}">Hapus</a>
+                                <a href="#" type="button" class="btn btn-danger delete" report-id="{{$adu->id}}">Hapus</a>
                             </td>
                         </tr>
                     </tbody>
@@ -54,7 +54,7 @@ Volunteer
                 var report_id = $(this).attr('report-id');
                 swal({
                         title: "Yakin?",
-                        text: "Ingin dihapus data informasi dengan id " + report_id + "?",
+                        text: "Ingin dihapus data report dengan id " + report_id + "?",
                         icon: "warning",
                         buttons: true,
                         dangerMode: true,
@@ -62,7 +62,7 @@ Volunteer
                     .then((willDelete) => {
                         console.log(willDelete);
                         if (willDelete) {
-                            window.location = "/admins/" + report_id + "/delete";
+                            window.location = "/admins/" + "report/" + report_id + "/delete";
                         } else {
 
                         }

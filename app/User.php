@@ -51,4 +51,12 @@ class User extends Authenticatable
     {
         return $this->hasMany(Event::class);
     }
+
+    public function getAvatar()
+    {
+        if ($this->user_image) {
+            return asset('admin/assets/img/default.jpg');
+        }
+        return asset('images/' . $this->user_image);
+    }
 }

@@ -19,7 +19,7 @@ Route::get('/about', 'SiteController@about');
 Route::get('/information', 'SiteController@information');
 
 //route DIY
-Route::get('/diy', 'PostController@diy');
+Route::get('/diy', 'DIYController@diy');
 
 //route PROFILE USER
 Route::get('/profile', 'UserController@profile');
@@ -44,6 +44,9 @@ Route::post('admins/postlogin', 'AdminController@adminpostlogin');
 Route::get('admins/logout', 'AdminController@adminlogout');
 Route::get('admins', 'AdminController@admins');
 
+//Route untuk volunteer
+Route::get('/volunteer', 'VolunteerController@volunteer');
+
 Route::group(['middleware' => ['auth', 'checkRole:admin']], function () {
     Route::get('/admins/index', 'AdminController@index');
     Route::post('/admins/create', 'AdminController@create');
@@ -63,13 +66,13 @@ Route::group(['middleware' => ['auth', 'checkRole:admin']], function () {
     //untuk information
     Route::get('/admins/information', 'InformationController@information');
     Route::post('/admins/information/create', 'InformationController@publishinfo')->name('info.publish');
+    Route::get('/admins/information/{id}/delete', 'InformationController@deleteinfo')->name('info.delete');
+
 
     //untuk repot
     Route::get('/admins/report', 'ReportController@viewreport');
+    Route::get('/admins/report/{id}/delete', 'ReportController@deletereport')->name('report.delete');
 });
 
-
-
 Auth::routes();
-
 Route::get('/home', 'HomeController@index')->name('home');

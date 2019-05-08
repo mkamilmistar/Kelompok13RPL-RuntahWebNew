@@ -38,21 +38,21 @@ Data Volunteer Admin
 
                         </tr>
                     </thead>
-                    @foreach($data_volunteer as $volunteer)
+                    @foreach($data_volunteer as $user)
                     <tbody>
                         <tr>
-                            <td>{{$volunteer -> username}}</td>
-                            <td>{{$volunteer -> email}}</td>
-                            <td>{{$volunteer -> nama_depan}}</td>
-                            <td>{{$volunteer -> nama_belakang}}</td>
-                            <td>{{$volunteer -> jenis_kelamin}}</td>
-                            <td>{{$volunteer -> nomor_telepon}}</td>
-                            <td>{{$volunteer -> alamat}}</td>
-                            <td>{{$volunteer -> nik_pengguna}}</td>
-                            <td>{{$volunteer -> poin}}</td>
+                            <td>{{$user -> username}}</td>
+                            <td>{{$user -> email}}</td>
+                            <td>{{$user -> nama_depan}}</td>
+                            <td>{{$user -> nama_belakang}}</td>
+                            <td>{{$user -> jenis_kelamin}}</td>
+                            <td>{{$user -> nomor_telepon}}</td>
+                            <td>{{$user -> alamat}}</td>
+                            <td>{{$user -> nik_pengguna}}</td>
+                            <td>{{$user -> poin}}</td>
                             <td>
-                                <a href="/admins/{{$volunteer->id}}/edit" type="button" class="btn btn-warning">Edit</a>
-                                <a href="#" type="button" class="btn btn-danger delete" volunteer-id="{{$volunteer->id}}">Hapus</a>
+                                <a href="/admins/{{$user->id}}/edit" type="button" class="btn btn-warning">Edit</a>
+                                <a href="#" type="button" class="btn btn-danger delete" user-id="{{$user->id}}">Hapus</a>
                             </td>
                         </tr>
                     </tbody>
@@ -99,10 +99,10 @@ Data Volunteer Admin
         @section('script')
         <script>
             $('.delete').click(function() {
-                var volunteer_id = $(this).attr('volunteer-id');
+                var user_id = $(this).attr('user-id');
                 swal({
                         title: "Yakin?",
-                        text: "Ingin dihapus data volunteer dengan id " + volunteer_id + "?",
+                        text: "Ingin dihapus data volunteer dengan id " + user_id + "?",
                         icon: "warning",
                         buttons: true,
                         dangerMode: true,
@@ -110,7 +110,7 @@ Data Volunteer Admin
                     .then((willDelete) => {
                         console.log(willDelete);
                         if (willDelete) {
-                            window.location = "/admins/" + volunteer_id + "/delete";
+                            window.location = "/admins/" + user_id + "/delete";
                         } else {
 
                         }

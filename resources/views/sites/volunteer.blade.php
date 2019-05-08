@@ -1,11 +1,11 @@
 @extends('sites.layouts.master')
 @section('title')
-Information - Runtah WEB
+Volunteer - Runtah WEB
 @endsection
 @section('content')
 <div class="clever-catagory blog-details bg-img d-flex align-items-center justify-content-center p-3 height-400" style="background-image: url({{asset('/sites')}}/img/bg-img/bg0.jpg);">
     <div class="blog-details-headline">
-        <h3>Tabel Data Informasi Sampah</h3>
+        <h3>Ayo Mulai Volunteer</h3>
         <div class="meta d-flex align-items-center justify-content-center">
             <a href="#">Iye13</a>
             <span><i class="fa fa-circle" aria-hidden="true"></i></span>
@@ -13,7 +13,7 @@ Information - Runtah WEB
         </div>
     </div>
 </div>
-<div class="blog-details-content section-padding-100">
+<div class="blog-details-content section-padding-70">
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-12 col-lg-8">
@@ -32,6 +32,7 @@ Information - Runtah WEB
                                             <th>Kecamatan</th>
                                             <th>Hari/Tanggal</th>
                                             <th>Jam</th>
+                                            <th>Action</th>
 
                                         </tr>
                                     </thead>
@@ -42,6 +43,7 @@ Information - Runtah WEB
                                             <td>{{$info->kecamatan}}</td>
                                             <td>{{$info->date}}</td>
                                             <td>{{$info->time}}</td>
+                                            <td>Join Event</td>
 
                                         </tr>
                                         @endforeach
@@ -58,6 +60,7 @@ Information - Runtah WEB
         </div>
     </div>
 </div>
+
 @section('script')
 
 <script src="{{asset('admin/assets/bower_components/datatables.net/js/jquery.dataTables.min.js')}}"></script>
@@ -76,4 +79,5 @@ Information - Runtah WEB
     })
 </script>
 @endsection
+
 @endsection
