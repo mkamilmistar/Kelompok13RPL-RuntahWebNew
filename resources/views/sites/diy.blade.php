@@ -43,7 +43,7 @@ Do It Yourself! - Runtah WEB
                 @if(Auth::guest())
                 <div class="form-group">
                     <div class="row justify-content-center">
-                        <a href="#" class="btn clever-btn">REPORT!</a>
+                       
                     </div>
                 </div>
                 @elseif(auth()->user()->role=='admin')
