@@ -23,7 +23,9 @@ Volunteer
                 <table id="example2" class="table table-bordered table-hover">
                     <thead>
                         <tr>
+                            <td><b>Username</b></td>
                             <td><b>Report</b></td>
+
                             <td><b>Action</b></td>
 
                         </tr>
@@ -31,6 +33,7 @@ Volunteer
                     @foreach($report as $adu)
                     <tbody>
                         <tr>
+                            <td>{{App\User::find($adu->id)->username}}</td>
                             <td>{{$adu -> report}}</td>
                             <td>
                                 <a href="#" type="button" class="btn btn-danger delete" information-id="{{$adu->id}}">Hapus</a>

@@ -6,6 +6,7 @@ use Illuminate\Notifications\Notifiable;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Console\Scheduling\Event;
 
 class User extends Authenticatable  implements MustVerifyEmail
 {
@@ -40,10 +41,14 @@ class User extends Authenticatable  implements MustVerifyEmail
         'email_verified_at' => 'datetime',
     ];
 
-    public function reports()
+    public function report()
     {
-        return $this->hasOne(Report::class);
-        return $this->hasOne(Volunteer::class);
-        return $this->hasOne(Admin::class);
+        return $this->hasMany(Report::class);
+        return $this->hasMany(Post::class);
+    }
+
+    public function event()
+    {
+        return $this->hasMany(Event::class);
     }
 }
