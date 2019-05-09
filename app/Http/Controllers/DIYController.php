@@ -35,7 +35,7 @@ class DIYController extends Controller
         $post->content = $request->input('content');
         $post->save();
 
-        return redirect('/admins/diypost');
+        return redirect('/admins/diypost')->with('sukses', 'DIY Posted!');
     }
 
     public function editpost($id)

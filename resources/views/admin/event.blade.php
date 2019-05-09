@@ -1,12 +1,12 @@
 @extends('admin.layouts.master')
 @section('title')
-Information Admin
+Event Admin
 @endsection
 @section('judulbesar')
 Information
 @endsection
 @section('judulkecil')
-Sampah
+Event
 @endsection
 
 @section('content')
@@ -16,8 +16,8 @@ Sampah
     <div class="col-xs-12">
         <div class="box">
             <div class="box-header">
-                <h3 class="box-title">Table Data Information</h3>
-                Pengangkatan Sampah Provinsi Jawa Barat
+                <h3 class="box-title">Table Data Event</h3>
+                Event Volunteer Provinsi Jawa Barat
                 <div class="right">
                     <!-- Button trigger modal -->
                     <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">Tambah Data
@@ -27,7 +27,7 @@ Sampah
         </div>
         <div class="box">
             <div class="box-header">
-                <h3 class="box-title">Data Information</h3>
+                <h3 class="box-title">Data Event</h3>
             </div>
             <!-- /.box-header -->
             <div class="box-body">
@@ -38,16 +38,18 @@ Sampah
                             <th>Kecamatan</th>
                             <th>Hari/Tanggal</th>
                             <th>Jam</th>
+                            <th>Lokasi</th>
                             <th>Action</th>
                         </tr>
                     </thead>
                     <tbody>
-                        @foreach($wilayah as $info)
+                        @foreach($event as $info)
                         <tr>
                             <td>{{$info->kabupaten}}</td>
                             <td>{{$info->kecamatan}}</td>
                             <td>{{$info->date}}</td>
                             <td>{{$info->time}}</td>
+                            <td>Lokasi</td>
                             <td>
                                 <a href="/admins/information/{{$info->id}}/edit" type="button" class="btn btn-warning">Edit</a>
                                 <a href="#" type="button" class="btn btn-danger delete" wilayah-id="{{$info->id}}">Hapus</a>

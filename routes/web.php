@@ -66,12 +66,16 @@ Route::group(['middleware' => ['auth', 'checkRole:admin']], function () {
     //untuk information
     Route::get('/admins/information', 'InformationController@information');
     Route::post('/admins/information/create', 'InformationController@publishinfo')->name('info.publish');
+    Route::get('/admins/information/{id}/edit', 'InformationController@editinfo')->name('info.edit');
+    Route::post('/admins/information/{id}/update', 'InformationController@updateinfo')->name('info.update');
     Route::get('/admins/information/{id}/delete', 'InformationController@deleteinfo')->name('info.delete');
-
 
     //untuk repot
     Route::get('/admins/report', 'ReportController@viewreport');
     Route::get('/admins/report/{id}/delete', 'ReportController@deletereport')->name('report.delete');
+
+    //untuk event admin
+    Route::get('/admins/event', 'VolunteerController@viewevent');
 });
 
 Auth::routes();

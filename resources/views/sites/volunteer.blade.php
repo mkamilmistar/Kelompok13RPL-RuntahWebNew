@@ -13,53 +13,56 @@ Volunteer - Runtah WEB
         </div>
     </div>
 </div>
-<div class="blog-details-content section-padding-70">
+<div class="blog-details-content section-padding-80">
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-12 col-lg-8">
                 <div class="box">
                     <div class="box-header">
-                        <h3 class="box-title">Data Pengangkatan Sampah Provinsi Jawa Barat</h3>
+                        <br>
+                        <h3 class="box-title">Data Event Volunteer Provinsi Jawa Barat</h3>
+                        <br>
                     </div>
                     <!-- box -->
-                    <div class="row justify-content-center">
-                        <div class="col-12 col-lg-8">
-                            <div class="box-body">
-                                <table id="example1" class="table table-bordered table-striped">
-                                    <thead>
-                                        <tr>
-                                            <th>Kabupaten</th>
-                                            <th>Kecamatan</th>
-                                            <th>Hari/Tanggal</th>
-                                            <th>Jam</th>
-                                            <th>Action</th>
+                    <div class="box-body">
+                        <table id="example1" class="table table-bordered table-striped">
+                            <thead>
+                                <tr>
+                                    <th>Kabupaten</th>
+                                    <th>Kecamatan</th>
+                                    <th>Hari/Tanggal</th>
+                                    <th>Jam</th>
+                                    <th>Lokasi</th>
+                                    <th>Action</th>
 
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        @foreach($information as $info)
-                                        <tr>
-                                            <td>{{$info->kabupaten}}</td>
-                                            <td>{{$info->kecamatan}}</td>
-                                            <td>{{$info->date}}</td>
-                                            <td>{{$info->time}}</td>
-                                            <td>Join Event</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach($information as $info)
+                                <tr>
+                                    <td>{{$info->kabupaten}}</td>
+                                    <td>{{$info->kecamatan}}</td>
+                                    <td>{{$info->date}}</td>
+                                    <td>{{$info->time}}</td>
+                                    <td>Lokasi</td>
+                                    <td>Join Event</td>
 
-                                        </tr>
-                                        @endforeach
-                                    </tbody>
+                                </tr>
+                                @endforeach
+                            </tbody>
 
-                                </table>
-                            </div>
-                            <!-- /.box-body -->
+                        </table>
+                        <div class="blog-details-content section-padding-100">
                         </div>
-                        <!-- /.box -->
                     </div>
+                    <!-- /.box-body -->
                 </div>
+                <!-- /.box -->
             </div>
         </div>
     </div>
 </div>
+
 
 @section('script')
 
@@ -79,5 +82,6 @@ Volunteer - Runtah WEB
     })
 </script>
 @endsection
+
 
 @endsection

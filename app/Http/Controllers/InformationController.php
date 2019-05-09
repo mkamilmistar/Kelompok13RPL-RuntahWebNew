@@ -20,8 +20,6 @@ class InformationController extends Controller
         return view('admin.information', compact('wilayah'));
     }
 
-
-
     public function publishinfo(Request $request)
     {
 
@@ -35,6 +33,23 @@ class InformationController extends Controller
         return redirect('/admins/information');
     }
 
+    public function editinfo($id)
+    {
+        $wilayah = Wilayah::find($id);
+        return view('admin.informationedit', compact('wilayah'));
+    }
+
+    public function updateinfo($id)
+    {
+        $wilayah = Wilayah::find($id);
+        $wilayah->update([
+            'kabupaten' => request('kabupaten'),
+            'kecamatan' => request('kecamatan'),
+            'date' => request('date'),
+            'time' => request('time')
+        ]);
+        return redirect('/admins/information')->with('sukses', 'Info updated!');
+    }
     public function deleteinfo($id)
     {
         $wilayah = Wilayah::find($id);
