@@ -44,9 +44,12 @@ Volunteer - Runtah WEB
                                     <td>{{$info->kecamatan}}</td>
                                     <td>{{$info->date}}</td>
                                     <td>{{$info->time}}</td>
-                                    <td>Lokasi</td>
-                                    <td>Join Event</td>
-
+                                    <td>{{$info->location}}</td>
+                                    @if($info->status==0)
+                                    <td><a href="#">Join Event</a></td>
+                                    @else
+                                    <td><a href="#">Join Event</a></td>
+                                    @endif
                                 </tr>
                                 @endforeach
                             </tbody>

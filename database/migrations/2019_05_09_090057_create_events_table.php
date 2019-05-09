@@ -14,14 +14,13 @@ class CreateEventsTable extends Migration
     public function up()
     {
         Schema::create('events', function (Blueprint $table) {
-            $table->increments('id');
-            $table->foreign('id')->references('id')->on('users')->onDELETE('CASCADE');
-            $table->integer('event_id')->unsigned();
-            $table->foreign('event_id')->references('id')->on('wilayah')->onDELETE('CASCADE');
-            $table->text('location');
-            $table->string('datetime');
+            $table->Increments('id');
+            $table->string('kabupaten');
+            $table->string('kecamatan');
             $table->string('date');
-            $table->integer('capacity');
+            $table->string('time');
+            $table->string('location');
+            $table->integer('status')->default(0);
             $table->timestamps();
         });
     }

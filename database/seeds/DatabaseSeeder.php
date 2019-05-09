@@ -16,5 +16,6 @@ class DatabaseSeeder extends Seeder
         $this->call(userseed::class);
         $this->call(reportseed::class);
         $this->call(wilayahseeder::class);
+        $this->call(eventseed::class);
     }
 }

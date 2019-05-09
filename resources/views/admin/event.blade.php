@@ -49,7 +49,7 @@ Event
                             <td>{{$info->kecamatan}}</td>
                             <td>{{$info->date}}</td>
                             <td>{{$info->time}}</td>
-                            <td>Lokasi</td>
+                            <td>{{$info->location}}</td>
                             <td>
                                 <a href="/admins/information/{{$info->id}}/edit" type="button" class="btn btn-warning">Edit</a>
                                 <a href="#" type="button" class="btn btn-danger delete" wilayah-id="{{$info->id}}">Hapus</a>

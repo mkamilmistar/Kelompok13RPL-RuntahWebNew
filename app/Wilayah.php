@@ -11,9 +11,4 @@ class wilayah extends Model
     protected $fillable = [
         'kabupaten', 'kecamatan', 'date', 'time'
     ];
-
-    public function event()
-    {
-        return $this->hasMany(Event::class);
-    }
 }

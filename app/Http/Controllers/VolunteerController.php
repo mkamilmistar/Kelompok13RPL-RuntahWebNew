@@ -3,20 +3,20 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Wilayah;
+use App\Event;
 
 class VolunteerController extends Controller
 {
     public function viewevent()
     {
-        $event = Wilayah::all();
+        $event = Event::all();
         //dd($information);
         return view('admin.event', compact('event'));
     }
 
     public function volunteer()
     {
-        $information = Wilayah::all();
+        $information = Event::all();
         //dd($information);
         return view('sites.volunteer', compact('information'));
     }
