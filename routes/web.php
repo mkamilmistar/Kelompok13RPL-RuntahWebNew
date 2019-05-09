@@ -18,6 +18,7 @@ Route::post('/postregister', 'SiteController@postregister');
 Route::get('/about', 'SiteController@about');
 Route::get('/information', 'SiteController@information');
 
+
 //route DIY
 Route::get('/diy', 'DIYController@diy');
 
@@ -79,4 +80,8 @@ Route::group(['middleware' => ['auth', 'checkRole:admin']], function () {
 });
 
 Auth::routes();
+Route::get('/home', 'HomeController@index')->name('home');
+
+Auth::routes();
+
 Route::get('/home', 'HomeController@index')->name('home');
