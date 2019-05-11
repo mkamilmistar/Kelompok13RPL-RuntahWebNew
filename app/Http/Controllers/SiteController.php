@@ -29,7 +29,7 @@ class SiteController extends Controller
 
     public function register()
     {
-        return view('sites.register');
+        return view('auth.register');
     }
 
     public function information(Request $request)
