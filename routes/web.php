@@ -49,6 +49,9 @@ Route::get('admins', 'AdminController@admins');
 Route::get('/volunteer', 'VolunteerController@volunteer');
 Route::get('/volunteer/{id}/join', 'VolunteerController@join')->name('join');
 Route::get('/volunteer/{id}/joined', 'VolunteerController@joined')->name('joined');
+Route::get('/volunteer/{id}/confirm', 'VolunteerController@confirm')->name('confirm');
+//hapus middleware checkPoint untuk melihat view
+Route::get('/volunteer/claimreward', 'VolunteerController@claimreward');
 
 Route::group(['middleware' => ['auth', 'checkRole:admin']], function () {
     Route::get('/admins/index', 'AdminController@index');

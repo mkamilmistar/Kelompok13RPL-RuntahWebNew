@@ -104,6 +104,16 @@ Volunteer - Runtah WEB
             });
     });
 </script>
+<script>
+    @if(Session::has('point'))
+    swal({
+        title: "Good job!",
+        text: "Kamu mendapat tambahan 5 point! Kumpulkan terus pointmu untuk mendapatkan reward!",
+        icon: "success",
+        button: "Baiklah!",
+    });
+    @endif
+</script>
 @endsection
 
 

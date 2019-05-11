@@ -22,8 +22,19 @@ My Profile - Runtah WEB
                     <div class="profile-stat">
                         <div class="row justify-content-center">
                             <div class="row justify-content-center">
-                                {{$users->poin }} <span> Points</span>
+                                @if($users->point==0)
+                                <span> Belum Ada Points</span>
+                                @else
+                                <span> {{$users->point }} Points</span>
+                                @endif
                             </div>
+                        </div>
+                        <div class="row justify-content-center">
+                            @if($users->point==500)
+                            <a href="/volunteer/claimreward" class="btn btn-primary">Claim Reward</a>
+                            @else
+                            <a href="#" class="btn btn-secondary">Point Belum Cukup</a>
+                            @endif
                         </div>
                     </div>
                     <!-- Contact Info -->

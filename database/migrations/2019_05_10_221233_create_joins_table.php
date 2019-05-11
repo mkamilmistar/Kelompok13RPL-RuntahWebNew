@@ -19,7 +19,7 @@ class CreateJoinsTable extends Migration
             $table->foreign('event_id')->references('id')->on('events')->onDelete('CASCADE');
             $table->integer('user_id')->unsigned();
             $table->foreign('user_id')->references('id')->on('users')->onDelete('CASCADE');
-            $table->string('status')->default('belum-selesai-event');
+            $table->string('status')->default('Belum Selesai');
             $table->timestamps();
         });
     }

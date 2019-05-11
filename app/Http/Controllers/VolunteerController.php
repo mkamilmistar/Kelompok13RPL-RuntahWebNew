@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Event;
 use App\Join;
 use Auth;
+use App\User;
 
 class VolunteerController extends Controller
 {
@@ -59,16 +60,37 @@ class VolunteerController extends Controller
         $joins = new Join;
         $joins->event_id = $id;
         $joins->user_id = Auth::user()->id;
-        $joins->status = "belum-menyelesaikan";
+        $joins->status = "Belum Selesai";
         $joins->save();
-        return redirect('/volunteer/{id}/joined')->with('sukses', 'Join Event');
+        return redirect('volunteer/' . $joins->id . '/joined')->with('sukses', 'Join Event');
     }
 
-    public function joined($id)
+    public function joined(Request $request)
     {
-        $joins = Join::find($id);
+        $joins = Join::all();
         return view('sites.joined', compact('joins'));
     }
 
+    public function confirm(Request $request, $id)
+    {
+
+        $joins = Join::find($id);
+        $joins->status = "Selesai";
+        if ($joins->status === "Selesai") {
+            $user_id = $joins->user_id;
+            $user = User::find($user_id);
+            $user->point = $user->point + 5;
+            $user->save();
+        }
+        $joins->save();
+        //  dd($joins);
+        return redirect('/volunteer')->with(['point' => 'tambah point']);
+    }
+
+    public function claimreward()
+    {
+
+        return view('sites.claimreward');
+    }
     //END OF SITES
 }

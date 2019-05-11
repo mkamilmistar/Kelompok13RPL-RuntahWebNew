@@ -23,11 +23,69 @@ Volunteer - Runtah WEB
                         <h3 class="box-title">Anda Berhasil Mengikuti Event!</h3>
                         <br>
                     </div>
-                    Selamat bla bla ba
+                    Selamat bla bla
+
+                    Kalo udah kelar, konfirmasi dengan menekan tombol dibawah ini
+                    <br>
+
+
+                    <div class="box-body">
+                        <table id="example1" class="table table-bordered table-striped">
+                            <thead>
+                                <tr>
+                                    <th>Event Yang Diikuti</th>
+                                    <th>Status</th>
+                                    <th>Action</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach($joins as $join)
+                                @if($join->status=="Belum Selesai")
+                                <tr>
+                                    <td>{{$join->event->location}}</td>
+                                    <td>{{$join->status}}</td>
+
+                                    <td>
+                                        <a href="#" class="btn btn-primary join" join-id="{{$join->id}}">Event Selesai</a>
+                                        <a href="#" type="button" class="btn btn-danger delete" event-id="{{$join->id}}">Batalkan</a>
+                                    </td>
+                                </tr>
+                                @endif
+                                @endforeach
+                            </tbody>
+
+                        </table>
+                    </div>
+
                 </div>
                 <!-- /.box -->
             </div>
         </div>
     </div>
 </div>
+
+
+@section('script')
+<script>
+    $('.join').click(function() {
+        var join_id = $(this).attr('join-id');
+        swal({
+                title: "Yakin?",
+                text: "Apakah anda yakin telah menyelesaikan event tersebut?",
+                icon: "info",
+                buttons: true,
+                dangerMode: false,
+            })
+            .then((willJoin) => {
+                console.log(willJoin);
+                if (willJoin) {
+                    window.location = "/volunteer/" + join_id + "/confirm";
+                } else {
+
+                }
+            });
+    });
+</script>
+@endsection
+
 @endsection
