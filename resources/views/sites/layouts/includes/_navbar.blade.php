@@ -4,7 +4,7 @@
         <div class="navbar-header">
             <!-- Logo -->
             <div class="navbar-brand">
-                <a href="index.html">
+                <a href="/">
                     <img class="logo" src="{{asset('/sites')}}/img/logo1.png" alt="logo">
                     <img class="logo-alt" src="{{asset('/sites')}}/img/logo2.png" alt="logo">
                 </a>

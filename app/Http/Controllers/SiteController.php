@@ -7,13 +7,22 @@ use App\Volunteer;
 use App\User;
 use App\Wilayah;
 use App\Report;
+use App\event;
 use Auth;
+use App\Join;
 
 class SiteController extends Controller
 {
     public function home()
     {
-        return view('sites.home');
+
+        $events = Event::all()->take(6);
+        $users = User::where(['role' => 'volunteer']);
+        $point = User::where('point', '>=', 500);
+        $event = Event::all();
+        $join = Join::where('status', 'Selesai');
+        //dd($information);
+        return view('sites.home', compact('events', 'users', 'point', 'event', 'join'));
     }
 
     public function profile(Request $request)

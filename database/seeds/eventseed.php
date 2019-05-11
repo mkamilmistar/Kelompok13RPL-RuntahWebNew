@@ -14,90 +14,87 @@ class eventseed extends Seeder
     {
         Event::insert([
             [
+                'nama_event' => 'Bersih-bersih di arjasari',
+                'image' => 'c1r.jpg',
                 'kabupaten' => 'Bandung',
                 'kecamatan' => 'Arjasari',
                 'date' => 'Senin/27 Mei 2019',
                 'time' => '07.00',
-                'location' => 'Jalan Pajajaran No.35'
+                'location' => 'Jalan Pajajaran No.35',
+                'status' => 'Tersedia'
             ],
             [
+                'nama_event' => 'Bersih-bersih di baleendah',
+                'image' => 'c2r.jpg',
                 'kabupaten' => 'Bandung',
                 'kecamatan' => 'Baleendah',
                 'date' => 'Senin/27 Mei 2019',
                 'time' => '07.00',
-                'location' => 'Jalan Gajah Mada No.4'
+                'location' => 'Jalan Gajah Mada No.4',
+                'status' => 'Tersedia'
             ],
             [
+                'nama_event' => 'Bersih-bersih di batujajar',
+                'image' => 'c3r.jpg',
                 'kabupaten' => 'Bandung Barat',
                 'kecamatan' => 'Batujajar',
                 'date' => 'Senin/27 Mei 2019',
                 'time' => '07.00',
-                'location' => 'Jalan Imam Bonjol No.35'
+                'location' => 'Jalan Imam Bonjol No.35',
+                'status' => 'Tidak Tersedia'
 
             ],
             [
+                'nama_event' => 'Bersih-bersih di Cihampelas',
+                'image' => 'c4r.jpg',
                 'kabupaten' => 'Bandung Barat',
                 'kecamatan' => 'Cihampelas',
                 'date' => 'Senin/27 Mei 2019',
                 'time' => '07.00',
-                'location' => 'Jalan Kucing No.35'
+                'location' => 'Jalan Kucing No.35',
+                'status' => 'Tersedia'
             ],
             [
+                'nama_event' => 'Bersih-bersih di Babelan',
+                'image' => 'c5r.jpg',
                 'kabupaten' => 'Bekasi',
                 'kecamatan' => 'Babelan',
                 'date' => 'Senin/27 Mei 2019',
                 'time' => '07.00',
-                'location' => 'Jalan Anjing No.35'
+                'location' => 'Jalan Anjing No.35',
+                'status' => 'Tersedia'
             ],
             [
+                'nama_event' => 'Bersih-bersih pagi indah di bojongmangu',
+                'image' => 'c6r.jpg',
                 'kabupaten' => 'Bekasi',
                 'kecamatan' => 'Bojongmangu',
                 'date' => 'Senin/27 Mei 2019',
                 'time' => '07.00',
-                'location' => 'Jalan Kura-kura No.35'
+                'location' => 'Jalan Kura-kura No.35',
+                'status' => 'Tidak Tersedia'
             ],
             [
+                'nama_event' => 'Bersih-bersih di bojongmangu',
+                'image' => 'c7r.jpg',
                 'kabupaten' => 'Bogor',
                 'kecamatan' => 'Bojongmangu',
                 'date' => 'Senin/27 Mei 2019',
                 'time' => '07.00',
-                'location' => 'Jalan Kucing Kawin No.35'
+                'location' => 'Jalan Kucing Kawin No.35',
+                'status' => 'Tidak Tersedia'
             ],
             [
+                'nama_event' => 'Bersih-bersih di bogor',
+                'image' => 'c8r.jpg',
                 'kabupaten' => 'Bogor',
                 'kecamatan' => 'Bojongmangu',
                 'date' => 'Senin/27 Mei 2019',
                 'time' => '07.00',
-                'location' => 'Jalan Yayak No.35'
+                'location' => 'Jalan Yayak No.35',
+                'status' => 'Tersedia'
             ],
-            [
-                'kabupaten' => 'Ciamis',
-                'kecamatan' => 'Bojongmangu',
-                'date' => 'Senin/27 Mei 2019',
-                'time' => '07.00',
-                'location' => 'Jalan Intan No.35'
-            ],
-            [
-                'kabupaten' => 'Ciamis',
-                'kecamatan' => 'Bojongmangu',
-                'date' => 'Senin/27 Mei 2019',
-                'time' => '07.00',
-                'location' => 'Jalan Berlian No.35'
-            ],
-            [
-                'kabupaten' => 'Cianjur',
-                'kecamatan' => 'Bojongmangu',
-                'date' => 'Senin/27 Mei 2019',
-                'time' => '07.00',
-                'location' => 'Jalan Pelangi No.35'
-            ],
-            [
-                'kabupaten' => 'Cianjur',
-                'kecamatan' => 'Bojongmangu',
-                'date' => 'Senin/27 Mei 2019',
-                'time' => '07.00',
-                'location' => 'Jalan Arya No.35'
-            ],
+
         ]);
     }
 }

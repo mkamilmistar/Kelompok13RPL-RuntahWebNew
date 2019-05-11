@@ -138,6 +138,11 @@ Volunteer - Runtah WEB
     });
     @endif
 </script>
+<script>
+    @if(Session::has('cancel'))
+    toastr.success("{{Session::get('cancel')}}", "Berhasil!")
+    @endif
+</script>
 @endsection
 
 

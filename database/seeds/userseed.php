@@ -24,6 +24,7 @@ class userseed extends Seeder
                 'alamat' => 'Riau',
                 'nik_pengguna' => '140423485746',
                 'role' => 'volunteer',
+                'point' => 600
             ],
             [
                 'username'            => 'suko',
@@ -36,6 +37,7 @@ class userseed extends Seeder
                 'alamat' => 'Riau',
                 'nik_pengguna' => '140445775746',
                 'role' => 'volunteer',
+                'point' => 300
             ],
             [
                 'username'            => 'osi',
@@ -48,6 +50,7 @@ class userseed extends Seeder
                 'alamat' => 'Riau',
                 'nik_pengguna' => '140423484576',
                 'role' => 'volunteer',
+                'point' => 1500
             ]
         ]);
     }

@@ -34,6 +34,7 @@ Event
                 <table id="example1" class="table table-bordered table-striped">
                     <thead>
                         <tr>
+                            <th>Nama Event</th>
                             <th>Kabupaten</th>
                             <th>Kecamatan</th>
                             <th>Hari/Tanggal</th>
@@ -46,6 +47,7 @@ Event
                     <tbody>
                         @foreach($events as $info)
                         <tr>
+                            <td>{{$info->nama_event}}</td>
                             <td>{{$info->kabupaten}}</td>
                             <td>{{$info->kecamatan}}</td>
                             <td>{{$info->date}}</td>
@@ -74,7 +76,7 @@ Event
             var event_id = $(this).attr('event-id');
             swal({
                     title: "Yakin?",
-                    text: "Ingin dihapus data informasi dengan id " + event_id + "?",
+                    text: "Ingin dihapus data event dengan id " + event_id + "?",
                     icon: "warning",
                     buttons: true,
                     dangerMode: true,
@@ -110,37 +112,44 @@ Event
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Tambah Data Jadwal Sampah Kabupaten Bogor</h5>
+                <h5 class="modal-title" id="exampleModalLabel">Tambah Event Provinsi Jawa Barat</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
             <div class="modal-body">
-                <form action="/admins/information/create" method="POST">
+                <form action="/admins/event/create" method="POST">
                     {{csrf_field()}}
                     <div class="form-group">
-                        <label for="text">Kabupaten</label>
-                        <input name="kabupaten" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Kabupaten">
+                        <label for="nama_event">Nama Event</label>
+                        <input name="nama_event" type="text" class="form-control" id="nama_event" aria-describedby="emailHelp" placeholder="Nama Event">
                     </div>
                     <div class="form-group">
-                        <label for="text">Kecamatan</label>
-                        <input name="kecamatan" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Kecamatan">
+                        <label for="kabupaten">Kabupaten</label>
+                        <input name="kabupaten" type="text" class="form-control" id="kabupaten" aria-describedby="emailHelp" placeholder="Kabupaten">
                     </div>
                     <div class="form-group">
-                        <label for="text">Hari/Tanggal</label>
-                        <input name="date" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Hari/Tanggal">
+                        <label for="kecamatan">Kecamatan</label>
+                        <input name="kecamatan" type="text" class="form-control" id="kecamatan" aria-describedby="emailHelp" placeholder="Kecamatan">
                     </div>
                     <div class="form-group">
-                        <label for="text">Jam</label>
-                        <input name="time" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Jam">
+                        <label for="date">Hari/Tanggal</label>
+                        <input name="date" type="text" class="form-control" id="date" aria-describedby="emailHelp" placeholder="Hari/Tanggal">
                     </div>
+                    <div class="form-group">
+                        <label for="time">Jam</label>
+                        <input name="time" type="text" class="form-control" id="time" aria-describedby="emailHelp" placeholder="Jam">
+                    </div>
+                    <div class="form-group">
+                        <label for="location">Lokasi</label>
+                        <input name="location" type="text" class="form-control" id="location" aria-describedby="emailHelp" placeholder="Lokasi">
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                    </div>
+                </form>
             </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                <button type="submit" class="btn btn-primary">Submit</button>
-            </div>
-            </form>
         </div>
     </div>
-</div>
-@endsection
+    @endsection

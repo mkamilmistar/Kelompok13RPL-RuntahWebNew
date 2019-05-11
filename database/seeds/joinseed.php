@@ -16,7 +16,6 @@ class joinseed extends Seeder
             [
                 'user_id'         => '1',
                 'event_id'         => '1',
-
             ]
         ]);
     }

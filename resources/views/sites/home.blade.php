@@ -60,7 +60,7 @@ Home - Runtah WEB
                     <i class="fa fa-cogs"></i>
                     <h3>Fakta Pencemaran Air</h3>
                     <p>Kualitas air sungai di Indonesia pada umumnya berada pada status tercemar berat.</p>
-                    <a href="#">Read more</a>
+
                 </div>
             </div>
             <!-- /about -->
@@ -72,7 +72,7 @@ Home - Runtah WEB
                     <h3>Fakta Pencemaran Udara</h3>
                     <p>Pencemaran udara besar yang terjadi pada tahun 1952 di London telah menewaskan lebih dari
                         4.000 jiwa.</p>
-                    <a href="#">Read more</a>
+
                 </div>
             </div>
             <!-- /about -->
@@ -84,7 +84,7 @@ Home - Runtah WEB
                     <h3>Fakta Kehutanan</h3>
                     <p>Setiap hari, diperkirakan bahwa 50-100 spesies flora dan fauna akan punah sebagai akibat dari
                         campur tangan manusia</p>
-                    <a href="#">Read more</a>
+
                 </div>
             </div>
             <!-- /about -->
@@ -96,7 +96,7 @@ Home - Runtah WEB
                     <h3>Fakta Perikanan</h3>
                     <p>75% perikanan dunia telah diambil dair perairan. Tidak hanya air, kemungkinan ikan juga akan
                         punah.</p>
-                    <a href="#">Read more</a>
+
                 </div>
             </div>
             <!-- /about -->
@@ -108,7 +108,7 @@ Home - Runtah WEB
                     <h3>Fakta Pencemaran Zat Kimia</h3>
                     <p>Tidak sedikit sumber makanan modern saat ini mengandung zat kimia dan bersifat karsinogenik
                         (penyebab kanker dalam jangka waktu panjang).</p>
-                    <a href="#">Read more</a>
+
                 </div>
             </div>
             <!-- /about -->
@@ -120,7 +120,7 @@ Home - Runtah WEB
                     <h3>Fakta Pencemaran Lingkungan</h3>
                     <p>40.000 jiwa anak-anak meninggal dunia setiap harinya akibat gangguan kesehatan yang
                         diakibatkan oleh pecemaran lingkungan.</p>
-                    <a href="#">Read more</a>
+
                 </div>
             </div>
             <!-- /about -->
@@ -334,7 +334,7 @@ Home - Runtah WEB
             <div class="col-sm-3 col-xs-6">
                 <div class="number">
                     <i class="fa fa-users"></i>
-                    <h3 class="white-text"><span class="counter">451</span></h3>
+                    <h3 class="white-text"><span class="counter">{{$users->count()}}</span></h3>
                     <span class="white-text">Volunteer yang telah mendaftar</span>
                 </div>
             </div>
@@ -344,18 +344,8 @@ Home - Runtah WEB
             <div class="col-sm-3 col-xs-6">
                 <div class="number">
                     <i class="fa fa-trophy"></i>
-                    <h3 class="white-text"><span class="counter">12</span></h3>
-                    <span class="white-text">Awards won</span>
-                </div>
-            </div>
-            <!-- /number -->
-
-            <!-- number -->
-            <div class="col-sm-3 col-xs-6">
-                <div class="number">
-                    <i class="fa fa-coffee"></i>
-                    <h3 class="white-text"><span class="counter">154</span>K</h3>
-                    <span class="white-text">Cups of Coffee</span>
+                    <h3 class="white-text"><span class="counter">{{$point->count()}}</span></h3>
+                    <span class="white-text">Yang telah mendapat reward</span>
                 </div>
             </div>
             <!-- /number -->
@@ -364,8 +354,18 @@ Home - Runtah WEB
             <div class="col-sm-3 col-xs-6">
                 <div class="number">
                     <i class="fa fa-file"></i>
-                    <h3 class="white-text"><span class="counter">45</span></h3>
-                    <span class="white-text">Wilayah yang dikunjungi</span>
+                    <h3 class="white-text"><span class="counter">{{$event->count()}}</span> Event</h3>
+                    <span class="white-text">Volunteer found</span>
+                </div>
+            </div>
+            <!-- /number -->
+
+            <!-- number -->
+            <div class="col-sm-3 col-xs-6">
+                <div class="number">
+                    <i class="fa fa-file"></i>
+                    <h3 class="white-text"><span class="counter">{{$join->count()}}</span></h3>
+                    <span class="white-text">Volunteer yang telah menyelesaikan event</span>
                 </div>
             </div>
             <!-- /number -->
@@ -395,94 +395,21 @@ Home - Runtah WEB
             <!-- /Section header -->
 
             <!-- Work -->
+            @foreach($events as $event)
             <div class="col-md-4 col-xs-6 work">
-                <img class="img-responsive" src="{{asset('sites/img/c-sampah/c1r.jpg')}}" alt="">
+                <img class="img-responsive" src="{{asset('images/'.$event->image)}}" alt="">
                 <div class="overlay"></div>
                 <div class="work-content">
-                    <span>bersih bersih pantai</span>
-                    <h3>Bara 3</h3>
+                    <span>{{$event->nama_event}}</span>
+                    <h3>{{$event->location}}</h3>
                     <div class="work-link">
-                        <a href="#"><i class="fa fa-external-link"></i></a>
-                        <a class="lightbox" href="{{asset('sites/img/c-sampah/c1r.jpg')}}"><i class="fa fa-search"></i></a>
+                        <a href="event/{{$event->id}}"><i class="fa fa-external-link"></i></a>
+                        <a class="lightbox" href="{{asset('images/'.$event->image)}}"><i class="fa fa-search"></i></a>
                     </div>
                 </div>
             </div>
             <!-- /Work -->
-
-            <!-- Work -->
-            <div class="col-md-4 col-xs-6 work">
-                <img class="img-responsive" src="{{asset('sites/img/c-sampah/c8r.jpg')}}" alt="">
-                <div class="overlay"></div>
-                <div class="work-content">
-                    <span>bersihin botol</span>
-                    <h3>Bara 1</h3>
-                    <div class="work-link">
-                        <a href="#"><i class="fa fa-external-link"></i></a>
-                        <a class="lightbox" href="{{asset('sites/img/c-sampah/c8r.jpg')}}"><i class="fa fa-search"></i></a>
-                    </div>
-                </div>
-            </div>
-            <!-- /Work -->
-
-            <!-- Work -->
-            <div class="col-md-4 col-xs-6 work">
-                <img class="img-responsive" src="{{asset('sites/img/c-sampah/c3r.jpg')}}" alt="">
-                <div class="overlay"></div>
-                <div class="work-content">
-                    <span>bersihin lapangan</span>
-                    <h3>bara tengah</h3>
-                    <div class="work-link">
-                        <a href="#"><i class="fa fa-external-link"></i></a>
-                        <a class="lightbox" href="{{asset('sites/img/c-sampah/c3r.jpg')}}"><i class="fa fa-search"></i></a>
-                    </div>
-                </div>
-            </div>
-            <!-- /Work -->
-
-            <!-- Work -->
-            <div class="col-md-4 col-xs-6 work">
-                <img class="img-responsive" src="{{asset('sites/img/c-sampah/c7r.jpg')}}" alt="">
-                <div class="overlay"></div>
-                <div class="work-content">
-                    <span>bersih bersih jalanan</span>
-                    <h3>Babakan Lebak</h3>
-                    <div class="work-link">
-                        <a href="#"><i class="fa fa-external-link"></i></a>
-                        <a class="lightbox" href="{{asset('sites/img/c-sampah/c7r.jpg')}}"><i class="fa fa-search"></i></a>
-                    </div>
-                </div>
-            </div>
-            <!-- /Work -->
-
-            <!-- Work -->
-            <div class="col-md-4 col-xs-6 work">
-                <img class="img-responsive" src="{{asset('sites/img/c-sampah/c6r.jpg')}}" alt="">
-                <div class="overlay"></div>
-                <div class="work-content">
-                    <span>bersih bersih lapangan kincir angin</span>
-                    <h3>Babakan Lio</h3>
-                    <div class="work-link">
-                        <a href="#"><i class="fa fa-external-link"></i></a>
-                        <a class="lightbox" href="{{asset('sites/img/c-sampah/c6r.jpg')}}"><i class="fa fa-search"></i></a>
-                    </div>
-                </div>
-            </div>
-            <!-- /Work -->
-
-            <!-- Work -->
-            <div class="col-md-4 col-xs-6 work">
-                <img class="img-responsive" src="{{asset('sites/img/c-sampah/c2r.jpg')}}" alt="">
-                <div class="overlay"></div>
-                <div class="work-content">
-                    <span>bersih bersih TPA</span>
-                    <h3>Cibanteng</h3>
-                    <div class="work-link">
-                        <a href="#"><i class="fa fa-external-link"></i></a>
-                        <a class="lightbox" href="{{asset('sites/img/c-sampah/c2r.jpg')}}"><i class="fa fa-search"></i></a>
-                    </div>
-                </div>
-            </div>
-            <!-- /Work -->
+            @endforeach
 
         </div>
         <!-- /Row -->

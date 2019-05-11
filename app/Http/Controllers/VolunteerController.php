@@ -17,24 +17,27 @@ class VolunteerController extends Controller
         //dd($information);
         return view('admin.event', compact('events'));
     }
-
+    public function publishevent(Request $request)
+    {
+        $events = new Event;
+        $events->create($request->all());
+        return redirect('/admins/event')->with('sukses', 'Event ditambahkan!');
+    }
     public function editevent($id)
     {
         $events = Event::find($id);
         return view('admin.eventedit', compact('events'));
     }
 
-    public function updateevent($id)
+    public function updateevent(Request $request, $id)
     {
         $events = Event::find($id);
-        $events->update([
-            'kabupaten' => request('kabupaten'),
-            'kecamatan' => request('kecamatan'),
-            'date' => request('date'),
-            'time' => request('time'),
-            'location' => request('location'),
-            'status' => request('status')
-        ]);
+        $events->update($request->all());
+        if ($request->hasFile('image')) {
+            $request->file('image')->move('images/', $request->file('image')->getClientOriginalName());
+            $events->image = $request->file('image')->getClientOriginalName();
+            $events->save();
+        }
         return redirect('/admins/event')->with('sukses', 'Event updated!');
     }
 
@@ -87,10 +90,22 @@ class VolunteerController extends Controller
         return redirect('/volunteer')->with(['point' => 'tambah point']);
     }
 
+    public function cancel($id)
+    {
+        $joins = Join::find($id);
+        $joins->delete();
+        return redirect('/volunteer')->with('cancel', 'Event berhasil dicancel!');
+    }
+
     public function claimreward()
     {
-
         return view('sites.claimreward');
+    }
+
+    public function show($id)
+    {
+        $events = event::find($id);
+        return view('sites.event', compact('events'));
     }
     //END OF SITES
 }

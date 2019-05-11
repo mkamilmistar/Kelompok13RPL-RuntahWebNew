@@ -7,9 +7,9 @@ use App\User;
 
 class Event extends Model
 {
-    protected $table = 'events';
+    protected $table = "events";
     protected $fillable = [
-        'kabupaten', 'kecamatan', 'date', 'time', 'location', 'status'
+        'kabupaten', 'kecamatan', 'date', 'time', 'location', 'status', 'nama_event', 'image'
     ];
 
     public function user()

@@ -37,13 +37,10 @@ Do It Yourself! - Runtah WEB
 <!-- ##### Blog Details Content ##### -->
 <!-- Blog -->
 <div id="service" class="section md-padding">
-
     <!-- Container -->
     <div class="container">
-
         <!-- Row -->
         <div class="row">
-
             <!-- Section header -->
             <div class="section-header text-center">
                 <h2 class="title">Apa sih untungnya jika kita melakukan diy barang bekas?</h2>
@@ -52,7 +49,7 @@ Do It Yourself! - Runtah WEB
 
             <!-- Blog Details Text -->
             @foreach($posts as $post)
-            <div class="section-header text-center">
+            <div class="page-content content">
                 <div class="form-group">
                     <label for="">
                         <h3> {{$post->title}}</h3>

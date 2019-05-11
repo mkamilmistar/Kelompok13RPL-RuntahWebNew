@@ -66,7 +66,7 @@ Volunteer - Runtah WEB
 
                             <td>
                                 <a href="#" class="btn btn-primary join" join-id="{{$join->id}}">Event Selesai</a>
-                                <a href="#" type="button" class="btn btn-danger delete" event-id="{{$join->id}}">Batalkan</a>
+                                <a href="#" type="button" class="btn btn-danger delete cancel" join-id="{{$join->id}}">Batalkan</a>
                             </td>
                         </tr>
                         @endif
@@ -98,6 +98,26 @@ Volunteer - Runtah WEB
                 console.log(willJoin);
                 if (willJoin) {
                     window.location = "/volunteer/" + join_id + "/confirm";
+                } else {
+
+                }
+            });
+    });
+</script>
+<script>
+    $('.cancel').click(function() {
+        var join_id = $(this).attr('join-id');
+        swal({
+                title: "Yakin?",
+                text: "Apakah anda yakin ingin mencancel event ini?",
+                icon: "warning",
+                buttons: true,
+                dangerMode: false,
+            })
+            .then((willCancel) => {
+                console.log(willCancel);
+                if (willCancel) {
+                    window.location = "/volunteer/" + join_id + "/cancel";
                 } else {
 
                 }

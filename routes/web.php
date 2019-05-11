@@ -50,8 +50,12 @@ Route::get('/volunteer', 'VolunteerController@volunteer');
 Route::get('/volunteer/{id}/join', 'VolunteerController@join')->name('join');
 Route::get('/volunteer/{id}/joined', 'VolunteerController@joined')->name('joined');
 Route::get('/volunteer/{id}/confirm', 'VolunteerController@confirm')->name('confirm');
-//hapus middleware checkPoint untuk melihat view
+Route::get('/volunteer/{id}/cancel', 'VolunteerController@cancel')->name('cancel');
+//hapus middleware ->middleware('checkPoint'); untuk melihat view
 Route::get('/volunteer/claimreward', 'VolunteerController@claimreward');
+
+//Route lihat event
+Route::get('/event/{id}', 'VolunteerController@show');
 
 Route::group(['middleware' => ['auth', 'checkRole:admin']], function () {
     Route::get('/admins/index', 'AdminController@index');
