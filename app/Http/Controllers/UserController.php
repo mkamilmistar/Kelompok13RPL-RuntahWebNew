@@ -51,7 +51,7 @@ class UserController extends Controller
         $users->email = $request->input('email');
         $users->save(); //save all
 
-        return redirect('/profile')->with('info', 'Profile updated!');
+        return redirect('/profile')->with('sukses', 'Profile updated!');
     }
 
     public function changepassword()

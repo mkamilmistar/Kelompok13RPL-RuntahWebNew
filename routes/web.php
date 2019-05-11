@@ -47,6 +47,8 @@ Route::get('admins', 'AdminController@admins');
 
 //Route untuk volunteer
 Route::get('/volunteer', 'VolunteerController@volunteer');
+Route::get('/volunteer/{id}/join', 'VolunteerController@join')->name('join');
+Route::get('/volunteer/{id}/joined', 'VolunteerController@joined')->name('joined');
 
 Route::group(['middleware' => ['auth', 'checkRole:admin']], function () {
     Route::get('/admins/index', 'AdminController@index');
@@ -77,6 +79,10 @@ Route::group(['middleware' => ['auth', 'checkRole:admin']], function () {
 
     //untuk event admin
     Route::get('/admins/event', 'VolunteerController@viewevent');
+    Route::post('/admins/event/create', 'VolunteerController@publishevent')->name('event.publish');
+    Route::get('/admins/event/{id}/edit', 'VolunteerController@editevent')->name('event.edit');
+    Route::post('/admins/event/{id}/update', 'VolunteerController@updateevent')->name('event.update');
+    Route::get('/admins/event/{id}/delete', 'VolunteerController@deleteevent')->name('event.delete');
 });
 
 Auth::routes();

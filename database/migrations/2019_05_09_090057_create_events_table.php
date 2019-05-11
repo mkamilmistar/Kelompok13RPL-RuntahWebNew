@@ -20,7 +20,7 @@ class CreateEventsTable extends Migration
             $table->string('date');
             $table->string('time');
             $table->string('location');
-            $table->integer('status')->default(0);
+            $table->string('status')->default("Tersedia");
             $table->timestamps();
         });
     }

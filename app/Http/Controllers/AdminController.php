@@ -4,10 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\User;
-use App\Post;
 use Auth;
-use App\Information;
-use App\Report;
+
 
 
 class AdminController extends Controller

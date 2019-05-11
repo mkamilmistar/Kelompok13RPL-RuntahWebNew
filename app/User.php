@@ -6,7 +6,7 @@ use Illuminate\Notifications\Notifiable;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Console\Scheduling\Event;
+use App\Event;
 
 class User extends Authenticatable  implements MustVerifyEmail
 {
@@ -17,6 +17,7 @@ class User extends Authenticatable  implements MustVerifyEmail
      *
      * @var array
      */
+    protected $table = 'users';
     protected $fillable = [
         'username', 'email', 'password',
         'nama_depan', 'nama_belakang', 'jenis_kelamin',
@@ -50,13 +51,5 @@ class User extends Authenticatable  implements MustVerifyEmail
     public function event()
     {
         return $this->hasMany(Event::class);
-    }
-
-    public function getAvatar()
-    {
-        if ($this->user_image) {
-            return asset('admin/assets/img/default.jpg');
-        }
-        return asset('images/' . $this->user_image);
     }
 }

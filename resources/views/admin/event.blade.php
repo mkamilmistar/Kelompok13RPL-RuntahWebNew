@@ -39,20 +39,22 @@ Event
                             <th>Hari/Tanggal</th>
                             <th>Jam</th>
                             <th>Lokasi</th>
+                            <th>Status</th>
                             <th>Action</th>
                         </tr>
                     </thead>
                     <tbody>
-                        @foreach($event as $info)
+                        @foreach($events as $info)
                         <tr>
                             <td>{{$info->kabupaten}}</td>
                             <td>{{$info->kecamatan}}</td>
                             <td>{{$info->date}}</td>
                             <td>{{$info->time}}</td>
                             <td>{{$info->location}}</td>
+                            <td>{{$info->status}}</td>
                             <td>
-                                <a href="/admins/information/{{$info->id}}/edit" type="button" class="btn btn-warning">Edit</a>
-                                <a href="#" type="button" class="btn btn-danger delete" wilayah-id="{{$info->id}}">Hapus</a>
+                                <a href="/admins/event/{{$info->id}}/edit" type="button" class="btn btn-warning">Edit</a>
+                                <a href="#" type="button" class="btn btn-danger delete" event-id="{{$info->id}}">Hapus</a>
                             </td>
                         </tr>
                         @endforeach
@@ -69,10 +71,10 @@ Event
     <script src="{{asset('admin/assets/bower_components/datatables.net-bs/js/dataTables.bootstrap.min.js')}}"></script>
     <script>
         $('.delete').click(function() {
-            var wilayah_id = $(this).attr('wilayah-id');
+            var event_id = $(this).attr('event-id');
             swal({
                     title: "Yakin?",
-                    text: "Ingin dihapus data informasi dengan id " + wilayah_id + "?",
+                    text: "Ingin dihapus data informasi dengan id " + event_id + "?",
                     icon: "warning",
                     buttons: true,
                     dangerMode: true,
@@ -80,7 +82,7 @@ Event
                 .then((willDelete) => {
                     console.log(willDelete);
                     if (willDelete) {
-                        window.location = "/admins/" + "information/" + wilayah_id + "/delete";
+                        window.location = "/admins/" + "event/" + event_id + "/delete";
                     } else {
 
                     }
