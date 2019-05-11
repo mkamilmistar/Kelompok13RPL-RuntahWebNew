@@ -10,7 +10,7 @@
 
     <!-- Title -->
     <title>@yield('title')</title>
-
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
     <!-- Favicon -->
     <link rel="icon" href="{{asset('/sites')}}/img/core-img/favicon.ico">
     <link rel="stylesheet" href="{{asset('admin/assets/bower_components/datatables.net-bs/css/dataTables.bootstrap.min.css')}}">
@@ -74,6 +74,18 @@
     <script src="{{asset('/sites')}}/js/active.js"></script>
     <!-- CK editor -->
     <script src="{{asset('admin/unisharp/laravel-ckeditor/ckeditor.js')}}"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
+    <script>
+        @if(Session::has('sukses'))
+        // Display a success toast, with a title
+        toastr.success("{{Session::get('sukses')}}", "Sukses")
+        @endif
+    </script>
+
+
     @yield('script')
 </body>
 </body>

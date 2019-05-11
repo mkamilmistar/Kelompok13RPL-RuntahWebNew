@@ -38,17 +38,17 @@ Volunteer - Runtah WEB
                                 </tr>
                             </thead>
                             <tbody>
-                                @foreach($information as $info)
+                                @foreach($events as $info)
                                 <tr>
                                     <td>{{$info->kabupaten}}</td>
                                     <td>{{$info->kecamatan}}</td>
                                     <td>{{$info->date}}</td>
                                     <td>{{$info->time}}</td>
                                     <td>{{$info->location}}</td>
-                                    @if($info->status==0)
-                                    <td><a href="#">Join Event</a></td>
+                                    @if($info->status=="Tersedia")
+                                    <td><a href="#" class="btn clever-btn join" event-id="{{$info->id}}">Join Event</a></td>
                                     @else
-                                    <td><a href="#">Join Event</a></td>
+                                    <td>Event Belum Tersedia</td>
                                     @endif
                                 </tr>
                                 @endforeach
@@ -83,6 +83,26 @@ Volunteer - Runtah WEB
             'autoWidth': false
         })
     })
+</script>
+<script>
+    $('.join').click(function() {
+        var event_id = $(this).attr('event-id');
+        swal({
+                title: "Yakin?",
+                text: "Apakah anda yakin ingin mengikuti event ini?",
+                icon: "info",
+                buttons: true,
+                dangerMode: false,
+            })
+            .then((willJoin) => {
+                console.log(willJoin);
+                if (willJoin) {
+                    window.location = "/volunteer/" + event_id + "/join";
+                } else {
+
+                }
+            });
+    });
 </script>
 @endsection
 
