@@ -2,28 +2,51 @@
 @section('title')
 Volunteer - Runtah WEB
 @endsection
-@section('content')
-<div class="clever-catagory blog-details bg-img d-flex align-items-center justify-content-center p-3 height-400" style="background-image: url({{asset('/sites')}}/img/bg-img/bg0.jpg);">
-    <div class="blog-details-headline">
-        <h3>Ayo Mulai Volunteer</h3>
-        <div class="meta d-flex align-items-center justify-content-center">
-            <a href="#">Iye13</a>
-            <span><i class="fa fa-circle" aria-hidden="true"></i></span>
-            <a href="#">Volunteer &amp; Non-Profit</a>
+@section('header')
+<!-- Background Image -->
+<div class="bg-img" style="background-image: url({{asset('sites/img/b-volunteer/b2.jpg')}});">
+    <div class="overlay"></div>
+</div>
+<!-- /Background Image -->
+<!-- home wrapper -->
+<div class="home-wrapper">
+    <div class="container">
+        <div class="row">
+
+            <!-- home content -->
+            <div class="col-md-10 col-md-offset-1">
+                <div class="home-content">
+                    <h2 class="white-text">Yuk, jadi bagian dari penyelamat dunia!</h2>
+                    <p class="white-text">
+                        <i>Volunteer Runtah solusinya!</i>
+                    </p>
+                </div>
+            </div>
+            <!-- /home content -->
+
         </div>
     </div>
 </div>
-<div class="blog-details-content section-padding-80">
+<!-- /home wrapper -->
+<!-- /home wrapper -->
+@endsection
+@section('content')
+<div id="service" class="section md-padding">
+
+    <!-- Container -->
     <div class="container">
-        <div class="row justify-content-center">
-            <div class="col-12 col-lg-8">
-                <div class="box">
-                    <div class="box-header">
-                        <br>
-                        <h3 class="box-title">Data Event Volunteer Provinsi Jawa Barat</h3>
-                        <br>
-                    </div>
-                    <!-- box -->
+
+        <!-- Row -->
+        <div class="row">
+
+            <!-- Section header -->
+            <div class="section-header text-center">
+                <h2 class="title">Jadwal Volunteer Provinsi Jawa Barat</h2>
+            </div>
+            <!-- /Section header -->
+            <!-- box -->
+            <main id="main" class="col-md-12">
+                <div class="col-12 col-lg-12">
                     <div class="box-body">
                         <table id="example1" class="table table-bordered table-striped">
                             <thead>
@@ -46,7 +69,7 @@ Volunteer - Runtah WEB
                                     <td>{{$info->time}}</td>
                                     <td>{{$info->location}}</td>
                                     @if($info->status=="Tersedia")
-                                    <td><a href="#" class="btn clever-btn join" event-id="{{$info->id}}">Join Event</a></td>
+                                    <td><a href="#" class="main-btn join" event-id="{{$info->id}}">Join Event</a></td>
                                     @else
                                     <td>Event Belum Tersedia</td>
                                     @endif
@@ -61,9 +84,10 @@ Volunteer - Runtah WEB
                     <!-- /.box-body -->
                 </div>
                 <!-- /.box -->
-            </div>
+            </main>
         </div>
     </div>
+</div>
 </div>
 
 

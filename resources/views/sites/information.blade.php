@@ -2,59 +2,78 @@
 @section('title')
 Information - Runtah WEB
 @endsection
-@section('content')
-<div class="clever-catagory blog-details bg-img d-flex align-items-center justify-content-center p-3 height-400" style="background-image: url({{asset('/sites')}}/img/bg-img/bg0.jpg);">
-    <div class="blog-details-headline">
-        <h3>Tabel Data Informasi Sampah</h3>
-        <div class="meta d-flex align-items-center justify-content-center">
-            <a href="#">Iye13</a>
-            <span><i class="fa fa-circle" aria-hidden="true"></i></span>
-            <a href="#">Volunteer &amp; Non-Profit</a>
+@section('header')
+<!-- Background Image -->
+<div class="bg-img" style="background-image: url({{asset('sites/img/c-sampah/c4.jpg')}});">
+    <div class="overlay"></div>
+</div>
+<!-- /Background Image -->
+<!-- home wrapper -->
+<div class="home-wrapper">
+    <div class="container">
+        <div class="row">
+            <!-- home content -->
+            <div class="col-md-10 col-md-offset-1">
+                <div class="home-content">
+                    <h2 class="white-text">Informasi Pengangkutan Sampah di Daerah Mu</h2>
+                    <p class="white-text">
+                        <i>Stop! Sampahmu sudah dibuang belum? Cek jadwal pengangkutan sampah daerahmu
+                            disini!</i>
+                    </p>
+                </div>
+            </div>
+            <!-- /home content -->
+
         </div>
     </div>
 </div>
-<div class="blog-details-content section-padding-100">
+<!-- /home wrapper -->
+@endsection
+@section('content')
+<!-- Service -->
+<div id="service" class="section md-padding">
+
+    <!-- Container -->
     <div class="container">
-        <div class="row justify-content-center">
-            <div class="col-12 col-lg-8">
-                <div class="box">
-                    <div class="box-header">
-                        <h3 class="box-title">Data Pengangkatan Sampah Provinsi Jawa Barat</h3>
-                    </div>
-                    <!-- box -->
-                    <div class="row justify-content-center">
-                        <div class="col-12 col-lg-8">
-                            <div class="box-body">
-                                <table id="example1" class="table table-bordered table-striped">
-                                    <thead>
-                                        <tr>
-                                            <th>Kabupaten</th>
-                                            <th>Kecamatan</th>
-                                            <th>Hari/Tanggal</th>
-                                            <th>Jam</th>
 
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        @foreach($information as $info)
-                                        <tr>
-                                            <td>{{$info->kabupaten}}</td>
-                                            <td>{{$info->kecamatan}}</td>
-                                            <td>{{$info->date}}</td>
-                                            <td>{{$info->time}}</td>
+        <!-- Row -->
+        <div class="row">
 
-                                        </tr>
-                                        @endforeach
-                                    </tbody>
-
-                                </table>
-                            </div>
-                            <!-- /.box-body -->
-                        </div>
-                        <!-- /.box -->
-                    </div>
-                </div>
+            <!-- Section header -->
+            <div class="section-header text-center">
+                <h2 class="title">Data Pengangkutan Sampah Provinsi Jawa Barat</h2>
             </div>
+            <!-- /Section header -->
+            <!-- box -->
+            <main id="main" class="col-md-12">
+                <div class="col-12 col-lg-12">
+                    <div class="box-body">
+                        <table id="example1" class="table table-bordered table-striped">
+                            <thead>
+                                <tr>
+                                    <th>Kabupaten</th>
+                                    <th>Kecamatan</th>
+                                    <th>Hari/Tanggal</th>
+                                    <th>Jam</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach($information as $info)
+                                <tr>
+                                    <td>{{$info->kabupaten}}</td>
+                                    <td>{{$info->kecamatan}}</td>
+                                    <td>{{$info->date}}</td>
+                                    <td>{{$info->time}}</td>
+                                </tr>
+                                @endforeach
+                            </tbody>
+
+                        </table>
+                    </div>
+                    <!-- /.box-body -->
+                </div>
+                <!-- /.box -->
+            </main>
         </div>
     </div>
 </div>
