@@ -22,10 +22,18 @@ Postingan Do It Yourself! Admin
                             <label for="">Title</label>
                             <input type="text" value="{{$posts->title}}" class="form-control" name="title" placeholder="Post Title">
                         </div>
-
+                        <div class="form-group">
+                            <label for="image">Foto Postingan</label>
+                            <img src="{{asset('images/post/'.$posts->image)}}" class="img-circle" style="width:200px;height:200px;object-fit: cover;border-radius:8px" alt="image">
+                            <input type="file" name="image" id="image" class="form-control">
+                        </div>
                         <div class="form-group">
                             <label for="">Content</label>
                             <textarea class="form-control" name="content" rows="5" placeholder="Post Title">{!!$posts->content!!}</textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="link">Link Video</label>
+                            <input type="text" value="{{$posts->linkvideo}}" id="link" class="form-control" name="linkvideo" placeholder="Post video">
                         </div>
                         <div class="form-group">
                             <input type="submit" value="Save" class="btn btn-primary">

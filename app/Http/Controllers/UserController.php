@@ -37,7 +37,7 @@ class UserController extends Controller
 
         //buat upload gambar
         if ($request->hasFile('user_image')) {
-            $request->file('user_image')->move('images/', $request->file('user_image')->getClientOriginalName());
+            $request->file('user_image')->move('images/user', $request->file('user_image')->getClientOriginalName());
             $users->user_image = $request->file('user_image')->getClientOriginalName();
         }
 

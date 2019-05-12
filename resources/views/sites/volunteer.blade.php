@@ -51,6 +51,7 @@ Volunteer - Runtah WEB
                         <table id="example1" class="table table-bordered table-striped">
                             <thead>
                                 <tr>
+                                    <th>Nama Event</th>
                                     <th>Kabupaten</th>
                                     <th>Kecamatan</th>
                                     <th>Hari/Tanggal</th>
@@ -63,6 +64,7 @@ Volunteer - Runtah WEB
                             <tbody>
                                 @foreach($events as $info)
                                 <tr>
+                                    <td><a href="/event/{{$info->id}}" target="_blank"> {{$info->nama_event}}</a></td>
                                     <td>{{$info->kabupaten}}</td>
                                     <td>{{$info->kecamatan}}</td>
                                     <td>{{$info->date}}</td>

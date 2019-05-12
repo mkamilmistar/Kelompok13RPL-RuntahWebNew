@@ -44,15 +44,15 @@ My Profile - Runtah WEB
         </div>
         <div class="contact--info inner ">
             <div class="row justify-content-center">
-                <img src="{{asset('images/'.$users->user_image)}}" class="img-circle" style="width:300px;height:300px;object-fit: cover;border-radius:8px" alt="Avatar">
+                <img src="{{asset('images/user/'.$users->user_image)}}" class="img-circle" style="width:300px;height:300px;object-fit: cover;border-radius:8px" alt="Avatar">
             </div>
             <div class="profile-stat">
                 <div class="row justify-content-center">
                     <div class="row justify-content-center">
                         @if($users->point==0)
-                        <span> Belum Ada Points</span>
+                        <span> Belum Ada Point</span>
                         @else
-                        <span> {{$users->point }} Points</span>
+                        <span> {{$users->point }} Point</span>
                         @endif
                     </div>
                 </div>
@@ -60,7 +60,7 @@ My Profile - Runtah WEB
                     @if($users->point==500)
                     <a href="/volunteer/claimreward" class="main-btn">Claim Reward</a>
                     @else
-                    <a href="#" class="main-btn">Point Belum Cukup</a>
+                    <a href="#" class="main-btn kosong">Point Belum Cukup</a>
                     @endif
                 </div>
                 <br>
@@ -168,4 +168,11 @@ My Profile - Runtah WEB
 </div>
 </div>
 <!-- ##### Regular Page Area End ##### -->
+@section('script')
+<script>
+    $('.kosong').click(function() {
+        swal("Pointmu belum cukup!", "Lakukan lebih banyak event dan dapatkan reward menarik!");
+    });
+</script>
+@endsection
 @stop

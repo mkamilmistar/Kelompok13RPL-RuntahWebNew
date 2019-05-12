@@ -33,7 +33,7 @@ Volunteer
                     @foreach($report as $adu)
                     <tbody>
                         <tr>
-                            <td>{{App\User::find($adu->id)->username}}</td>
+                            <td>{{App\User::find($adu->report_id)->username}}</td>
                             <td>{{$adu -> report}}</td>
                             <td>
                                 <a href="#" type="button" class="btn btn-danger delete" report-id="{{$adu->id}}">Hapus</a>

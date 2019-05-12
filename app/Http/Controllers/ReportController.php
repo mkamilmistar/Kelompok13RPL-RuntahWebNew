@@ -19,7 +19,7 @@ class ReportController extends Controller
         $report->report = $request->input('report');
         $report->save();
 
-        return redirect('/');
+        return redirect('/')->with('sukses', 'Report berhasil dikirimkan!');
     }
 
     public function viewreport(Request $request)
@@ -33,6 +33,6 @@ class ReportController extends Controller
     {
         $wilayah = Report::find($id);
         $wilayah->delete();
-        return redirect('/admins/report')->with('sukses', 'Report berhasil dihapus');
+        return redirect('/admins/report')->with('sukses', 'Report berhasil dihapus!');
     }
 }

@@ -93,4 +93,4 @@ Route::group(['middleware' => ['auth', 'checkRole:admin']], function () {
 });
 
 Auth::routes();
-Route::get('/home', 'HomeController@index')->name('home');
+//Route::get('/home', 'HomeController@index')->name('home');

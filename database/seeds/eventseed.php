@@ -18,7 +18,7 @@ class eventseed extends Seeder
                 'image' => 'c1r.jpg',
                 'kabupaten' => 'Bandung',
                 'kecamatan' => 'Arjasari',
-                'date' => 'Senin/27 Mei 2019',
+                'date' => '2019-12-31',
                 'time' => '07.00',
                 'location' => 'Jalan Pajajaran No.35',
                 'status' => 'Tersedia'
@@ -28,7 +28,7 @@ class eventseed extends Seeder
                 'image' => 'c2r.jpg',
                 'kabupaten' => 'Bandung',
                 'kecamatan' => 'Baleendah',
-                'date' => 'Senin/27 Mei 2019',
+                'date' => '2019-12-31',
                 'time' => '07.00',
                 'location' => 'Jalan Gajah Mada No.4',
                 'status' => 'Tersedia'
@@ -38,7 +38,7 @@ class eventseed extends Seeder
                 'image' => 'c3r.jpg',
                 'kabupaten' => 'Bandung Barat',
                 'kecamatan' => 'Batujajar',
-                'date' => 'Senin/27 Mei 2019',
+                'date' => '2019-12-31',
                 'time' => '07.00',
                 'location' => 'Jalan Imam Bonjol No.35',
                 'status' => 'Tidak Tersedia'
@@ -49,7 +49,7 @@ class eventseed extends Seeder
                 'image' => 'c4r.jpg',
                 'kabupaten' => 'Bandung Barat',
                 'kecamatan' => 'Cihampelas',
-                'date' => 'Senin/27 Mei 2019',
+                'date' => '2019-12-31',
                 'time' => '07.00',
                 'location' => 'Jalan Kucing No.35',
                 'status' => 'Tersedia'
@@ -59,7 +59,7 @@ class eventseed extends Seeder
                 'image' => 'c5r.jpg',
                 'kabupaten' => 'Bekasi',
                 'kecamatan' => 'Babelan',
-                'date' => 'Senin/27 Mei 2019',
+                'date' => '2019-12-31',
                 'time' => '07.00',
                 'location' => 'Jalan Anjing No.35',
                 'status' => 'Tersedia'
@@ -69,7 +69,7 @@ class eventseed extends Seeder
                 'image' => 'c6r.jpg',
                 'kabupaten' => 'Bekasi',
                 'kecamatan' => 'Bojongmangu',
-                'date' => 'Senin/27 Mei 2019',
+                'date' => '2019-12-31',
                 'time' => '07.00',
                 'location' => 'Jalan Kura-kura No.35',
                 'status' => 'Tidak Tersedia'
@@ -79,7 +79,7 @@ class eventseed extends Seeder
                 'image' => 'c7r.jpg',
                 'kabupaten' => 'Bogor',
                 'kecamatan' => 'Bojongmangu',
-                'date' => 'Senin/27 Mei 2019',
+                'date' => '2019-12-31',
                 'time' => '07.00',
                 'location' => 'Jalan Kucing Kawin No.35',
                 'status' => 'Tidak Tersedia'
@@ -89,7 +89,7 @@ class eventseed extends Seeder
                 'image' => 'c8r.jpg',
                 'kabupaten' => 'Bogor',
                 'kecamatan' => 'Bojongmangu',
-                'date' => 'Senin/27 Mei 2019',
+                'date' => '2019-12-31',
                 'time' => '07.00',
                 'location' => 'Jalan Yayak No.35',
                 'status' => 'Tersedia'

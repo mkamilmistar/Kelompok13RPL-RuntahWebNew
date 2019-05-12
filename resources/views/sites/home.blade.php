@@ -244,67 +244,25 @@ Home - Runtah WEB
             <!-- /Section header -->
 
             <!-- blog -->
+            @foreach($posts as $post)
             <div class="col-md-4">
                 <div class="blog">
                     <div class="blog-img">
-                        <img class="img-responsive" src="{{asset('sites/img/blog1.jpg')}}" alt="">
+                        <img class="img-responsive" src="{{asset('images/post/'.$post->image)}}" alt="">
                     </div>
                     <div class="blog-content">
                         <ul class="blog-meta">
-                            <li><i class="fa fa-user"></i>John doe</li>
-                            <li><i class="fa fa-clock-o"></i>18 Oct</li>
-                            <li><i class="fa fa-comments"></i>57</li>
+                            <li><i class="fa fa-user"></i>{{App\User::find($post->post_id)->username}}</li>
+                            <li><i class="fa fa-clock-o"></i>{{$post->created_at->format('d, M Y')}}</li>
                         </ul>
-                        <h3>Molestie at elementum eu facilisis sed odio</h3>
-                        <p>Nec feugiat nisl pretium fusce id velit ut tortor pretium. Nisl purus in mollis nunc sed.
-                            Nunc non blandit massa enim nec.</p>
-                        <a href="blog-single.html">Read more</a>
+                        <h3>{{$post->title}}</h3>
+                        <p>{!!$post->content!!}</p>
+                        <a href="/diy">Read more</a>
                     </div>
                 </div>
             </div>
             <!-- /blog -->
-
-            <!-- blog -->
-            <div class="col-md-4">
-                <div class="blog">
-                    <div class="blog-img">
-                        <img class="img-responsive" src="{{asset('sites/img/blog2.jpg')}}" alt="">
-                    </div>
-                    <div class="blog-content">
-                        <ul class="blog-meta">
-                            <li><i class="fa fa-user"></i>John doe</li>
-                            <li><i class="fa fa-clock-o"></i>18 Oct</li>
-                            <li><i class="fa fa-comments"></i>57</li>
-                        </ul>
-                        <h3>Molestie at elementum eu facilisis sed odio</h3>
-                        <p>Nec feugiat nisl pretium fusce id velit ut tortor pretium. Nisl purus in mollis nunc sed.
-                            Nunc non blandit massa enim nec.</p>
-                        <a href="blog-single.html">Read more</a>
-                    </div>
-                </div>
-            </div>
-            <!-- /blog -->
-
-            <!-- blog -->
-            <div class="col-md-4">
-                <div class="blog">
-                    <div class="blog-img">
-                        <img class="img-responsive" src="{{asset('sites/img/blog3.jpg')}}" alt="">
-                    </div>
-                    <div class="blog-content">
-                        <ul class="blog-meta">
-                            <li><i class="fa fa-user"></i>John doe</li>
-                            <li><i class="fa fa-clock-o"></i>18 Oct</li>
-                            <li><i class="fa fa-comments"></i>57</li>
-                        </ul>
-                        <h3>Molestie at elementum eu facilisis sed odio</h3>
-                        <p>Nec feugiat nisl pretium fusce id velit ut tortor pretium. Nisl purus in mollis nunc sed.
-                            Nunc non blandit massa enim nec.</p>
-                        <a href="blog-single.html">Read more</a>
-                    </div>
-                </div>
-            </div>
-            <!-- /blog -->
+            @endforeach
 
         </div>
         <!-- /Row -->
@@ -397,14 +355,14 @@ Home - Runtah WEB
             <!-- Work -->
             @foreach($events as $event)
             <div class="col-md-4 col-xs-6 work">
-                <img class="img-responsive" src="{{asset('images/'.$event->image)}}" alt="">
+                <img class="img-responsive" src="{{asset('images/event/'.$event->image)}}" alt="">
                 <div class="overlay"></div>
                 <div class="work-content">
                     <span>{{$event->nama_event}}</span>
                     <h3>{{$event->location}}</h3>
                     <div class="work-link">
                         <a href="event/{{$event->id}}"><i class="fa fa-external-link"></i></a>
-                        <a class="lightbox" href="{{asset('images/'.$event->image)}}"><i class="fa fa-search"></i></a>
+                        <a class="lightbox" href="{{asset('images/event/'.$event->image)}}"><i class="fa fa-search"></i></a>
                     </div>
                 </div>
             </div>

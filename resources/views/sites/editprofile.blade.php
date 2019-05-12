@@ -90,7 +90,7 @@ Edit Profile - Runtah WEB
 
                     <li>
                         <h6><i class="fa fa-phone" aria-hidden="true"></i><label for="nomor_telepon">Phone<font color="red">*</h6>
-                        <h6><input type="text" class="form-control" required name="nomor_telepon" value="{{$users->nomor_telepon}}"></h6>
+                        <h6><input type="tel" pattern="[0-9]{4}-[0-9]{3}-[0-9]{4}" minlength="10" maxlength="12" title="Ten digits code" placeholder="0822 8377 7098" class="form-control" required name="nomor_telepon" value="{{$users->nomor_telepon}}"></h6>
                     </li>
 
                     <li>

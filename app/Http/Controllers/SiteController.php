@@ -10,6 +10,7 @@ use App\Report;
 use App\event;
 use Auth;
 use App\Join;
+use App\Post;
 
 class SiteController extends Controller
 {
@@ -21,8 +22,9 @@ class SiteController extends Controller
         $point = User::where('point', '>=', 500);
         $event = Event::all();
         $join = Join::where('status', 'Selesai');
+        $posts = Post::all()->take(3);
         //dd($information);
-        return view('sites.home', compact('events', 'users', 'point', 'event', 'join'));
+        return view('sites.home', compact('events', 'users', 'point', 'event', 'join', 'posts'));
     }
 
     public function profile(Request $request)

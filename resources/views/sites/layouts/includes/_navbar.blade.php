@@ -55,7 +55,7 @@
             @endif
             @if(Auth::guest())
             <li><a href="#">|</a></li>
-            <li><a href="/regiser">Register</a></li>
+            <li><a href="/register">Register</a></li>
             <li><a href="/login">Login</a></li>
             @else
             <li class="has-dropdown"><a href="#">{{auth()->user()->username}}</a>

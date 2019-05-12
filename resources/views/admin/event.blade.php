@@ -47,10 +47,10 @@ Event
                     <tbody>
                         @foreach($events as $info)
                         <tr>
-                            <td>{{$info->nama_event}}</td>
+                            <td><a href="/event/{{$info->id}}" target="_blank"> {{$info->nama_event}}</a></td>
                             <td>{{$info->kabupaten}}</td>
                             <td>{{$info->kecamatan}}</td>
-                            <td>{{$info->date}}</td>
+                            <td>{{ date('l, d M Y', strtotime($info->date)) }}</td>
                             <td>{{$info->time}}</td>
                             <td>{{$info->location}}</td>
                             <td>{{$info->status}}</td>
@@ -118,7 +118,7 @@ Event
                 </button>
             </div>
             <div class="modal-body">
-                <form action="/admins/event/create" method="POST">
+                <form action="/admins/event/create" method="POST" enctype="multipart/form-data">
                     {{csrf_field()}}
                     <div class="form-group">
                         <label for="nama_event">Nama Event</label>
@@ -126,23 +126,34 @@ Event
                     </div>
                     <div class="form-group">
                         <label for="kabupaten">Kabupaten</label>
-                        <input name="kabupaten" type="text" class="form-control" id="kabupaten" aria-describedby="emailHelp" placeholder="Kabupaten">
+                        <input name="kabupaten" type="text" class="form-control" id="kabupaten" aria-describedby="emailHelp" placeholder="Bogor">
                     </div>
                     <div class="form-group">
                         <label for="kecamatan">Kecamatan</label>
-                        <input name="kecamatan" type="text" class="form-control" id="kecamatan" aria-describedby="emailHelp" placeholder="Kecamatan">
+                        <input name="kecamatan" type="text" class="form-control" id="kecamatan" aria-describedby="emailHelp" placeholder="Dramaga">
                     </div>
                     <div class="form-group">
                         <label for="date">Hari/Tanggal</label>
-                        <input name="date" type="text" class="form-control" id="date" aria-describedby="emailHelp" placeholder="Hari/Tanggal">
+                        <input name="date" type="date" class="form-control" id="date" aria-describedby="emailHelp" placeholder="Sun, 24 Mei 2018">
                     </div>
                     <div class="form-group">
                         <label for="time">Jam</label>
-                        <input name="time" type="text" class="form-control" id="time" aria-describedby="emailHelp" placeholder="Jam">
+                        <input name="time" type="datetime" class="form-control" id="time" aria-describedby="emailHelp" placeholder="16.00">
                     </div>
                     <div class="form-group">
                         <label for="location">Lokasi</label>
-                        <input name="location" type="text" class="form-control" id="location" aria-describedby="emailHelp" placeholder="Lokasi">
+                        <input name="location" type="text" class="form-control" id="location" aria-describedby="emailHelp" placeholder="Jl. Pajajaran No.35">
+                    </div>
+                    <div class="form-group">
+                        <label for="Select">Jenis Kelamin</label>
+                        <select name="status" class="form-control" id="Select">
+                            <option value="Tersedia">Tersedia</option>
+                            <option value="Tidak Tersedia">Tidak Tersedia</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="image">Photo Event</label>
+                        <input type="file" name="image" id="image" class="form-control">
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>

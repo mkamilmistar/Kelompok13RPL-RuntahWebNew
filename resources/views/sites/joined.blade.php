@@ -109,7 +109,7 @@ Volunteer - Runtah WEB
         var join_id = $(this).attr('join-id');
         swal({
                 title: "Yakin?",
-                text: "Apakah anda yakin ingin mencancel event ini?",
+                text: "Apakah anda yakin ingin membatalkan event ini?",
                 icon: "warning",
                 buttons: true,
                 dangerMode: false,

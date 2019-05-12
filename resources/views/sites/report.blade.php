@@ -65,4 +65,12 @@ Report - Runtah WEB
         </div>
     </div>
 </div>
+@section('script')
+<script>
+    @if(Session::has('sukses'))
+    toastr.success("{{Session::get('sukses')}}", "Berhasil!")
+    @endif
+</script>
+
+@endsection
 @endsection

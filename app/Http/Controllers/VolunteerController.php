@@ -19,8 +19,34 @@ class VolunteerController extends Controller
     }
     public function publishevent(Request $request)
     {
-        $events = new Event;
-        $events->create($request->all());
+        $this->validate($request, [
+            'nama_event' => 'required',
+            'kabupaten' => 'required',
+            'kecamatan' => 'required',
+            'date' => 'required',
+            'time' => 'required',
+            'location' => 'required',
+            'status' => 'required',
+            'image' => 'required|file|image|mimes:jpeg,png,jpg|max:2048'
+        ]);
+
+        $events = new Event();
+        $events->nama_event = $request->input('nama_event');
+        $events->kabupaten = $request->input('kabupaten');
+        $events->kecamatan = $request->input('kecamatan');
+        $events->date = $request->input('date');
+        $events->time = $request->input('time');
+        $events->location = $request->input('location');
+        $events->status = $request->input('status');
+        if ($request->hasFile('image')) {
+            $request->file('image')->move('images/event/', $request->file('image')->getClientOriginalName());
+            $events->image = $request->file('image')->getClientOriginalName();
+        } else {
+            return $request;
+            $events->image = 'default.jpg';
+        }
+        $events->save();
+        //dd($events);
         return redirect('/admins/event')->with('sukses', 'Event ditambahkan!');
     }
     public function editevent($id)
@@ -31,6 +57,7 @@ class VolunteerController extends Controller
 
     public function updateevent(Request $request, $id)
     {
+
         $events = Event::find($id);
         $events->update($request->all());
         if ($request->hasFile('image')) {

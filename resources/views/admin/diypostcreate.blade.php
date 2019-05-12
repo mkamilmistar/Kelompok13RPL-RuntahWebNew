@@ -19,18 +19,24 @@ Postingan Do It Yourself! Admin
                 <!-- /.box-header -->
                 <div class="box-body">
                     <div class="box-group" id="accordion">
-                        <form action="{{ route('post.publish') }}" class="class" method="post">
+                        <form action="{{ route('post.publish') }}" class="class" method="post" enctype="multipart/form-data">
                             {{csrf_field()}}
                             <div class="form-group">
-                                <label for="">Title</label>
-                                <input type="text" class="form-control" name="title" placeholder="Post Title">
+                                <label for="title">Title</label>
+                                <input type="text" id="title" class="form-control" name="title" placeholder="Post Title">
                             </div>
-
                             <div class="form-group">
-                                <label for="">Content</label>
-                                <textarea class="form-control" name="content" rows="5" placeholder="Post Content"> </textarea>
+                                <label for="image">Foto Postingan</label>
+                                <input type="file" name="image" id="image" class="form-control">
                             </div>
-
+                            <div class="form-group">
+                                <label for="content">Content</label>
+                                <textarea class="form-control" name="content" id="content" rows="5" placeholder="Post Content"> </textarea>
+                            </div>
+                            <div class="form-group">
+                                <label for="link">Link Video</label>
+                                <input type="text" id="link" class="form-control" name="linkvideo" placeholder="Post video">
+                            </div>
                             <div class="form-group">
                                 <input type="submit" value="Publish" class="btn btn-primary">
                             </div>
@@ -48,7 +54,13 @@ Postingan Do It Yourself! Admin
 </section>
 
 @endsection
-
+@section('script')
+<script>
+    @if(Session::has('sukses'))
+    toastr.success("{{Session::get('sukses')}}", "Berhasil!")
+    @endif
+</script>
+@endsection
 @section('js')
 <script>
     CKEDITOR.replace('content');

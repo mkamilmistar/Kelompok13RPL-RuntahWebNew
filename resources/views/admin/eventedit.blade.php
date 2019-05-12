@@ -37,7 +37,7 @@ Edit
                                 </div>
                                 <div class="form-group">
                                     <label for="date">Hari/Tanggal</label>
-                                    <input name="date" value="{{$events->date}}" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Hari/Tanggal">
+                                    <input name="date" value="{{$events->date}}" type="date" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Hari/Tanggal">
                                 </div>
                                 <div class="form-group">
                                     <label for="time">Jam</label>
@@ -48,9 +48,9 @@ Edit
                                     <input name="location" value="{{$events->location}}" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Lokasi">
                                 </div>
                                 <div class="form-group">
-                                    <label for="text">Photo Event</label>
+                                    <label for="img">Photo Event</label>
                                     <br>
-                                    <img src="{{asset('images/'.$events->image)}}" class="img-circle" style="width:300px;height:300px;object-fit: cover;border-radius:8px" alt="event_image">
+                                    <img src="{{asset('images/event/'.$events->image)}}" class="img-circle" style="width:300px;height:300px;object-fit: cover;border-radius:8px" alt="image">
                                     <input type="file" name="image" id="img" onchange="PreviewImage();">
                                 </div>
                                 <div class="form-group">

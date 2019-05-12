@@ -19,7 +19,7 @@ class CreateEventsTable extends Migration
             $table->string('image')->default('default.jpg');
             $table->string('kabupaten');
             $table->string('kecamatan');
-            $table->string('date');
+            $table->date('date')->useCurrent = true;
             $table->string('time');
             $table->string('location');
             $table->string('status')->default("Tersedia");

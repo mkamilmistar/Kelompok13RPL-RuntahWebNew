@@ -33,6 +33,11 @@ class DIYController extends Controller
         $post->post_id = Auth::user()->id;
         $post->title = $request->input('title');
         $post->content = $request->input('content');
+        $post->linkvideo = $request->input('linkvideo');
+        if ($request->hasFile('image')) {
+            $request->file('image')->move('images/post/', $request->file('image')->getClientOriginalName());
+            $post->image = $request->file('image')->getClientOriginalName();
+        }
         $post->save();
 
         return redirect('/admins/diypost')->with('sukses', 'DIY Posted!');

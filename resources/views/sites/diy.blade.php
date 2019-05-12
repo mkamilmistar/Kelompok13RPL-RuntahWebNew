@@ -57,7 +57,12 @@ Do It Yourself! - Runtah WEB
                 </div>
                 <div class="form-group">
                     <label for="">
-                        <p>{!!$post->content!!}</p>
+
+                    </label>
+                </div>
+                <div class="form-group">
+                    <label for="">
+                        <p>{!!$post->content!!}
                     </label>
                 </div>
                 @if(Auth::guest())

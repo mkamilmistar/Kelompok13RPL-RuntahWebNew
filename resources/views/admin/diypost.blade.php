@@ -28,9 +28,12 @@ Postingan Do It Yourself! Admin
                         </div>
                         <div id="collapseOne" class="panel-collapse collapse in">
                             <div class="box-body">
+                                <img src="{{asset('images/post/'.$post->image)}}" class="img-circle" style="width:300px;height:300px;object-fit: cover;border-radius:8px" alt="image">
+                                <br>
                                 {!!$post->content!!}
                             </div>
                         </div>
+
                         <div id="collapseOne" class="panel-collapse collapse in">
                             <div class="box-body">
                                 <div class="col-md-6">
