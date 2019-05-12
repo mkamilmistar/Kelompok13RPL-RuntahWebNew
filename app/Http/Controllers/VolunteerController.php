@@ -10,6 +10,11 @@ use App\User;
 
 class VolunteerController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware(['auth', 'verified']);
+    }
+
     //START OF ADMIN
     public function viewevent()
     {

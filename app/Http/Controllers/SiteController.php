@@ -14,6 +14,7 @@ use App\Post;
 
 class SiteController extends Controller
 {
+
     public function home()
     {
 

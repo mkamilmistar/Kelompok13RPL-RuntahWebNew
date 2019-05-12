@@ -93,5 +93,9 @@ Route::group(['middleware' => ['auth', 'checkRole:admin']], function () {
     Route::get('/admins/event/{id}/delete', 'VolunteerController@deleteevent')->name('event.delete');
 });
 
-Auth::routes();
+//verifikasi email
+Auth::routes(['verify' => true]);
+
+Route::get('/verif', 'Auth\AuthController@verif');
+Route::get('/verifconfirm', 'Auth\AuthController@confirm');
 //Route::get('/home', 'HomeController@index')->name('home');

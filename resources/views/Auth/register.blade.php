@@ -14,18 +14,33 @@ RuntahWeb | Register
             <p class="login-box-msg">Register a new volunteer </p>
 
             <form action="{{ route('register') }}" method="post">
-                {{csrf_field()}}
+                @csrf
                 <div class="form-group has-feedback">
                     <input required type="text" id="username" value="{{ old('username') }}" class="form-control" placeholder="Username" name="username" required autocomplete="username">
                     <span class="glyphicon glyphicon-user form-control-feedback"></span>
+                    @error('username')
+                    <span class="invalid-feedback" role="alert">
+                        <strong>{{ $message }}</strong>
+                    </span>
+                    @enderror
                 </div>
                 <div class="form-group has-feedback">
                     <input required type="email" id="email" value="{{ old('email') }}" class="form-control" placeholder="Email" name="email" required autocomplete="email">
                     <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
+                    @error('email')
+                    <span class="invalid-feedback" role="alert">
+                        <strong>{{ $message }}</strong>
+                    </span>
+                    @enderror
                 </div>
                 <div class="form-group has-feedback">
                     <input required type="password" id="password" class="form-control" placeholder="Password" name="password" required autocomplete="new-password">
                     <span class="glyphicon glyphicon-lock form-control-feedback"></span>
+                    @error('password')
+                    <span class="invalid-feedback" role="alert">
+                        <strong>{{ $message }}</strong>
+                    </span>
+                    @enderror
                 </div>
                 <div class="form-group has-feedback">
                     <input required type="password" id="password-confirm" class="form-control" placeholder="Retype password" name="password_confirmation" required autocomplete="new-password">

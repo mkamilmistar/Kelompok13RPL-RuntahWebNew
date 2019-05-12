@@ -9,7 +9,7 @@ use Illuminate\Database\Eloquent\Model;
 use App\Event;
 use App\Wilayah;
 
-class User extends Authenticatable
+class User extends Authenticatable implements MustVerifyEmail
 {
     use Notifiable;
 

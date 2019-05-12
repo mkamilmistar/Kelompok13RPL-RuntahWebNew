@@ -16,22 +16,17 @@ RuntahWeb | Confrim
         </div>
 
         <div class="login-box-body">
-            <div class="card-header">
-                <h3>{{ __('Verify Your Email Address') }}</h3>
-            </div>
-
             <div class="card-body">
-                @if (session('resent'))
+                @if (session('status'))
                 <div class="alert alert-success" role="alert">
-                    {{ __('A fresh verification link has been sent to your email address.') }}
+                    {{ session('status') }}
                 </div>
                 @endif
 
-                {{ __('Before proceeding, please check your email for a verification link.') }}
-                <br> {{ __('If you did not receive the email') }}, <a href="{{ route('verification.resend') }}">{{ __('click here to request another') }}</a>.
+                You are logged in!
+                Go to homepage <a href="/">here!</a>
             </div>
         </div>
-        <!-- /.form-box -->
     </div>
     <!-- /.register-box -->
 

@@ -17,10 +17,20 @@ RuntahWeb | Log In
                 <div class="form-group has-feedback">
                     <input required type="email" class="form-control" placeholder="Email" name="email">
                     <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
+                    @error('email')
+                    <span class="invalid-feedback" role="alert">
+                        <strong>{{ $message }}</strong>
+                    </span>
+                    @enderror
                 </div>
                 <div class="form-group has-feedback">
                     <input required type="password" class="form-control" placeholder="Password" name="password">
                     <span class="glyphicon glyphicon-lock form-control-feedback"></span>
+                    @error('password')
+                    <span class="invalid-feedback" role="alert">
+                        <strong>{{ $message }}</strong>
+                    </span>
+                    @enderror
                 </div>
                 <div class="row">
                     <div class="col-xs-8">
@@ -38,7 +48,7 @@ RuntahWeb | Log In
                 </div>
             </form>
 
-            <a href="#">I forgot my password</a><br>
+            <a href="{{ route('password.request') }}">I forgot my password</a><br>
             <a href="/register" class="text-center">Register a new membership</a>
 
         </div>
