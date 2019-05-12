@@ -134,7 +134,9 @@ Table OF Contents
     .contact-form form textarea.form-control {
       width: 100%;
       height: 130px; }
-
+.p{
+    color:white;
+}
 
 /* -- typography -- */
 body {

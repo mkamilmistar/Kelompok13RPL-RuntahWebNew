@@ -82,8 +82,7 @@ Home - Runtah WEB
                 <div class="about">
                     <i class="fa fa-mobile"></i>
                     <h3>Fakta Kehutanan</h3>
-                    <p>Setiap hari, diperkirakan bahwa 50-100 spesies flora dan fauna akan punah sebagai akibat dari
-                        campur tangan manusia</p>
+                    <p>Setiap hari, diperkirakan bahwa 50-100 spesies flora dan fauna akan punah akibat dari campur tangan manusia</p>
 
                 </div>
             </div>
@@ -94,8 +93,7 @@ Home - Runtah WEB
                 <div class="about">
                     <i class="fa fa-cogs"></i>
                     <h3>Fakta Perikanan</h3>
-                    <p>75% perikanan dunia telah diambil dair perairan. Tidak hanya air, kemungkinan ikan juga akan
-                        punah.</p>
+                    <p>75% perikanan dunia telah diambil dair perairan. Tidak hanya air, kemungkinan ikan juga akan punah akibat campur tangan manusia yang tidak bertanggung jawab.</p>
 
                 </div>
             </div>
