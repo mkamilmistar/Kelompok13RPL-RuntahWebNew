@@ -58,16 +58,15 @@ Volunteer - Runtah WEB
                         </tr>
                     </thead>
                     <tbody>
-
-                        @foreach($joins as $join)
-                        @if($join->status=="Belum Selesai")
+                        @foreach($histories as $history)
+                        @if($history->status=="Belum Selesai")
                         <tr>
-                            <td>{{$join->event->location}}</td>
-                            <td>{{$join->status}}</td>
+                            <td>{{$history->event->location}}</td>
+                            <td>{{$history->status}}</td>
 
                             <td>
-                                <a href="#" class="btn btn-primary join" join-id="{{$join->id}}">Event Selesai</a>
-                                <a href="#" type="button" class="btn btn-danger delete cancel" join-id="{{$join->id}}">Batalkan</a>
+                                <a href="#" class="btn btn-primary join" join-id="{{$history->id}}">Event Selesai</a>
+                                <a href="#" type="button" class="btn btn-danger delete cancel" join-id="{{$history->id}}">Batalkan</a>
                             </td>
                         </tr>
                         @endif

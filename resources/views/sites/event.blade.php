@@ -42,7 +42,7 @@ Event - Runtah WEB
         <div class="contact--info inner">
             <h2>Foto Event</h2>
             <div class="row justify-content-center">
-                <img src="{{asset('images/'.$events->image)}}" class="img-circle" style="width:300px;height:300px;object-fit: cover;border-radius:8px" alt="Avatar">
+                <img src="{{asset('images/event/'.$events->image)}}" class="img-circle" style="width:300px;height:300px;object-fit: cover;border-radius:8px" alt="Avatar">
             </div>
             <!-- Contact Info -->
             <div id="main" class="col-md-50">

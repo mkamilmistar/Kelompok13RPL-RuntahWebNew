@@ -92,12 +92,12 @@ class VolunteerController extends Controller
         $joins->user_id = Auth::user()->id;
         $joins->status = "Belum Selesai";
         $joins->save();
-        return redirect('volunteer/' . $joins->id . '/joined')->with('sukses', 'Join Event');
+        return redirect('volunteer/' . $joins->user_id . '/joined')->with('sukses', 'Join Event');
     }
 
     public function joined(Request $request)
     {
-        $joins = Join::all();
+        $joins = join::where('user_id', Auth::user()->id)->get();
         return view('sites.joined', compact('joins'));
     }
 
@@ -121,7 +121,7 @@ class VolunteerController extends Controller
     {
         $joins = Join::find($id);
         $joins->delete();
-        return redirect('/volunteer')->with('cancel', 'Event berhasil dicancel!');
+        return redirect('/volunteer/history')->with('cancel', 'Event berhasil dicancel!');
     }
 
     public function claimreward()
@@ -133,6 +133,13 @@ class VolunteerController extends Controller
     {
         $events = event::find($id);
         return view('sites.event', compact('events'));
+    }
+
+    public function history(Request $request)
+    {
+        $histories = join::where('user_id', Auth::user()->id)->get();
+
+        return view('sites.history', compact('histories'));
     }
     //END OF SITES
 }

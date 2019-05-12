@@ -32,7 +32,7 @@
             <li class="has-dropdown"><a href="#">Volunteer</a>
                 <ul class="dropdown">
                     <li><a href="/volunteer">Mulai!</a></li>
-                    <li><a href="#">History</a></li>
+                    <li><a href="/volunteer/history">History</a></li>
                     <li><a href="/report">Lapor!</a></li>
                     <li><a href="/profile">Edit Profile</a></li>
                 </ul>
@@ -46,7 +46,7 @@
             <li class="has-dropdown"><a href="#">Volunteer</a>
                 <ul class="dropdown">
                     <li><a href="/volunteer">Mulai!</a></li>
-                    <li><a href="#">History</a></li>
+                    <li><a href="/volunteer/history">History</a></li>
                     <li><a href="/report">Lapor!</a></li>
                     <li><a href="/profile">Edit Profile</a></li>
                 </ul>

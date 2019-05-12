@@ -53,6 +53,7 @@ Route::get('/volunteer/{id}/confirm', 'VolunteerController@confirm')->name('conf
 Route::get('/volunteer/{id}/cancel', 'VolunteerController@cancel')->name('cancel');
 //hapus middleware ->middleware('checkPoint'); untuk melihat view
 Route::get('/volunteer/claimreward', 'VolunteerController@claimreward');
+Route::get('/volunteer/history', 'VolunteerController@history');
 
 //Route lihat event
 Route::get('/event/{id}', 'VolunteerController@show');
