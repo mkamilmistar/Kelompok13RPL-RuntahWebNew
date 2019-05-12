@@ -42,7 +42,6 @@
                     <li><a href="/volunteer">Mulai!</a></li>
                     <li><a href="/volunteer/history">History</a></li>
                     <li><a href="/report">Lapor!</a></li>
-                    <li><a href="/profile">Edit Profile</a></li>
                 </ul>
             </li>
             <li><a href="/about">About</a></li>
