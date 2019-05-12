@@ -5,6 +5,12 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\User;
 use Auth;
+use App\Volunteer;
+use App\Wilayah;
+use App\Report;
+use App\event;
+use App\Join;
+use App\Post;
 
 
 
@@ -47,8 +53,14 @@ class AdminController extends Controller
 
     public function dashboard()
     {
-
-        return view('admin.dashboard');
+        $events = Event::all()->take(6);
+        $users = User::where(['role' => 'volunteer']);
+        $point = User::where('point', '>=', 500);
+        $event = Event::all();
+        $join = Join::where('status', 'Selesai');
+        $posts = Post::all()->take(3);
+        //dd($information);
+        return view('admin.dashboard', compact('events', 'users', 'point', 'event', 'join', 'posts'));
     }
 
 

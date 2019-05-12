@@ -313,7 +313,7 @@ Home - Runtah WEB
                 <div class="number">
                     <i class="fa fa-file"></i>
                     <h3 class="white-text"><span class="counter">{{$event->count()}}</span> Event</h3>
-                    <span class="white-text">Volunteer found</span>
+                    <span class="white-text">Event found</span>
                 </div>
             </div>
             <!-- /number -->
