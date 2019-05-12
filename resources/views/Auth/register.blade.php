@@ -1,4 +1,7 @@
 @extends('Auth.layouts.master')
+@section('title')
+RuntahWeb | Register
+@endsection
 @section('content')
 
 <body class="hold-transition register-page">

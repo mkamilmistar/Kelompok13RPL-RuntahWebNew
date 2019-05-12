@@ -46,6 +46,7 @@ My Profile - Runtah WEB
             <div class="row justify-content-center">
                 <img src="{{asset('images/user/'.$users->user_image)}}" class="img-circle" style="width:300px;height:300px;object-fit: cover;border-radius:8px" alt="Avatar">
             </div>
+            @if(auth()->user()->role=='volunteer')
             <div class="profile-stat">
                 <div class="row justify-content-center">
                     <div class="row justify-content-center">
@@ -57,7 +58,7 @@ My Profile - Runtah WEB
                     </div>
                 </div>
                 <div class="row justify-content-center">
-                    @if($users->point==500)
+                    @if($users->point>499)
                     <a href="/volunteer/claimreward" class="main-btn">Claim Reward</a>
                     @else
                     <a href="#" class="main-btn kosong">Point Belum Cukup</a>
@@ -65,6 +66,7 @@ My Profile - Runtah WEB
                 </div>
                 <br>
             </div>
+            @endif
             <!-- Contact Info -->
             <div id="main" class="col-md-12">
                 <div class="col-12 col-lg-12">

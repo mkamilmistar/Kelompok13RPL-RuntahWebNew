@@ -1,6 +1,6 @@
 @extends('sites.layouts.master')
 @section('title')
-Volunteer - Runtah WEB
+History - Runtah WEB
 @endsection
 @section('header')
 <!-- Background Image -->
@@ -37,19 +37,57 @@ Volunteer - Runtah WEB
 
         <!-- Row -->
         <div class="row">
-
-            <!-- Section header -->
-            <div class="section-header text-center">
-                <h2 class="title">Anda Berhasil Mengikuti Event!</h2>
-            </div>
-            <!-- /Section header -->
-            <!-- box -->
-            Kalo udah kelar, konfirmasi dengan menekan tombol dibawah ini
             <br>
 
 
             <div class="box-body">
                 <table id="example1" style="text-align:center;" class="table table-bordered table-striped">
+                    <thead>
+                        <!-- Section header -->
+                        <div class="section-header text-center">
+                            <h2 class="title">Status Event yang Diikuti</h2>
+                        </div>
+                        <!-- /Section header -->
+                        <!-- box -->
+                        <tr>
+                            <td><b>Event Yang Diikuti</b></td>
+                            <td><b>Status</b></td>
+                            <td><b>Action</b></td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @forelse($histories as $history)
+                        @if($history->status=="Belum Selesai")
+                        <tr>
+                            <td>{{$history->event->location}}</td>
+                            <td>{{$history->status}}</td>
+                            <td>
+                                <a href="#" class="btn btn-primary join" join-id="{{$history->id}}">Event Selesai</a>
+                                <a href="#" type="button" class="btn btn-danger delete cancel" join-id="{{$history->id}}">Batalkan</a>
+                            </td>
+                        </tr>
+                        @endif
+                        @empty
+
+                        @endforelse
+
+
+                    </tbody>
+
+                </table>
+
+                <br>
+                <br>
+
+            </div>
+            <div class="box-body">
+                <table id="example1" style="text-align:center;" class="table table-bordered table-striped">
+                    <!-- Section header -->
+                    <div class="section-header text-center">
+                        <h3 class="title">Event yang Telah Diikuti</h3>
+                    </div>
+                    <!-- /Section header -->
+                    <!-- box -->
                     <thead>
                         <tr>
                             <td><b>Event Yang Diikuti</b></td>
@@ -58,23 +96,29 @@ Volunteer - Runtah WEB
                         </tr>
                     </thead>
                     <tbody>
-                        @foreach($histories as $history)
-                        @if($history->status=="Belum Selesai")
+                        @forelse($histories as $history)
+                        @if($history->status=="Selesai")
                         <tr>
                             <td>{{$history->event->location}}</td>
                             <td>{{$history->status}}</td>
 
                             <td>
-                                <a href="#" class="btn btn-primary join" join-id="{{$history->id}}">Event Selesai</a>
-                                <a href="#" type="button" class="btn btn-danger delete cancel" join-id="{{$history->id}}">Batalkan</a>
+                                <a class="btn btn-primary" join-id="{{$history->id}}">Event Selesai</a>
+
                             </td>
                         </tr>
+                        @else
                         @endif
-                        @endforeach
+                        @empty
+                        <tr>
+                            <td colspan="3"><b>Belum Ada Event Yang Telah Diikuti</b></td>
+                        </tr>
+                        @endforelse
                     </tbody>
 
                 </table>
             </div>
+
 
         </div>
         <!-- /.box -->

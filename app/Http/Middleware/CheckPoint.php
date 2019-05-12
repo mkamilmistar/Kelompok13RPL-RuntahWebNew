@@ -15,7 +15,7 @@ class CheckPoint
      */
     public function handle($request, Closure $next)
     {
-        if ($request->user()->point <= 200) {
+        if ($request->user()->point <= 500) {
             return redirect('/profile');
         }
         return $next($request);

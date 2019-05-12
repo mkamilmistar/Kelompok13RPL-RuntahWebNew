@@ -25,20 +25,14 @@
             <li><a href="/diy">Do It Yourself!</a></li>
             <li><a href="/information">Information</a></li>
             <li><a href="/about">About</a></li>
+            <li><a>|</a></li>
             @elseif(auth()->user()->role=='admin')
             <li><a href="/">Home</a></li>
             <li><a href="/diy">Do It Yourself!</a></li>
             <li><a href="/information">Information</a></li>
-            <li class="has-dropdown"><a href="#">Volunteer</a>
-                <ul class="dropdown">
-                    <li><a href="/volunteer">Mulai!</a></li>
-                    <li><a href="/volunteer/history">History</a></li>
-                    <li><a href="/report">Lapor!</a></li>
-                    <li><a href="/profile">Edit Profile</a></li>
-                </ul>
-            </li>
-            <li><a href="/admins/dashboard">Admin</a></li>
             <li><a href="/about">About</a></li>
+            <li><a href="/admins/dashboard">Admin</a></li>
+            <li><a>|</a></li>
             @elseif(auth()->user()->role=='volunteer')
             <li><a href="/">Home</a></li>
             <li><a href="/diy">Do It Yourself!</a></li>
@@ -52,9 +46,9 @@
                 </ul>
             </li>
             <li><a href="/about">About</a></li>
+            <li><a>|</a></li>
             @endif
             @if(Auth::guest())
-            <li><a href="#">|</a></li>
             <li><a href="/register">Register</a></li>
             <li><a href="/login">Login</a></li>
             @else

@@ -29,7 +29,7 @@
 
     <!-- Custom stlylesheet -->
     <link type="text/css" rel="stylesheet" href="{{asset('/sites')}}/css/style.css" />
-
+    <link rel="icon" href="{{asset('/sites')}}/img/core-img/favicon.ico">
 
 </head>
 

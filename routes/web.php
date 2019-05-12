@@ -52,7 +52,7 @@ Route::get('/volunteer/{id}/joined', 'VolunteerController@joined')->name('joined
 Route::get('/volunteer/{id}/confirm', 'VolunteerController@confirm')->name('confirm');
 Route::get('/volunteer/{id}/cancel', 'VolunteerController@cancel')->name('cancel');
 //hapus middleware ->middleware('checkPoint'); untuk melihat view
-Route::get('/volunteer/claimreward', 'VolunteerController@claimreward');
+Route::get('/volunteer/claimreward', 'VolunteerController@claimreward')->middleware('checkPoint');
 Route::get('/volunteer/history', 'VolunteerController@history');
 
 //Route lihat event

@@ -1,4 +1,7 @@
 @extends('Auth.layouts.master')
+@section('title')
+RuntahWeb | Log In
+@endsection
 @section('content')
 
 <body class="hold-transition login-page">
