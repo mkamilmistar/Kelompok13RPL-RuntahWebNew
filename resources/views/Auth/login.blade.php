@@ -15,11 +15,11 @@ RuntahWeb | Log In
             <form action="/postlogin" method="post">
                 {{csrf_field()}}
                 <div class="form-group has-feedback">
-                    <input type="email" class="form-control" placeholder="Email" name="email">
+                    <input required type="email" class="form-control" placeholder="Email" name="email">
                     <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
                 </div>
                 <div class="form-group has-feedback">
-                    <input type="password" class="form-control" placeholder="Password" name="password">
+                    <input required type="password" class="form-control" placeholder="Password" name="password">
                     <span class="glyphicon glyphicon-lock form-control-feedback"></span>
                 </div>
                 <div class="row">

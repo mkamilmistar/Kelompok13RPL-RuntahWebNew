@@ -15,9 +15,11 @@ class CreateWilayahTable extends Migration
     {
         Schema::create('wilayah', function (Blueprint $table) {
             $table->Increments('id');
+            $table->integer('user_id')->unsigned();
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('CASCADE');
             $table->string('kabupaten');
             $table->string('kecamatan');
-            $table->string('date');
+            $table->date('date')->useCurrent = true;
             $table->string('time');
             $table->timestamps();
         });

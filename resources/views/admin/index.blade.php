@@ -49,7 +49,7 @@ Data Volunteer Admin
                             <td>{{$user -> nomor_telepon}}</td>
                             <td>{{$user -> alamat}}</td>
                             <td>{{$user -> nik_pengguna}}</td>
-                            <td>{{$user -> poin}}</td>
+                            <td>{{$user -> point}}</td>
                             <td>
                                 <a href="/admins/{{$user->id}}/edit" type="button" class="btn btn-warning">Edit</a>
                                 <a href="#" type="button" class="btn btn-danger delete" user-id="{{$user->id}}">Hapus</a>

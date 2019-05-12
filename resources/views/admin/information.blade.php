@@ -46,7 +46,7 @@ Sampah
                         <tr>
                             <td>{{$info->kabupaten}}</td>
                             <td>{{$info->kecamatan}}</td>
-                            <td>{{$info->date}}</td>
+                            <td>{{ date('l, d M Y', strtotime($info->date)) }}</td>
                             <td>{{$info->time}}</td>
                             <td>
                                 <a href="/admins/information/{{$info->id}}/edit" type="button" class="btn btn-warning">Edit</a>
@@ -115,20 +115,20 @@ Sampah
                 <form action="/admins/information/create" method="POST">
                     {{csrf_field()}}
                     <div class="form-group">
-                        <label for="text">Kabupaten</label>
-                        <input name="kabupaten" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Kabupaten">
+                        <label for="kabupaten">Kabupaten</label>
+                        <input required name="kabupaten" type="text" class="form-control" id="kabupaten" aria-describedby="emailHelp" placeholder="Bogor">
                     </div>
                     <div class="form-group">
-                        <label for="text">Kecamatan</label>
-                        <input name="kecamatan" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Kecamatan">
+                        <label for="kecamatan">Kecamatan</label>
+                        <input required name="kecamatan" type="text" class="form-control" id="kecamatan" aria-describedby="emailHelp" placeholder="Dramaga">
                     </div>
                     <div class="form-group">
-                        <label for="text">Hari/Tanggal</label>
-                        <input name="date" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Hari/Tanggal">
+                        <label for="date">Hari/Tanggal</label>
+                        <input required name="date" type="date" class="form-control" id="date" aria-describedby="emailHelp" placeholder="Sun, 28 Mar 2019">
                     </div>
                     <div class="form-group">
-                        <label for="text">Jam</label>
-                        <input name="time" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Jam">
+                        <label for="datetime">Jam</label>
+                        <input required name="time" type="text" class="form-control" id="datetime" aria-describedby="emailHelp" placeholder="17.00">
                     </div>
             </div>
             <div class="modal-footer">

@@ -120,33 +120,40 @@ Event
             <div class="modal-body">
                 <form action="/admins/event/create" method="POST" enctype="multipart/form-data">
                     {{csrf_field()}}
+                    @if(count($errors)>0)
+                    @foreach($errors->all() as $error)
+                    <div class="alert alert-dismissible alert-danger">
+                        {{$error}}
+                    </div>
+                    @endforeach
+                    @endif
                     <div class="form-group">
                         <label for="nama_event">Nama Event</label>
-                        <input name="nama_event" type="text" class="form-control" id="nama_event" aria-describedby="emailHelp" placeholder="Nama Event">
+                        <input name="nama_event" required type="text" class="form-control" id="nama_event" aria-describedby="emailHelp" placeholder="Nama Event">
                     </div>
                     <div class="form-group">
                         <label for="kabupaten">Kabupaten</label>
-                        <input name="kabupaten" type="text" class="form-control" id="kabupaten" aria-describedby="emailHelp" placeholder="Bogor">
+                        <input name="kabupaten" required type="text" class="form-control" id="kabupaten" aria-describedby="emailHelp" placeholder="Bogor">
                     </div>
                     <div class="form-group">
                         <label for="kecamatan">Kecamatan</label>
-                        <input name="kecamatan" type="text" class="form-control" id="kecamatan" aria-describedby="emailHelp" placeholder="Dramaga">
+                        <input name="kecamatan" required type="text" class="form-control" id="kecamatan" aria-describedby="emailHelp" placeholder="Dramaga">
                     </div>
                     <div class="form-group">
                         <label for="date">Hari/Tanggal</label>
-                        <input name="date" type="date" class="form-control" id="date" aria-describedby="emailHelp" placeholder="Sun, 24 Mei 2018">
+                        <input name="date" required type="date" class="form-control" id="date" aria-describedby="emailHelp" placeholder="Sun, 24 Mei 2018">
                     </div>
                     <div class="form-group">
                         <label for="time">Jam</label>
-                        <input name="time" type="datetime" class="form-control" id="time" aria-describedby="emailHelp" placeholder="16.00">
+                        <input name="time" required type="datetime" class="form-control" id="time" aria-describedby="emailHelp" placeholder="16.00">
                     </div>
                     <div class="form-group">
                         <label for="location">Lokasi</label>
-                        <input name="location" type="text" class="form-control" id="location" aria-describedby="emailHelp" placeholder="Jl. Pajajaran No.35">
+                        <textarea required name="location" class="form-control" id="location" rows="3"></textarea>
                     </div>
                     <div class="form-group">
-                        <label for="Select">Jenis Kelamin</label>
-                        <select name="status" class="form-control" id="Select">
+                        <label for="Select">Status</label>
+                        <select required name="status" class="form-control" id="Select">
                             <option value="Tersedia">Tersedia</option>
                             <option value="Tidak Tersedia">Tidak Tersedia</option>
                         </select>

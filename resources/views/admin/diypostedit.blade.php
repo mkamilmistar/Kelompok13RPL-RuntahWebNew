@@ -16,11 +16,11 @@ Postingan Do It Yourself! Admin
             <!-- /.box-header -->
             <div class="box-body">
                 <div class="box-group" id="accordion">
-                    <form action="/admins/diypost/{{$posts->id}}/update" class="class" method="post">
+                    <form action="/admins/diypost/{{$posts->id}}/update" class="class" method="post" enctype="multipart/form-data">
                         {{csrf_field()}}
                         <div class="form-group">
                             <label for="">Title</label>
-                            <input type="text" value="{{$posts->title}}" class="form-control" name="title" placeholder="Post Title">
+                            <input required type="text" value="{{$posts->title}}" class="form-control" name="title" placeholder="Post Title">
                         </div>
                         <div class="form-group">
                             <label for="image">Foto Postingan</label>
@@ -29,11 +29,7 @@ Postingan Do It Yourself! Admin
                         </div>
                         <div class="form-group">
                             <label for="">Content</label>
-                            <textarea class="form-control" name="content" rows="5" placeholder="Post Title">{!!$posts->content!!}</textarea>
-                        </div>
-                        <div class="form-group">
-                            <label for="link">Link Video</label>
-                            <input type="text" value="{{$posts->linkvideo}}" id="link" class="form-control" name="linkvideo" placeholder="Post video">
+                            <textarea required class="form-control" name="content" rows="5" placeholder="Post Title">{!!$posts->content!!}</textarea>
                         </div>
                         <div class="form-group">
                             <input type="submit" value="Save" class="btn btn-primary">

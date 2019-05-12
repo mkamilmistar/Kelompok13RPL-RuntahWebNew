@@ -57,7 +57,7 @@ Do It Yourself! - Runtah WEB
                 </div>
                 <div class="form-group">
                     <label for="">
-
+                        <img src="{{asset('images/post/'.$post->image)}}" class="img-circle" style="width:300px;height:300px;object-fit: cover;border-radius:8px" alt="Avatar">
                     </label>
                 </div>
                 <div class="form-group">

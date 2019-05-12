@@ -17,10 +17,8 @@ Volunteer
             <div class="box-header">
                 <h3 class="box-title">Table Data Report Volunteer</h3>
             </div>
-
-            <!-- /.box-header -->
             <div class="box-body">
-                <table id="example2" class="table table-bordered table-hover">
+                <table id="example1" class="table table-bordered table-striped">
                     <thead>
                         <tr>
                             <td><b>Username</b></td>
@@ -42,13 +40,16 @@ Volunteer
                     </tbody>
                     @endforeach
 
+
                 </table>
             </div>
-            <!-- /.box-body -->
         </div>
         <!-- /.box -->
 
         @section('script')
+
+        <script src="{{asset('admin/assets/bower_components/datatables.net/js/jquery.dataTables.min.js')}}"></script>
+        <script src="{{asset('admin/assets/bower_components/datatables.net-bs/js/dataTables.bootstrap.min.js')}}"></script>
         <script>
             $('.delete').click(function() {
                 var report_id = $(this).attr('report-id');
@@ -68,6 +69,19 @@ Volunteer
                         }
                     });
             });
+        </script>
+        <script>
+            $(function() {
+                $('#example1').DataTable()
+                $('#example2').DataTable({
+                    'paging': true,
+                    'lengthChange': false,
+                    'searching': false,
+                    'ordering': true,
+                    'info': true,
+                    'autoWidth': false
+                })
+            })
         </script>
         @endsection
     </div>

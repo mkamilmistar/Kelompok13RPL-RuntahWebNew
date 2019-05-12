@@ -24,35 +24,35 @@ Edit
                             <form action="/admins/{{$users->id}}/update" method="POST" enctype="multipart/form-data">
                                 {{csrf_field()}}
                                 <div class="form-group">
-                                    <label for="text">Nama Depan</label>
-                                    <input name="nama_depan" value="{{$users->nama_depan}}" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Nama Depan">
+                                    <label for="nama_epan">Nama Depan</label>
+                                    <input required name="nama_depan" value="{{$users->nama_depan}}" type="text" class="form-control" id="nama_depan" aria-describedby="emailHelp" placeholder="Nama Depan">
                                 </div>
                                 <div class="form-group">
-                                    <label for="text">Nama Belakang</label>
-                                    <input name="nama_belakang" value="{{$users->nama_belakang}}" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Nama belakang">
+                                    <label for="nama_belakang">Nama Belakang</label>
+                                    <input required name="nama_belakang" value="{{$users->nama_belakang}}" type="text" class="form-control" id="nama_belakang" aria-describedby="emailHelp" placeholder="Nama belakang">
                                 </div>
                                 <div class="form-group">
-                                    <label for="Select">Jenis Kelamin</label>
-                                    <select name="jenis_kelamin" class="form-control" id="exampleFormControlSelect1">
+                                    <label for="gender">Jenis Kelamin</label>
+                                    <select required name="jenis_kelamin" class="form-control" id="gender">
                                         <option value="Laki-laki" @if($users -> jenis_kelamin =="Laki-laki") selected @endif >Laki-laki</option>
                                         <option value="Perempuan" @if($users -> jenis_kelamin =="Perempuan") selected @endif >Perempuan</option>
                                     </select>
                                 </div>
                                 <div class="form-group">
-                                    <label for="text">Nomor Telepon</label>
-                                    <input name="nomor_telepon" value="{{$users->nomor_telepon}}" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Nomor Telepon">
+                                    <label for="no_hp">Nomor Telepon</label>
+                                    <input required name="nomor_telepon" maxlength="12" minlength="10" value="{{$users->nomor_telepon}}" type="tel" pattern="[0-9]{4}-[0-9]{3}-[0-9]{4}" minlength="10" maxlength="12" title="Ten digits code" class="form-control" id="no_hp" aria-describedby="emailHelp" placeholder="Nomor Telepon">
                                 </div>
                                 <div class="form-group">
-                                    <label for="exampleFormControlTextarea1">Alamat</label>
-                                    <textarea name="alamat" class="form-control" id="exampleFormControlTextarea1" rows="3">{{$users->alamat}}</textarea>
+                                    <label for="alamat">Alamat</label>
+                                    <textarea required name="alamat" class="form-control" id="alamat" rows="3">{{$users->alamat}}</textarea>
                                 </div>
                                 <div class="form-group">
-                                    <label for="text">Email</label>
-                                    <input name="email" value="{{$users->email}}" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Alamat">
+                                    <label for="email">Email</label>
+                                    <input required name="email" value="{{$users->email}}" type="text" class="form-control" id="email" aria-describedby="emailHelp" placeholder="Alamat">
                                 </div>
                                 <div class="form-group">
-                                    <label for="text">NIK</label>
-                                    <input name="nik_pengguna" value="{{$users->nik_pengguna}}" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="NIK Pengguna">
+                                    <label for="nik">NIK</label>
+                                    <input required name="nik_pengguna" value="{{$users->nik_pengguna}}" type="text" class="form-control" id="nik" aria-describedby="emailHelp" placeholder="NIK Pengguna">
                                 </div>
 
                                 <button type="submit" class="btn btn-warning">Update</button>

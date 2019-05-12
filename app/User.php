@@ -7,6 +7,7 @@ use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Database\Eloquent\Model;
 use App\Event;
+use App\Wilayah;
 
 class User extends Authenticatable
 {
@@ -47,6 +48,11 @@ class User extends Authenticatable
     {
         return $this->hasMany(Report::class);
         return $this->hasMany(Post::class);
+    }
+
+    public function wilayah()
+    {
+        return $this->hasMany(Wilayah::class);
     }
 
     public function event()

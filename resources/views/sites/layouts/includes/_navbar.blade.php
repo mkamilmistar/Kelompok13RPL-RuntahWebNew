@@ -59,7 +59,7 @@
                 </ul>
             </li>
             <li>
-                <img src="{{asset('images/'.$users->user_image)}}" style="width:150%; margin:0; padding:0; vertical-align:baseline; position:absolute; bottom:-50px; right:5%;border-radius: 6px; left:5%;">
+                <img src="{{asset('images/user/'.$users->user_image)}}" style="width:40px; height:40px; margin:0; padding:0; vertical-align:baseline; position:absolute; object-fit:cover; bottom:-45px; right:5%;border-radius: 6px; left:5%;">
             </li>
             @endif
         </ul>

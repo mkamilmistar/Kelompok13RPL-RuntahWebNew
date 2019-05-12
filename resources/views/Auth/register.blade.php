@@ -16,19 +16,19 @@ RuntahWeb | Register
             <form action="{{ route('register') }}" method="post">
                 {{csrf_field()}}
                 <div class="form-group has-feedback">
-                    <input type="text" id="username" value="{{ old('username') }}" class="form-control" placeholder="Username" name="username" required autocomplete="username">
+                    <input required type="text" id="username" value="{{ old('username') }}" class="form-control" placeholder="Username" name="username" required autocomplete="username">
                     <span class="glyphicon glyphicon-user form-control-feedback"></span>
                 </div>
                 <div class="form-group has-feedback">
-                    <input type="email" id="email" value="{{ old('email') }}" class="form-control" placeholder="Email" name="email" required autocomplete="email">
+                    <input required type="email" id="email" value="{{ old('email') }}" class="form-control" placeholder="Email" name="email" required autocomplete="email">
                     <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
                 </div>
                 <div class="form-group has-feedback">
-                    <input type="password" id="password" class="form-control" placeholder="Password" name="password" required autocomplete="new-password">
+                    <input required type="password" id="password" class="form-control" placeholder="Password" name="password" required autocomplete="new-password">
                     <span class="glyphicon glyphicon-lock form-control-feedback"></span>
                 </div>
                 <div class="form-group has-feedback">
-                    <input type="password" id="password-confirm" class="form-control" placeholder="Retype password" name="password_confirmation" required autocomplete="new-password">
+                    <input required type="password" id="password-confirm" class="form-control" placeholder="Retype password" name="password_confirmation" required autocomplete="new-password">
                     <span class="glyphicon glyphicon-log-in form-control-feedback"></span>
                 </div>
                 <div class="row">

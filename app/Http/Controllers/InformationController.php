@@ -22,15 +22,21 @@ class InformationController extends Controller
 
     public function publishinfo(Request $request)
     {
-
+        $this->validate($request, [
+            'kabupaten' => 'max:25',
+            'kecamatan' => 'max:25',
+            'date' => 'max:20',
+            'time' => 'max:20',
+        ]);
         $wilayah = new Wilayah();
+        $wilayah->user_id = Auth::user()->id;
         $wilayah->kabupaten = $request->input('kabupaten');
         $wilayah->kecamatan = $request->input('kecamatan');
         $wilayah->date = $request->input('date');
         $wilayah->time = $request->input('time');
         $wilayah->save();
 
-        return redirect('/admins/information');
+        return redirect('/admins/information')->with('sukses', 'Info berhasil ditambahkan!');
     }
 
     public function editinfo($id)
@@ -54,7 +60,7 @@ class InformationController extends Controller
     {
         $wilayah = Wilayah::find($id);
         $wilayah->delete();
-        return redirect('/admins/information')->with('sukses', 'Info berhasil dihapus');
+        return redirect('/admins/information')->with('sukses', 'Info berhasil dihapus!');
     }
     //AKHIR INFORMATION
 

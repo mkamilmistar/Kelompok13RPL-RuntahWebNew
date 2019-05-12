@@ -25,27 +25,27 @@ Edit
                                 {{csrf_field()}}
                                 <div class="form-group">
                                     <label for="nama_event">Nama Event</label>
-                                    <input name="nama_event" value="{{$events->nama_event}}" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Nama Event">
+                                    <input required name="nama_event" value="{{$events->nama_event}}" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Nama Event">
                                 </div>
                                 <div class="form-group">
                                     <label for="kabupaten">Kabupaten</label>
-                                    <input name="kabupaten" value="{{$events->kabupaten}}" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Kabupaten">
+                                    <input required name="kabupaten" value="{{$events->kabupaten}}" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Kabupaten">
                                 </div>
                                 <div class="form-group">
                                     <label for="kecamatan">Kecamatan</label>
-                                    <input name="kecamatan" value="{{$events->kecamatan}}" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="kecamatan">
+                                    <input required name="kecamatan" value="{{$events->kecamatan}}" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="kecamatan">
                                 </div>
                                 <div class="form-group">
                                     <label for="date">Hari/Tanggal</label>
-                                    <input name="date" value="{{$events->date}}" type="date" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Hari/Tanggal">
+                                    <input required name="date" value="{{$events->date}}" type="date" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Hari/Tanggal">
                                 </div>
                                 <div class="form-group">
                                     <label for="time">Jam</label>
-                                    <input name="time" value="{{$events->time}}" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Jam">
+                                    <input required name="time" value="{{$events->time}}" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Jam">
                                 </div>
                                 <div class="form-group">
                                     <label for="location">Lokasi</label>
-                                    <input name="location" value="{{$events->location}}" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Lokasi">
+                                    <textarea required name="location" class="form-control" id="location" rows="3">{{$events->location}}</textarea>
                                 </div>
                                 <div class="form-group">
                                     <label for="img">Photo Event</label>
@@ -55,7 +55,7 @@ Edit
                                 </div>
                                 <div class="form-group">
                                     <label for="Select">Status</label>
-                                    <select name="status" class="form-control" id="exampleFormControlSelect1">
+                                    <select required name="status" class="form-control" id="exampleFormControlSelect1">
                                         <option value="Tersedia" @if($events -> status =="Tersedia") selected @endif >Tersedia</option>
                                         <option value="Tidak Tersedia" @if($events -> status =="Tidak Tersedia") selected @endif >Tidak Tersedia</option>
                                     </select>

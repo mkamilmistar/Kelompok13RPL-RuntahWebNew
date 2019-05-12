@@ -33,7 +33,6 @@ class DIYController extends Controller
         $post->post_id = Auth::user()->id;
         $post->title = $request->input('title');
         $post->content = $request->input('content');
-        $post->linkvideo = $request->input('linkvideo');
         if ($request->hasFile('image')) {
             $request->file('image')->move('images/post/', $request->file('image')->getClientOriginalName());
             $post->image = $request->file('image')->getClientOriginalName();
@@ -49,13 +48,19 @@ class DIYController extends Controller
         return view('admin.diypostedit', compact('posts'));
     }
 
-    public function updatepost($id)
+    public function updatepost(Request $request, $id)
     {
-        $posts = Post::find($id);
-        $posts->update([
-            'title' => request('title'),
-            'content' => request('content')
+        $this->validate($request, [
+            'image' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
         ]);
+        $posts = Post::find($id);
+        $posts->update($request->all());
+        if ($request->hasFile('image')) {
+            $request->file('image')->move('images/post/', $request->file('image')->getClientOriginalName());
+            $posts->image = $request->file('image')->getClientOriginalName();
+            $posts->save();
+        }
+
         return redirect('/admins/diypost')->with('sukses', 'post updated!');
     }
 

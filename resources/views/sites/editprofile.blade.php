@@ -56,7 +56,7 @@ Edit Profile - Runtah WEB
                         <p>Change Photo</p>
                     </div>
                     <div class="row justify-content-center">
-                        <img src="{{asset('images/'.$users->user_image)}}" class="img-circle" style="width:300px;height:300px;object-fit: cover;border-radius:8px" alt="Avatar">
+                        <img src="{{asset('images/user/'.$users->user_image)}}" class="img-circle" style="width:300px;height:300px;object-fit: cover;border-radius:8px" alt="Avatar">
                     </div>
                     <div class="inner">
                         <input type="file" name="user_image" id="img" onchange="PreviewImage();">

@@ -24,20 +24,20 @@ Edit
                             <form action="/admins/information/{{$wilayah->id}}/update" method="POST" enctype="multipart/form-data">
                                 {{csrf_field()}}
                                 <div class="form-group">
-                                    <label for="text">Kabupaten</label>
-                                    <input name="kabupaten" value="{{$wilayah->kabupaten}}" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Kabupaten">
+                                    <label for="kabupaten">Kabupaten</label>
+                                    <input name="kabupaten" value="{{$wilayah->kabupaten}}" type="kabupaten" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Kabupaten">
                                 </div>
                                 <div class="form-group">
-                                    <label for="text">Kecamatan</label>
-                                    <input name="kecamatan" value="{{$wilayah->kecamatan}}" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="kecamatan">
+                                    <label for="kecamatan">Kecamatan</label>
+                                    <input name="kecamatan" value="{{$wilayah->kecamatan}}" type="kecamatan" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="kecamatan">
                                 </div>
                                 <div class="form-group">
-                                    <label for="text">Hari/Tanggal</label>
-                                    <input name="date" value="{{$wilayah->date}}" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Hari/Tanggal">
+                                    <label for="date">Hari/Tanggal</label>
+                                    <input name="date" value="{{$wilayah->date}}" type="date" class="form-control" id="date" aria-describedby="emailHelp" placeholder="Hari/Tanggal">
                                 </div>
                                 <div class="form-group">
-                                    <label for="text">Jam</label>
-                                    <input name="time" value="{{$wilayah->time}}" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Jam">
+                                    <label for="datetime">Jam</label>
+                                    <input name="time" value="{{$wilayah->time}}" type="text" class="form-control" id="datetime" aria-describedby="emailHelp" placeholder="Jam">
                                 </div>
 
                                 <button type="submit" class="btn btn-warning">Update</button>

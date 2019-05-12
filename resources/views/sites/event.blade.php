@@ -52,58 +52,58 @@ Event - Runtah WEB
                     <ul class="contact-list">
                         @if ( !empty ( $events->nama_event ) )
                         <li>
-                            <h6><i class="fa fa-user" aria-hidden="true"></i>Nama Event</h6>
+                            <h6><i class="fa fa-bookmark" aria-hidden="true"></i>Nama Event</h6>
                             <h6>{{$events->nama_event}}</h6>
                         </li>
                         @else
                         <li>
-                            <h6><i class="fa fa-user" aria-hidden="true"></i>Nama Event</h6>
+                            <h6><i class="fa fa-bookmark" aria-hidden="true"></i>Nama Event</h6>
                             <h6>-</h6>
                         </li>
                         @endif
                         @if ( !empty ( $events->kabupaten ) )
                         <li>
-                            <h6><i class="fa fa-user" aria-hidden="true"></i>Kabupaten</h6>
+                            <h6><i class="fa fa-map" aria-hidden="true"></i>Kabupaten</h6>
                             <h6>{{$events->kabupaten}}</h6>
                         </li>
                         @else
                         <li>
-                            <h6><i class="fa fa-user" aria-hidden="true"></i>Kabupaten</h6>
+                            <h6><i class="fa fa-map" aria-hidden="true"></i>Kabupaten</h6>
                             <h6>-</h6>
                         </li>
                         @endif
                         @if ( !empty ( $events->kecamatan ) )
                         <li>
-                            <h6><i class="fa fa-intersex" aria-hidden="true"></i>Kecamatan</h6>
+                            <h6><i class="fa fa-map" aria-hidden="true"></i>Kecamatan</h6>
                             <h6>{{$events->kecamatan}}</h6>
                         </li>
                         @else
                         <li>
-                            <h6><i class="fa fa-intersex" aria-hidden="true"></i>Kecamatan</h6>
+                            <h6><i class="fa fa-map" aria-hidden="true"></i>Kecamatan</h6>
                             <h6>-</h6>
                         </li>
                         @endif
 
                         @if ( !empty ( $events->date ) )
                         <li>
-                            <h6><i class="fa fa-phone" aria-hidden="true"></i>Hari/Tanggal</h6>
+                            <h6><i class="fa fa-calendar" aria-hidden="true"></i>Hari/Tanggal</h6>
                             <h6>{{$events -> date}}</h6>
                         </li>
                         @else
                         <li>
-                            <h6><i class="fa fa-phone" aria-hidden="true"></i>Hari/Tanggal</h6>
+                            <h6><i class="fa fa-calendar" aria-hidden="true"></i>Hari/Tanggal</h6>
                             <h6>-</h6>
                         </li>
                         @endif
 
                         @if ( !empty ( $events->time ) )
                         <li>
-                            <h6><i class="fa fa-envelope" aria-hidden="true"></i>Jam</h6>
+                            <h6><i class="fa fa-clock-o" aria-hidden="true"></i>Jam</h6>
                             <h6>{{$events->time}}</h6>
                         </li>
                         @else
                         <li>
-                            <h6><i class="fa fa-envelope" aria-hidden="true"></i>Jam</h6>
+                            <h6><i class="fa fa-clock-o" aria-hidden="true"></i>Jam</h6>
                             <h6>-</h6>
                         </li>
                         @endif

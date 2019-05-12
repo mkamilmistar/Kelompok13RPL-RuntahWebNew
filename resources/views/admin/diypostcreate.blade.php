@@ -23,7 +23,7 @@ Postingan Do It Yourself! Admin
                             {{csrf_field()}}
                             <div class="form-group">
                                 <label for="title">Title</label>
-                                <input type="text" id="title" class="form-control" name="title" placeholder="Post Title">
+                                <input required type="text" id="title" class="form-control" name="title" placeholder="Post Title">
                             </div>
                             <div class="form-group">
                                 <label for="image">Foto Postingan</label>
@@ -31,11 +31,7 @@ Postingan Do It Yourself! Admin
                             </div>
                             <div class="form-group">
                                 <label for="content">Content</label>
-                                <textarea class="form-control" name="content" id="content" rows="5" placeholder="Post Content"> </textarea>
-                            </div>
-                            <div class="form-group">
-                                <label for="link">Link Video</label>
-                                <input type="text" id="link" class="form-control" name="linkvideo" placeholder="Post video">
+                                <textarea required class="form-control" name="content" id="content" rows="5" placeholder="Post Content"> </textarea>
                             </div>
                             <div class="form-group">
                                 <input type="submit" value="Publish" class="btn btn-primary">

@@ -17,6 +17,6 @@ class DatabaseSeeder extends Seeder
         $this->call(reportseed::class);
         $this->call(wilayahseeder::class);
         $this->call(eventseed::class);
-        $this->call(joinseed::class);
+        //$this->call(joinseed::class);
     }
 }

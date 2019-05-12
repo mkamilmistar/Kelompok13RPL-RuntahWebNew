@@ -57,11 +57,18 @@ class VolunteerController extends Controller
 
     public function updateevent(Request $request, $id)
     {
-
+        $this->validate($request, [
+            'image' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'kabupaten' => 'max:25',
+            'kecamatan' => 'max:25',
+            'date' => 'max:20',
+            'time' => 'max:20',
+            'location' => 'max:50',
+        ]);
         $events = Event::find($id);
         $events->update($request->all());
         if ($request->hasFile('image')) {
-            $request->file('image')->move('images/', $request->file('image')->getClientOriginalName());
+            $request->file('image')->move('images/event/', $request->file('image')->getClientOriginalName());
             $events->image = $request->file('image')->getClientOriginalName();
             $events->save();
         }
