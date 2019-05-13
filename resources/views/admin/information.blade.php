@@ -47,7 +47,7 @@ Sampah
                             <td>{{$info->kabupaten}}</td>
                             <td>{{$info->kecamatan}}</td>
                             <td>{{ date('l, d M Y', strtotime($info->date)) }}</td>
-                            <td>{{$info->time}}</td>
+                            <td>{{ date('H.i', strtotime($info->time)) }}</td>
                             <td>
                                 <a href="/admins/information/{{$info->id}}/edit" type="button" class="btn btn-warning">Edit</a>
                                 <a href="#" type="button" class="btn btn-danger delete" wilayah-id="{{$info->id}}">Hapus</a>
@@ -128,7 +128,7 @@ Sampah
                     </div>
                     <div class="form-group">
                         <label for="datetime">Jam</label>
-                        <input required name="time" type="text" class="form-control" id="datetime" aria-describedby="emailHelp" placeholder="17.00">
+                        <input required name="time" type="time" class="form-control" id="datetime" aria-describedby="emailHelp" placeholder="17.00">
                     </div>
             </div>
             <div class="modal-footer">

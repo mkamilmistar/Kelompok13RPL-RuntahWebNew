@@ -41,7 +41,7 @@ Edit
                                 </div>
                                 <div class="form-group">
                                     <label for="time">Jam</label>
-                                    <input required name="time" value="{{$events->time}}" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Jam">
+                                    <input required name="time" value="{{$events->time}}" type="time" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Jam">
                                 </div>
                                 <div class="form-group">
                                     <label for="location">Lokasi</label>

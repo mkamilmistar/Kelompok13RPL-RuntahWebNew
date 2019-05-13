@@ -48,11 +48,18 @@ Report - Runtah WEB
                         <div class="row justify-content-center">
                             <form action="{{ route('postreport') }}" class="class" method="post">
                                 {{csrf_field()}}
+                                @if(count($errors)>0)
+                                @foreach($errors->all() as $error)
+                                <div class="alert alert-dismissible alert-danger">
+                                    {{$error}}
+                                </div>
+                                @endforeach
+                                @endif
                                 <div class="form-group">
                                     <label for="">Report</label>
-                                    <textarea class="form-control" name="report" rows="5" placeholder="Post report"> </textarea>
-                                </div>
+                                    <textarea required class="form-control" name="report" rows="5" placeholder="Post report"> </textarea>
 
+                                </div>
                                 <div class="form-group">
                                     <input type="submit" value="Publish" class="btn btn-primary">
                                 </div>
@@ -71,6 +78,14 @@ Report - Runtah WEB
     toastr.success("{{Session::get('sukses')}}", "Berhasil!")
     @endif
 </script>
-
+<script>
+    $(function() {
+        $('input').iCheck({
+            checkboxClass: 'icheckbox_square-blue',
+            radioClass: 'iradio_square-blue',
+            increaseArea: '20%' /* optional */
+        });
+    });
+</script>
 @endsection
 @endsection

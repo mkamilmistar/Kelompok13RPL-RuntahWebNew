@@ -66,8 +66,6 @@ class VolunteerController extends Controller
             'image' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
             'kabupaten' => 'max:25',
             'kecamatan' => 'max:25',
-            'date' => 'max:20',
-            'time' => 'max:20',
             'location' => 'max:50',
         ]);
         $events = Event::find($id);

@@ -14,6 +14,9 @@ class ReportController extends Controller
     }
     public function postreport(Request $request)
     {
+        $this->validate($request, [
+            'report' => 'required',
+        ]);
         $report = new Report;
         $report->report_id = Auth::user()->id;
         $report->report = $request->input('report');

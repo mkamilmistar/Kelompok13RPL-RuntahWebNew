@@ -37,7 +37,7 @@ Edit
                                 </div>
                                 <div class="form-group">
                                     <label for="datetime">Jam</label>
-                                    <input name="time" value="{{$wilayah->time}}" type="text" class="form-control" id="datetime" aria-describedby="emailHelp" placeholder="Jam">
+                                    <input name="time" value="{{$wilayah->time}}" type="time" class="form-control" id="datetime" aria-describedby="emailHelp" placeholder="Jam">
                                 </div>
 
                                 <button type="submit" class="btn btn-warning">Update</button>

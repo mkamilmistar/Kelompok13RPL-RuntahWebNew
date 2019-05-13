@@ -51,7 +51,7 @@ Event
                             <td>{{$info->kabupaten}}</td>
                             <td>{{$info->kecamatan}}</td>
                             <td>{{ date('l, d M Y', strtotime($info->date)) }}</td>
-                            <td>{{$info->time}}</td>
+                            <td>{{ date('H.i', strtotime($info->time)) }}</td>
                             <td>{{$info->location}}</td>
                             <td>{{$info->status}}</td>
                             <td>
@@ -145,7 +145,7 @@ Event
                     </div>
                     <div class="form-group">
                         <label for="time">Jam</label>
-                        <input name="time" required type="datetime" class="form-control" id="time" aria-describedby="emailHelp" placeholder="16.00">
+                        <input name="time" required type="time" class="form-control" id="time" aria-describedby="emailHelp" placeholder="16.00">
                     </div>
                     <div class="form-group">
                         <label for="location">Lokasi</label>

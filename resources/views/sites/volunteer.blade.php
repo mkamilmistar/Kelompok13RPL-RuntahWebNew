@@ -67,8 +67,8 @@ Volunteer - Runtah WEB
                                     <td><a href="/event/{{$info->id}}" target="_blank"> {{$info->nama_event}}</a></td>
                                     <td>{{$info->kabupaten}}</td>
                                     <td>{{$info->kecamatan}}</td>
-                                    <td>{{$info->date}}</td>
-                                    <td>{{$info->time}}</td>
+                                    <td>{{ date('l, d M Y', strtotime($info->date)) }}</td>
+                                    <td>{{ date('H.i', strtotime($info->time)) }}</td>
                                     <td>{{$info->location}}</td>
                                     @if($info->status=="Tersedia")
                                     <td><a href="#" class="main-btn join" event-id="{{$info->id}}">Join Event</a></td>

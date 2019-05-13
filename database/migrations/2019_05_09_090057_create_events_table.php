@@ -20,7 +20,7 @@ class CreateEventsTable extends Migration
             $table->string('kabupaten');
             $table->string('kecamatan');
             $table->date('date')->useCurrent = true;
-            $table->string('time');
+            $table->time('time');
             $table->string('location');
             $table->string('status')->default("Tersedia");
             $table->timestamps();

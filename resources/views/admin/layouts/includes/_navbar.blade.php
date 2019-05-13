@@ -10,13 +10,13 @@
             <!-- User Account: style can be found in dropdown.less -->
             <li class="dropdown user user-menu">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                    <img src="{{asset('admin/assets/img/default.jpg')}}" class="user-image" alt="User Image">
+                    <img src="{{asset('images/user/'.auth()->user()->user_image)}}" style="width:30px; height:30px;object-fit:cover;" class="user-image" alt="User Image">
                     <span class="hidden-xs">{{auth()->user()->username}}</span>
                 </a>
                 <ul class="dropdown-menu">
                     <!-- User image -->
                     <li class="user-header">
-                        <img src="{{asset('admin/assets/img/default.jpg')}}" class="img-circle" alt="User Image">
+                        <img src="{{asset('images/user/'.auth()->user()->user_image)}}" style="width:40px; height:40px;object-fit:cover;" class="img-circle" alt="User Image">
 
                         <p>
                             {{auth()->user()->username}} - Web Developer

@@ -62,8 +62,8 @@ Information - Runtah WEB
                                 <tr>
                                     <td>{{$info->kabupaten}}</td>
                                     <td>{{$info->kecamatan}}</td>
-                                    <td>{{$info->date}}</td>
-                                    <td>{{$info->time}}</td>
+                                    <td>{{ date('l, d M Y', strtotime($info->date)) }}</td>
+                                    <td>{{ date('H.i', strtotime($info->time)) }}</td>
                                 </tr>
                                 @endforeach
                             </tbody>

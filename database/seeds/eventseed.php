@@ -19,7 +19,7 @@ class eventseed extends Seeder
                 'kabupaten' => 'Bandung',
                 'kecamatan' => 'Arjasari',
                 'date' => '2019-12-31',
-                'time' => '07.00',
+                'time' => '07:00',
                 'location' => 'Jalan Pajajaran No.35',
                 'status' => 'Tersedia'
             ],
@@ -29,7 +29,7 @@ class eventseed extends Seeder
                 'kabupaten' => 'Bandung',
                 'kecamatan' => 'Baleendah',
                 'date' => '2019-12-31',
-                'time' => '07.00',
+                'time' => '07:00',
                 'location' => 'Jalan Gajah Mada No.4',
                 'status' => 'Tersedia'
             ],
@@ -39,7 +39,7 @@ class eventseed extends Seeder
                 'kabupaten' => 'Bandung Barat',
                 'kecamatan' => 'Batujajar',
                 'date' => '2019-12-31',
-                'time' => '07.00',
+                'time' => '07:00',
                 'location' => 'Jalan Imam Bonjol No.35',
                 'status' => 'Tidak Tersedia'
 
@@ -50,7 +50,7 @@ class eventseed extends Seeder
                 'kabupaten' => 'Bandung Barat',
                 'kecamatan' => 'Cihampelas',
                 'date' => '2019-12-31',
-                'time' => '07.00',
+                'time' => '07:00',
                 'location' => 'Jalan Kucing No.35',
                 'status' => 'Tersedia'
             ],
@@ -60,7 +60,7 @@ class eventseed extends Seeder
                 'kabupaten' => 'Bekasi',
                 'kecamatan' => 'Babelan',
                 'date' => '2019-12-31',
-                'time' => '07.00',
+                'time' => '07:00',
                 'location' => 'Jalan Anjing No.35',
                 'status' => 'Tersedia'
             ],
@@ -70,7 +70,7 @@ class eventseed extends Seeder
                 'kabupaten' => 'Bekasi',
                 'kecamatan' => 'Bojongmangu',
                 'date' => '2019-12-31',
-                'time' => '07.00',
+                'time' => '07:00',
                 'location' => 'Jalan Kura-kura No.35',
                 'status' => 'Tidak Tersedia'
             ],
@@ -80,7 +80,7 @@ class eventseed extends Seeder
                 'kabupaten' => 'Bogor',
                 'kecamatan' => 'Bojongmangu',
                 'date' => '2019-12-31',
-                'time' => '07.00',
+                'time' => '07:00',
                 'location' => 'Jalan Kucing Kawin No.35',
                 'status' => 'Tidak Tersedia'
             ],
@@ -90,7 +90,7 @@ class eventseed extends Seeder
                 'kabupaten' => 'Bogor',
                 'kecamatan' => 'Bojongmangu',
                 'date' => '2019-12-31',
-                'time' => '07.00',
+                'time' => '07:00',
                 'location' => 'Jalan Yayak No.35',
                 'status' => 'Tersedia'
             ],
