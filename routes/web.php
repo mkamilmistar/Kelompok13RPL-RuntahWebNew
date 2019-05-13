@@ -95,7 +95,6 @@ Route::group(['middleware' => ['auth', 'checkRole:admin']], function () {
 
 //verifikasi email
 Auth::routes(['verify' => true]);
-
 Route::get('/verif', 'Auth\AuthController@verif');
 Route::get('/verifconfirm', 'Auth\AuthController@confirm');
 //Route::get('/home', 'HomeController@index')->name('home');
