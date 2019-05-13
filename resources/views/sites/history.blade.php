@@ -72,6 +72,7 @@ History - Runtah WEB
                         @endforelse
 
 
+
                     </tbody>
 
                 </table>
@@ -92,7 +93,7 @@ History - Runtah WEB
                         <tr>
                             <td><b>Event Yang Diikuti</b></td>
                             <td><b>Status</b></td>
-                            <td><b>Action</b></td>
+
                         </tr>
                     </thead>
                     <tbody>
@@ -100,12 +101,7 @@ History - Runtah WEB
                         @if($history->status=="Selesai")
                         <tr>
                             <td>{{$history->event->location}}</td>
-                            <td>{{$history->status}}</td>
-
-                            <td>
-                                <a class="btn btn-primary" join-id="{{$history->id}}">Event Selesai</a>
-
-                            </td>
+                            <td><a>{{$history->status}}</a></td>
                         </tr>
                         @else
                         @endif
@@ -124,8 +120,6 @@ History - Runtah WEB
         <!-- /.box -->
     </div>
 </div>
-
-
 
 @section('script')
 <script>
