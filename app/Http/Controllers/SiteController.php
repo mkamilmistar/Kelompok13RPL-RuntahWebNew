@@ -7,7 +7,7 @@ use App\Volunteer;
 use App\User;
 use App\Wilayah;
 use App\Report;
-use App\event;
+use App\Event;
 use Auth;
 use App\Join;
 use App\Post;
