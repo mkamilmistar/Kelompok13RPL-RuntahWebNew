@@ -96,13 +96,18 @@ class VolunteerController extends Controller
 
     public function join(Request $request, $id)
     {
+        $user = User::find(Auth::user()->id);
 
-        $joins = new Join;
-        $joins->event_id = $id;
-        $joins->user_id = Auth::user()->id;
-        $joins->status = "Belum Selesai";
-        $joins->save();
-        return redirect('volunteer/history')->with('sukses', 'Join Event');
+        if ($user->jenis_kelamin == null) {
+            return redirect('/profile')->with('lengkapi', 'Lengkapi profile terlebih dahulu!');
+        } else {
+            $joins = new Join;
+            $joins->event_id = $id;
+            $joins->user_id = Auth::user()->id;
+            $joins->status = "Belum Selesai";
+            $joins->save();
+            return redirect('volunteer/history')->with('sukses', 'Join Event');
+        }
     }
 
     public function joined(Request $request)

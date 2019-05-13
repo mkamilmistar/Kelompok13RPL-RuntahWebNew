@@ -122,6 +122,11 @@
         // Display a success toast, with a title
         toastr.success("{{Session::get('sukses')}}", "Sukses")
         @endif
+
+        @if(Session::has('lengkapi'))
+        // Display a success toast, with a title
+        toastr.error("{{Session::get('lengkapi')}}", "Gagal")
+        @endif
     </script>
 
 
