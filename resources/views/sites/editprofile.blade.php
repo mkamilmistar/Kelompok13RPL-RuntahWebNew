@@ -100,7 +100,8 @@ Edit Profile - Runtah WEB
 
                     <li>
                         <h6><i class="fa fa-home" aria-hidden="true"></i><label for="alamat">Address<font color="red">*</h6>
-                        <h6><input type="text" class="form-control" required name="alamat" value="{{$users->alamat}}"></h6>
+                        <h6> <textarea required name="alamat" class="form-control" id="alamat" rows="3">{{$users->alamat}}</textarea></h6>
+
                     </li>
                     @if(auth()->user()->role=='admin')
                     <label for=""></label>
