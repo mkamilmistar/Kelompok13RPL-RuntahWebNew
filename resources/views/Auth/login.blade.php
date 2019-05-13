@@ -14,6 +14,13 @@ RuntahWeb | Log In
             <p class="login-box-msg">Sign in to start your session</p>
             <form action="/postlogin" method="post">
                 {{csrf_field()}}
+                @if(count($errors)>0)
+                @foreach($errors->all() as $error)
+                <div class="alert alert-dismissible alert-danger">
+                    {{$error}}
+                </div>
+                @endforeach
+                @endif
                 <div class="form-group has-feedback">
                     <input required type="email" class="form-control" placeholder="Email" name="email">
                     <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
@@ -26,11 +33,11 @@ RuntahWeb | Log In
                 <div class="form-group has-feedback">
                     <input required type="password" class="form-control" placeholder="Password" name="password">
                     <span class="glyphicon glyphicon-lock form-control-feedback"></span>
-                    @error('password')
-                    <span class="invalid-feedback" role="alert">
-                        <strong>{{ $message }}</strong>
+                    @if ($errors->has('password'))
+                    <span class="invalid-feedback">
+                        <strong>{{ $errors->first('password') }}</strong>
                     </span>
-                    @enderror
+                    @endif
                 </div>
                 <div class="row">
                     <div class="col-xs-8">

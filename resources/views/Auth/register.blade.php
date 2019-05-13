@@ -9,7 +9,6 @@ RuntahWeb | Register
         <div class="register-logo">
             <a href="/"><b>Runtah</b>Web</a>
         </div>
-
         <div class="register-box-body">
             <p class="login-box-msg">Register a new volunteer </p>
 
