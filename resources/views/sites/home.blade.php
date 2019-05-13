@@ -24,7 +24,7 @@ Home - Runtah WEB
                     @if(Auth::guest())
                     <a class="main-btn" href="/register">Aku berani ikut andil!</a>
                     @elseif(auth()->user()->role=='admin')
-                    <a class="main-btn" href="/volunteer">Ikuti Event Volunteer</a>
+                    <a class="main-btn" href="/admins/dashboard">Admin Page</a>
                     @elseif(auth()->user()->role=='volunteer')
                     <a class="main-btn" href="/volunteer">Ikuti Event Volunteer</a>
                     @endif
