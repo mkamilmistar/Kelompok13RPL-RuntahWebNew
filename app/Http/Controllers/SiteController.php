@@ -3,12 +3,10 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Volunteer;
 use App\User;
 use App\Wilayah;
 use App\Report;
 use App\Event;
-use Auth;
 use App\Join;
 use App\Post;
 
