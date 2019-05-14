@@ -74,7 +74,7 @@ class AdminController extends Controller
     {
         $users = \App\User::find($id);
         $users->update($request->all());
-        return redirect('/admins/dashboard')->with('sukses', 'Data Berhasil diedit');
+        return redirect('/admins/index')->with('sukses', 'Data Berhasil diedit');
     }
 
     public function delete($id)

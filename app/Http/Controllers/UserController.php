@@ -33,8 +33,6 @@ class UserController extends Controller
             'nomor_telepon' => 'required',
             'email' => 'required',
         ]);
-
-
         $users = User::find(Auth::user()->id);
         //buat upload gambar
         if ($request->hasFile('user_image')) {
