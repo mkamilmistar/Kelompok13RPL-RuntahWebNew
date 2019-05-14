@@ -35,29 +35,29 @@ Route::get('/logout', 'AuthController@logout');
 Route::post('/postlogin', 'AuthController@postlogin');
 Route::get('/login', 'AuthController@login')->name('login');
 
-//route report
-Route::get('/report', 'ReportController@report');
-Route::post('/postreport', 'ReportController@postreport')->name('postreport');
-
 //route untuk admin
 Route::get('admins/login', 'AdminController@adminlogin');
 Route::post('admins/postlogin', 'AdminController@adminpostlogin');
 Route::get('admins/logout', 'AdminController@adminlogout');
 Route::get('admins', 'AdminController@admins');
 
-//Route untuk volunteer
-Route::get('/volunteer', 'VolunteerController@volunteer');
-Route::get('/volunteer/{id}/join', 'VolunteerController@join')->name('join');
-Route::get('/volunteer/{id}/joined', 'VolunteerController@joined')->name('joined');
-Route::get('/volunteer/{id}/confirm', 'VolunteerController@confirm')->name('confirm');
-Route::get('/volunteer/{id}/cancel', 'VolunteerController@cancel')->name('cancel');
-//hapus middleware ->middleware('checkPoint'); untuk melihat view
-Route::get('/volunteer/claimreward', 'VolunteerController@claimreward')->middleware('checkPoint');
-Route::get('/volunteer/history', 'VolunteerController@history');
-
 //Route lihat event
 Route::get('/event/{id}', 'VolunteerController@show');
+Route::group(['middleware' => ['auth', 'checkRole:volunteer']], function () {
+    //Route untuk volunteer
+    Route::get('/volunteer', 'VolunteerController@volunteer');
+    Route::get('/volunteer/{id}/join', 'VolunteerController@join')->name('join');
+    Route::get('/volunteer/{id}/joined', 'VolunteerController@joined')->name('joined');
+    Route::get('/volunteer/{id}/confirm', 'VolunteerController@confirm')->name('confirm');
+    Route::get('/volunteer/{id}/cancel', 'VolunteerController@cancel')->name('cancel');
+    //hapus middleware ->middleware('checkPoint'); untuk melihat view
+    Route::get('/volunteer/claimreward', 'VolunteerController@claimreward')->middleware('checkPoint');
+    Route::get('/volunteer/history', 'VolunteerController@history');
 
+    //route report
+    Route::get('/report', 'ReportController@report');
+    Route::post('/postreport', 'ReportController@postreport')->name('postreport');
+});
 Route::group(['middleware' => ['auth', 'checkRole:admin']], function () {
     Route::get('/admins/index', 'AdminController@index');
     Route::post('/admins/create', 'AdminController@create');

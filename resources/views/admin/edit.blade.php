@@ -40,7 +40,7 @@ Edit
                                 </div>
                                 <div class="form-group">
                                     <label for="no_hp">Nomor Telepon</label>
-                                    <input required name="nomor_telepon" maxlength="12" minlength="10" value="{{$users->nomor_telepon}}" type="tel" pattern="[0-9]{4}-[0-9]{3}-[0-9]{4}" minlength="10" maxlength="12" title="Ten digits code" class="form-control" id="no_hp" aria-describedby="emailHelp" placeholder="Nomor Telepon">
+                                    <input required name="nomor_telepon" maxlength="12" minlength="10" value="{{$users->nomor_telepon}}" type="tel" minlength="10" maxlength="12" class="form-control" id="no_hp" aria-describedby="emailHelp" placeholder="Nomor Telepon">
                                 </div>
                                 <div class="form-group">
                                     <label for="alamat">Alamat</label>
