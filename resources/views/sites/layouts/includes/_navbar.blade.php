@@ -31,6 +31,7 @@
             <li><a href="/diy">Do It Yourself!</a></li>
             <li><a href="/information">Information</a></li>
             <li><a href="/about">About</a></li>
+            <li><a href="/volunteer">Volunteer</a></li>
             <li><a href="/admins/dashboard">Admin</a></li>
             <li><a>|</a></li>
             @elseif(auth()->user()->role=='volunteer')

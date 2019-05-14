@@ -57,8 +57,10 @@ Volunteer - Runtah WEB
                                     <th>Hari/Tanggal</th>
                                     <th>Jam</th>
                                     <th>Lokasi</th>
+                                    @if(auth()->user()->role=='admin')
+                                    @else
                                     <th>Action</th>
-
+                                    @endif
                                 </tr>
                             </thead>
                             <tbody>
@@ -70,10 +72,13 @@ Volunteer - Runtah WEB
                                     <td>{{ date('l, d M Y', strtotime($info->date)) }}</td>
                                     <td>{{ date('H.i', strtotime($info->time)) }}</td>
                                     <td>{{$info->location}}</td>
+                                    @if(auth()->user()->role=='admin')
+                                    @else
                                     @if($info->status=="Tersedia")
                                     <td><a href="#" class="main-btn join" event-id="{{$info->id}}">Join Event</a></td>
                                     @else
                                     <td>Event Belum Tersedia</td>
+                                    @endif
                                     @endif
                                 </tr>
                                 @endforeach

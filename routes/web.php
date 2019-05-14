@@ -43,9 +43,10 @@ Route::get('admins', 'AdminController@admins');
 
 //Route lihat event
 Route::get('/event/{id}', 'VolunteerController@show');
+Route::get('/volunteer', 'VolunteerController@volunteer');
+
 Route::group(['middleware' => ['auth', 'checkRole:volunteer']], function () {
     //Route untuk volunteer
-    Route::get('/volunteer', 'VolunteerController@volunteer');
     Route::get('/volunteer/{id}/join', 'VolunteerController@join')->name('join');
     Route::get('/volunteer/{id}/joined', 'VolunteerController@joined')->name('joined');
     Route::get('/volunteer/{id}/confirm', 'VolunteerController@confirm')->name('confirm');
