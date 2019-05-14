@@ -90,12 +90,19 @@ Edit Profile - Runtah WEB
 
                     <li>
                         <h6><i class="fa fa-phone" aria-hidden="true"></i><label for="nomor_telepon">Phone<font color="red">*</h6>
-                        <h6><input type="tel" pattern="[0-9]{4}-[0-9]{3}-[0-9]{4}" minlength="10" maxlength="12" title="Ten digits code" placeholder="0822 8377 7098" class="form-control" required name="nomor_telepon" value="{{$users->nomor_telepon}}"></h6>
+                        <h6><input type="text" class="calculator-input" onkeypress="return event.charCode >= 48 && event.charCode <= 57" pattern="[0-9]{4}-[0-9]{3}-[0-9]{4}" minlength="10" maxlength="12" title="Ten digits code" placeholder="0822 8377 7098" class="form-control" required name="nomor_telepon" value="{{$users->nomor_telepon}}"></h6>
                     </li>
 
                     <li>
                         <h6><i class="fa fa-envelope" aria-hidden="true"></i><label for="email">Email<font color="red">*</h6>
-                        <h6><input type="text" class="form-control" required name="email" value="{{$users->email}}"></h6>
+                        <h6>
+                            <input type="email" pattern=".+@gmail.com" class="form-control" required name="email" value="{{$users->email}}">
+                            @error('email')
+                            <span class="invalid-feedback" role="alert">
+                                <strong>{{ $message }}</strong>
+                            </span>
+                            @enderror
+                        </h6>
                     </li>
 
                     <li>
@@ -129,6 +136,16 @@ Edit Profile - Runtah WEB
 </div>
 <!-- END PROFILE HEADER -->
 
-
+@section('script')
+<script>
+    $(function() {
+        $('input').iCheck({
+            checkboxClass: 'icheckbox_square-blue',
+            radioClass: 'iradio_square-blue',
+            increaseArea: '20%' /* optional */
+        });
+    });
+</script>
+@endsection
 <!-- ##### Regular Page Area End ##### -->
 @stop

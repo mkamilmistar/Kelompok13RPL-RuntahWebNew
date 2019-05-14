@@ -12,20 +12,19 @@ RuntahWeb | Log In
         <!-- /.login-logo -->
         <div class="login-box-body">
             <p class="login-box-msg">Sign in to start your session</p>
-            <form action="/postlogin" method="post">
+            <form method="POST" action="{{ route('login') }}">
                 @csrf
                 <div class="form-group has-feedback">
-                    <input required autocomplete="email" autofocus type="email" value="{{ old('email') }}" class="form-control @error('email') is-invalid @enderror" placeholder="Email" name="email">
+                    <input placeholder="Email" id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
                     <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
                     @error('email')
                     <span class="invalid-feedback" role="alert">
                         <strong>{{ $message }}</strong>
                     </span>
                     @enderror
-
                 </div>
                 <div class="form-group has-feedback">
-                    <input required autocomplete="current-password" type="password" value="{{ old('password') }}" class="form-control @error('password') is-invalid @enderror" placeholder="Password" name="password">
+                    <input placeholder="Password" id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="current-password">
                     <span class="glyphicon glyphicon-lock form-control-feedback"></span>
                     @error('password')
                     <span class="invalid-feedback" role="alert">
@@ -33,27 +32,30 @@ RuntahWeb | Log In
                     </span>
                     @enderror
                 </div>
-                <div class="row">
-                    <div class="col-xs-8">
-                        <div class="checkbox icheck">
-                            <label>
-                                <input class="form-check-input" type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}> Remember Me
+                <div class="form-group row">
+                    <div class="col-md-6 offset-md-4">
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
+                            <label class="form-check-label" for="remember">
+                                {{ __('Remember Me') }}
                             </label>
                         </div>
                     </div>
-                    <!-- /.col -->
-                    <div class="col-xs-4">
-                        <button type="submit" class="btn btn-primary btn-block btn-flat">Sign In</button>
+                </div>
+                <div class="form-group row mb-0">
+                    <div class="col-md-8 offset-md-4">
+                        <button type="submit" class="btn btn-primary btn-block btn-flat">
+                            {{ __('Login') }}
+                        </button>
+                        @if (Route::has('password.request'))
+                        <a class="text-center" href="{{ route('password.request') }}">
+                            {{ __('Forgot Your Password?') }} <br>
+                        </a>
+                        @endif
+                        <a href="/register" class="text-center">Register a new membership</a>
                     </div>
-                    <!-- /.col -->
                 </div>
             </form>
-
-            <a href="{{ route('password.request') }}">I forgot my password</a><br>
-            <a href="/register" class="text-center">Register a new membership</a>
-
         </div>
-        <!-- /.login-box-body -->
     </div>
-    <!-- /.login-box -->
     @endsection

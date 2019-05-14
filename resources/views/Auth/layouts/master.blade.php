@@ -39,6 +39,12 @@
         });
     });
 </script>
+<script>
+    @if(Session::has('gagal'))
+    // Display a success toast, with a title
+    toastr.error("{{Session::get('gagal')}}", "Gagal")
+    @endif
+</script>
 </body>
 
 </html>

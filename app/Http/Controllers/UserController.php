@@ -31,27 +31,33 @@ class UserController extends Controller
             'jenis_kelamin' => 'required',
             'alamat' => 'required',
             'nomor_telepon' => 'required',
-            'email' => 'required',
+            'email' => 'required|email|unique',
         ]);
-        $users = User::find(Auth::user()->id);
+        if ($request->fails()) {
+            return redirect('/profile/{id}/edit')->with('gagal', 'Profile tidak terupdate!');
+        } else {
 
-        //buat upload gambar
-        if ($request->hasFile('user_image')) {
-            $request->file('user_image')->move('images/user', $request->file('user_image')->getClientOriginalName());
-            $users->user_image = $request->file('user_image')->getClientOriginalName();
+
+            $users = User::find(Auth::user()->id);
+
+            //buat upload gambar
+            if ($request->hasFile('user_image')) {
+                $request->file('user_image')->move('images/user', $request->file('user_image')->getClientOriginalName());
+                $users->user_image = $request->file('user_image')->getClientOriginalName();
+            }
+
+            $users->id = Auth::user()->id;
+            $users->nama_depan = $request->input('nama_depan');
+            $users->nama_belakang = $request->input('nama_belakang');
+            $users->jenis_kelamin = $request->input('jenis_kelamin');
+            $users->nomor_telepon = $request->input('nomor_telepon');
+            $users->alamat = $request->input('alamat');
+            $users->nik_pengguna = $request->input('nik_pengguna');
+            $users->email = $request->input('email');
+            $users->save(); //save all
+
+            return redirect('/profile')->with('sukses', 'Profile updated!');
         }
-
-        $users->id = Auth::user()->id;
-        $users->nama_depan = $request->input('nama_depan');
-        $users->nama_belakang = $request->input('nama_belakang');
-        $users->jenis_kelamin = $request->input('jenis_kelamin');
-        $users->nomor_telepon = $request->input('nomor_telepon');
-        $users->alamat = $request->input('alamat');
-        $users->nik_pengguna = $request->input('nik_pengguna');
-        $users->email = $request->input('email');
-        $users->save(); //save all
-
-        return redirect('/profile')->with('sukses', 'Profile updated!');
     }
 
     public function changepassword()
