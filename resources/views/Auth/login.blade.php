@@ -13,37 +13,31 @@ RuntahWeb | Log In
         <div class="login-box-body">
             <p class="login-box-msg">Sign in to start your session</p>
             <form action="/postlogin" method="post">
-                {{csrf_field()}}
-                @if(count($errors)>0)
-                @foreach($errors->all() as $error)
-                <div class="alert alert-dismissible alert-danger">
-                    {{$error}}
-                </div>
-                @endforeach
-                @endif
+                @csrf
                 <div class="form-group has-feedback">
-                    <input required type="email" class="form-control" placeholder="Email" name="email">
+                    <input required autocomplete="email" autofocus type="email" value="{{ old('email') }}" class="form-control @error('email') is-invalid @enderror" placeholder="Email" name="email">
                     <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
                     @error('email')
                     <span class="invalid-feedback" role="alert">
                         <strong>{{ $message }}</strong>
                     </span>
                     @enderror
+
                 </div>
                 <div class="form-group has-feedback">
-                    <input required type="password" class="form-control" placeholder="Password" name="password">
+                    <input required autocomplete="current-password" type="password" value="{{ old('password') }}" class="form-control @error('password') is-invalid @enderror" placeholder="Password" name="password">
                     <span class="glyphicon glyphicon-lock form-control-feedback"></span>
-                    @if ($errors->has('password'))
-                    <span class="invalid-feedback">
-                        <strong>{{ $errors->first('password') }}</strong>
+                    @error('password')
+                    <span class="invalid-feedback" role="alert">
+                        <strong>{{ $message }}</strong>
                     </span>
-                    @endif
+                    @enderror
                 </div>
                 <div class="row">
                     <div class="col-xs-8">
                         <div class="checkbox icheck">
                             <label>
-                                <input type="checkbox"> Remember Me
+                                <input class="form-check-input" type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}> Remember Me
                             </label>
                         </div>
                     </div>
