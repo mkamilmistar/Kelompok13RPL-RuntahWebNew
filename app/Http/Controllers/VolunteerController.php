@@ -54,6 +54,8 @@ class VolunteerController extends Controller
         //dd($events);
         return redirect('/admins/event')->with('sukses', 'Event ditambahkan!');
     }
+
+
     public function editevent($id)
     {
         $events = Event::find($id);
